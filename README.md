@@ -1,10 +1,10 @@
 
 Welcome to the Fedora CoreOS issue tracker. This tracker will be used
 to discuss new features for Fedora CoreOS and also important bugs that
-are affecting the project. Tickets with the 'meeting' label will be
+are affecting the project. Tickets with the `meeting` label will be
 taken as agenda items during the meetings. This repo is to be used primarily
 for development purposes. If you are a user and have questions please use
-the [discourse or the mailing list]().
+the [forum or the mailing list](#communication-channels-for-fedora-coreos).
 
 # Fedora CoreOS Working Group
 
@@ -28,29 +28,29 @@ Future Link to download page
 
 - main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 - status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/) (announcements/important messages)
-- #fedora-coreos on IRC (Freenode)
+- `#fedora-coreos` on IRC (Freenode)
 - forum at [https://discussion.fedoraproject.org/c/coreos](https://discussion.fedoraproject.org/c/coreos)
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
 - website at [https://coreos.fedoraproject.org/](https://coreos.fedoraproject.org/)
-- Twitter: [@coreos](https://twitter.com/coreos) (specific to CoreOS and containers) and [@fedora](https://twitter.com/fedora] (all Fedora and other relevant news)
+- Twitter: [@coreos](https://twitter.com/coreos) (specific to CoreOS and containers) and [@fedora](https://twitter.com/fedora) (all Fedora and other relevant news)
 
 # Meetings
 
 The Fedora CoreOS Working Group has a weekly meeting. The meeting usually 
-happens in #fedora-meeting-1 on irc.freenode.net and the schedule for the 
+happens in `#fedora-meeting-1` on irc.freenode.net and the schedule for the 
 meeting can be found here: https://apps.fedoraproject.org/calendar/CoreOS
-Currently, meetings are at 16:30 UTC on Wednesdays.
+Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 ## Steps to run the meeting
 
-- Navigate to #fedora-meeting-1 on freenode
+- Navigate to `#fedora-meeting-1` on freenode
 - Type `#startmeeting fedora_coreos_meeting`
 - #topic roll call
 
 Wait for 2-4 minutes for people to check in for the roll call.
 
-- #chair all the people present for the meeting
-- #topic Action items from last meeting
+- `#chair` all the people present for the meeting
+- `#topic` Action items from last meeting
 
 Find the last meeting log from
 [meetbot](https://meetbot-raw.fedoraproject.org/teams/fedora_coreos_meeting)
@@ -62,16 +62,16 @@ update the status of.
 
 Do the following for each ticket
 
-- #topic Ticket subject 
-- #link link_to_the_ticket
+- `#topic` Ticket subject 
+- `#link` link_to_the_ticket
 
 When all the tickets are over, go for Open floor
 
-* #topic Open Floor
+* `#topic` Open Floor
 
 After open floor, end the meeting.
 
-* #endmeeting
+* `#endmeeting`
 
 # Voting
 
