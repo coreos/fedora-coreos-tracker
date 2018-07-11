@@ -27,7 +27,7 @@ Future Link to download page
 # Communication channels for Fedora CoreOS
 
 - main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
-- status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/) (announcements/important messages)
+- status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
 - `#fedora-coreos` on IRC (Freenode)
 - forum at [https://discussion.fedoraproject.org/c/coreos](https://discussion.fedoraproject.org/c/coreos)
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
