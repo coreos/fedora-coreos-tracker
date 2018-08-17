@@ -1,0 +1,206 @@
+The source for this document lives at https://github.com/coreos/fedora-coreos-tracker/blob/master/PRD.txt
+
+The rendered document lives on the Fedora wiki at https://fedoraproject.org/wiki/CoreOS/PRD
+
+= Document Purpose and Overview =
+
+This is the [http://en.wikipedia.org/wiki/Product_requirements_document Product Requirements Document] for the Fedora CoreOS Working Group. It:
+    
+* Describes use cases and design considerations for Fedora CoreOS.
+
+= Release/Product Overview =
+
+Fedora CoreOS is an automatically updating, minimal, monolithic, container-focused operating system, designed for clusters but also operable standalone, optimized for Kubernetes but also great without it.
+
+
+= Market Opportunity =
+
+The market around Linux containers and "microservices" architecture is growing rapidly, as are the technologies and processes that enable it. The demand for a container focused operating system that is automatically updated has been proven by Container Linux and Atomic Host. Fedora CoreOS is the successor to these distributions.
+
+The technologies included in Fedora CoreOS for enabling transactional system updates and containerized application hosting will have relevance to other Fedora products. Currently in the Fedora IoT and Fedora Silverblue initiatives there's an opportunity for this working group to help develop and spread these technologies to other parts of the Fedora community.
+
+== Target Market / Audience ==
+
+System administrators creating containerized workloads, and organizations and users running those applications. Fedora CoreOS is particularly interested in organizations that might want to contribute back to Fedora and be involved in helping find/report/fix bugs, and develop new features.
+
+
+= Use Cases and Goals =
+
+=== Primary Use Cases ===
+
+A primary use case for Fedora CoreOS is defined as those which:
+
+* are factored into design decisions
+* are actively tested
+* receive priority in active bug fixing
+
+The primary use cases of Fedora CoreOS are:
+
+* '''Clustered server node for running Kubernetes and/OpenShift OKD'''
+
+Fedora CoreOS aims to be one of the best platforms for running Kubernetes by making it easy to set up on a known immutable OS and working closely with upstream Kubernetes to fix bugs when they occur.
+
+* '''Single server node for running containerized applications'''
+
+Fedora CoreOS aims to be one of the best platforms for running single node containerized applications by offering a container runtime and automatic updates of the base OS.
+
+== Secondary Use Cases ==
+
+A secondary use case of Fedora is defined as those which: 
+
+* are factored into design decisions
+* may be tested; note that individuals or groups within the community may make stronger guarantees depending on the use case and technology used
+* may have a lower priority for bug fixes, and those fixes may be completely dependent on related upstreams
+
+
+The secondary use cases of Fedora CoreOS are:
+
+* '''Clustered server node for running container orchestration platforms other than Kubernetes'''
+
+Fedora CoreOS will try to be a good platform for running DIY or other container orchestration platforms on top by providing a stable base OS and known good container runtimes.
+
+== Use Case Indifferent Goals ==
+
+A use case that Fedora CoreOS is indifferent about is defined as those which:
+
+* are not factored into design decisions, but an attempt is made to not intentionally break these use cases unless the change conflicts with primary use cases
+* are not actively tested
+
+Fedora CoreOS is indifferent about the following use cases:
+
+* '''IoT'''
+
+The Fedora IoT Objective proposes a distinct edition for Internet of Things. Fedora IoT will use many technologies also used by CoreOS, but is a separate subproject. This separation allows both editions to put their own target audiences and use cases first when making design decisions. While Fedora CoreOS may work for IoT use cases the working group encourages users to consider the Fedora IoT edition.
+
+* '''Fedora CoreOS as a Development Platform'''
+
+Developing containerized applications, containerized runtimes, or container orchestration platforms can be done on Fedora CoreOS but it is not the goal of the working group to make significant changes to the platform to enable those use cases.
+
+=== Use Case Anti-Goals ===
+
+An anti-goal use case for Fedora CoreOS is defined as those which:
+
+* are not factored into design decisions. No attempt is made to not break these use cases.
+* the working group explicitly asks users to not explore these use cases as part of Fedora CoreOS.
+
+Based on the above definition, the anti-goal use cases for Fedora CoreOS are:
+
+* '''Host for running non-containerized applications'''
+
+Running non-containerized applications (including via package layering) is not an explicit use case of Fedora CoreOS unless named as an exception.
+
+* '''User desktop'''
+
+For desktop use cases the CoreOS group encourages users to leverage the Fedora Silverblue project.
+
+
+= Product Objectives =
+
+The Fedora CoreOS working group will deliver a Fedora CoreOS
+distribution that:
+
+* automatically updates on a regular cadence, with occasional out-of-cycle security updates
+* delivers a small base software set (minimal, but practical), including a container runtime
+* has SELinux enabled by default
+* runs on various virtual machine, bare metal, public and private cloud platforms
+
+The first three objectives allow CoreOS to be a suitable platform for security-conscious users.
+
+
+= Delivery Mechanisms =
+
+Fedora CoreOS images must be easy to consume as part of a public or private cloud, as virtual machines, or on bare metal. Because we target these environments, we'll produce ISO images, downloadable VM/cloud images, and publish images to relevant public cloud services.
+
+=== Where to obtain ===
+
+All artifacts will be downloadable from the getfedora.org website. Similarly, for public cloud cases users can find Fedora CoreOS in the public cloud services without having to download and upload to the cloud service themselves.
+
+=== Delivery Format ===
+
+Artifacts will be delivered as cloud images on Amazon EC2, Azure, DigitalOcean, Google Compute Engine, and Packet; as downloadable images for OpenStack, QEMU, VirtualBox, and VMware; and as ISO images, netboot images, and installable raw images for bare metal systems. We may add other public cloud images and downloadable formats to meet demand or anticipated need.
+
+=== Architectures ===
+
+We are targeting 64-bit x86 initially, but plan to add other architectures starting with aarch64 and ppc64le.
+
+=== Updates ===
+
+Fedora CoreOS will update automatically by default. The updates will be based on the underlying OSTree technology. Updated content will be released approximately every X weeks. Updated content will be produced only for the current latest number release of Fedora and not for any previous releases of Fedora.
+
+
+= Measuring Success =
+
+Success looks like:
+
+* Adoption from Container Linux and Atomic Host users/communities
+* Third party support / targeting of Fedora CoreOS as a platform.
+* Increased contribution and participation in the Fedora CoreOS WG and Fedora Project in general.
+* Creation of new stacks by third parties based on CoreOS or underlying technology (OSTree).
+
+
+= Documentation =
+
+We aim to provide comprehensive documentation for both users and developers.
+
+
+== Fedora Project Documentation ==
+
+The CoreOS Working Group will cooperate with the Documentation Project to provide documentation to users, and developers of Fedora Cloud Products.
+
+== Open Source Projects documentation ==
+
+Ensuring that Fedora is well-represented, up-to-date in other open source project documentation...
+
+
+= About this Document =
+
+This PRD (Product Requirements Document) is an evolving document, created by the Fedora CoreOS Working Group as part of the process for designing the Fedora CoreOS project deliverable.
+This document will evolve over time as the purpose of the working group continues to be determined as the working group process gets under way and initial products start to get produced.
+
+== Authors ==
+
+Contributors to this document include:
+* [[User:dustymabe|Dusty Mabe]]
+
+== Reviewers & Contributors ==
+The following people have contributed to the development of this document, through feedback on IRC, mailing lists, and other points of contact.
+
+==  Credits ==
+
+The [https://fedoraproject.org/wiki/Atomic/PRD Atomic PRD] was a large inspiration for this document.
+
+==  Community Information ==
+
+The Fedora CoreOS Working Group is one of many teams within the Fedora Project. Communication channels are listed [https://github.com/coreos/fedora-coreos-tracker#communication-channels-for-fedora-coreos here]. Meeting/meeting log information can be found [https://github.com/coreos/fedora-coreos-tracker#meetings here].
+
+== Approval History ==
+
+Over time, it is expected that this document will undergo various rounds of review, approval, and editing; in the future, it may be rewritten for different releases of Fedora.
+While one can review the history of a wiki document (by clicking the "history" tab), it is useful to provide explicit indicators of any major format changes, approvals, or indications of it being in a “final” state, in a list that can allow someone to quickly see that all of the prescribed layers of approval have occured.
+* July 24, 2018 First Draft by dustymabe
+* August 17, 2018 Second Draft by dustymabe
+* FutureDate: Approval by SomeGroup; link to any pertinent mail announcement and/or meeting minutes
+
+== Definitions and Acronyms ==
+
+* AWS: [https://aws.amazon.com/ Amazon Web Services]
+* Amazon EC2: Amazon Elastic Compute Cloud, a popular public IaaS, part of AWS
+* IaaS: Infrastructure as a Service
+* PaaS: Platform as a Service
+* SaaS: Software as a Service
+* PRD: Product Requirements Document
+* [[EPEL]]: Extra Packages for Enterprise Linux
+* CI: Continuous Integration
+* CD: Continuous Delivery or Continuous Deployment
+* [[SoftwareCollections | SCL]]: Software Collections
+* [[Category:SIGs|Special Interests Groups]]: teams in charge of some aspects of Fedora Project
+* BZ: [[Bugzilla]]
+* GUI: Graphical User Interface
+* CLI: Command Line Interface
+* API: Application Programming Interface
+* [[FESCo]]: Fedora Engineering Steering Committee
+
+
+<references />
+[[Category:Product_Requirements_Document]]
+
