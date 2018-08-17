@@ -57,7 +57,7 @@ The secondary use cases of Fedora CoreOS are:
 
 * '''Clustered server node for running container orchestration platforms other than Kubernetes'''
 
-Fedora CoreOS will try to be a good platform for running DIY or other container orchestration platforms on top by providing a stable base OS and known good container runtimes.
+Fedora CoreOS will try to be a good platform for running DIY or other container orchestration platforms on top by providing a stable base OS, cluster support, and known good container runtimes.
 
 == Use Case Indifferent Goals ==
 
@@ -99,7 +99,7 @@ For desktop use cases the CoreOS group encourages users to leverage the Fedora S
 The Fedora CoreOS working group will deliver a Fedora CoreOS
 distribution that:
 
-* automatically updates on a regular cadence, with occasional out-of-cycle security updates
+* automatically updates on a regular cadence, with occasional out-of-cycle security or critical bug fix updates
 * delivers a small base software set (minimal, but practical), including a container runtime
 * has SELinux enabled by default
 * runs on various virtual machine, bare metal, public and private cloud platforms
