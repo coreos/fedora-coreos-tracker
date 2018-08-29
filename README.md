@@ -11,9 +11,9 @@ the [forum or the mailing list](#communication-channels-for-fedora-coreos).
 Fedora CoreOS is an automatically updating, minimal, monolithic,
 container-focused operating system, designed for clusters but also
 operable standalone, optimized for Kubernetes but also great without
-it. It aims to combine the best of both CoreOS Container Linux and 
+it. It aims to combine the best of both CoreOS Container Linux and
 Fedora Atomic Host, integrating technology like Ignition from Container
-Linux with rpm-ostree and SELinux hardening from Project Atomic. Its 
+Linux with rpm-ostree and SELinux hardening from Project Atomic. Its
 goal is to provide the best container host to run containerized workloads
 securely and at scale.
 
@@ -36,8 +36,8 @@ Future Link to download page
 
 # Meetings
 
-The Fedora CoreOS Working Group has a weekly meeting. The meeting usually 
-happens in `#fedora-meeting-1` on irc.freenode.net and the schedule for the 
+The Fedora CoreOS Working Group has a weekly meeting. The meeting usually
+happens in `#fedora-meeting-1` on irc.freenode.net and the schedule for the
 meeting can be found here: https://apps.fedoraproject.org/calendar/CoreOS
 Currently, meetings are at `16:30 UTC` on Wednesdays.
 
@@ -45,12 +45,12 @@ Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 - Navigate to `#fedora-meeting-1` on freenode
 - Type `#startmeeting fedora_coreos_meeting`
-- #topic roll call
+- `#topic roll call`
 
 Wait for 2-4 minutes for people to check in for the roll call.
 
 - `#chair` all the people present for the meeting
-- `#topic` Action items from last meeting
+- `#topic Action items from last meeting`
 
 Find the last meeting log from
 [meetbot](https://meetbot-raw.fedoraproject.org/teams/fedora_coreos_meeting)
@@ -62,20 +62,41 @@ update the status of.
 
 Do the following for each ticket
 
-- `#topic` Ticket subject 
+- `#topic` Ticket subject
 - `#link` link_to_the_ticket
+
+During the meeting, you can give people action items for them to complete:
+
+- `#action <username>` description of what needs to be done
 
 When all the tickets are over, go for Open floor
 
-* `#topic` Open Floor
+- `#topic` Open Floor
 
 After open floor, end the meeting.
 
-* `#endmeeting`
+- `#endmeeting`
+
+When convenient, send an email to `coreos@lists.fedoraproject.org` with the
+details of the meeting.  The usual format follows:
+
+```
+Subject:  Fedora CoreOS Meeting Minutes year-mm-dd
+
+Body:
+
+Minutes: <URL to meetbot .html>
+Minutes (text): <URL to meetbot .txt>
+Log:  <URL to meetbot .log.html>
+
+<Copy/paste content of Log>
+```
+
+You can see examples in the [archives](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 
 # Voting
 
-On some topics we will need to vote. The following rules apply to the voting 
+On some topics we will need to vote. The following rules apply to the voting
 process.
 
 ## For Regularly Scheduled Meetings
