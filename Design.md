@@ -39,3 +39,19 @@ the root filesystem has changed. This is currently untested.
  - What is the exact partition layout?
  - Do we make /etc a ro bind mount?
  - What filesystem do we use for / and /var? ext4?
+
+## Cloud Agents
+
+Originally discussed in [#12](https://github.com/coreos/fedora-coreos-tracker/issues/12).
+
+### Summary:
+
+ - FCOS will not ship cloud agents whenever possible.
+ - Some clouds require the OS perform tasks like signaling boot completion. For those we will re-implement that functionality in
+   Ignition or coreos-metadata.
+ - For the short term, if we need to include an agent we will bake it into the image. We will not have any specific
+   mechanism for including agents.
+
+### Open questions:
+
+ - What do we do about VMware, which has a very involved and intrusive "agent"?
