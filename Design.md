@@ -5,12 +5,17 @@ conclusion should be summarized here with a link to the issue.
 
 ## Disk Layout
 
-Originally discussed in issue [#18](https://github.com/coreos/fedora-coreos-tracker/issues/18). See also [dustymabe's comment](https://github.com/coreos/fedora-coreos-tracker/issues/18#issuecomment-409668929) summarizing the discussion in the FCOS meeting.
+- Originally discussed in issue [#18](https://github.com/coreos/fedora-coreos-tracker/issues/18). 
+  See also [dustymabe's comment](https://github.com/coreos/fedora-coreos-tracker/issues/18#issuecomment-409668929)
+  summarizing the discussion in the FCOS meeting.
+- Filesystem details were discussed in [#33](https://github.com/coreos/fedora-coreos-tracker/issues/33).
+  We will use XFS by default.
 
 ### Summary:
 
  - FCOS will use a "dd-able" image and ship with a standard partition layout.
  - The bare metal image and cloud images have the same layout.
+ - The `/var` and root (`/`) filesystems will be XFS by default.
  - Anaconda will not be used for installation.
  - FCOS should not use the [GPT generator](https://www.freedesktop.org/software/systemd/man/systemd-gpt-auto-generator.html).
  - LVM should be supported, but not used by default.
@@ -25,8 +30,8 @@ The partition layout is still undecided, but initial proposals look something li
     -----------------------------------
     1	fat32	Boot partition/ESP
     2	N/A	Bios Boot partition
-    3	?	Root
-    4	?	/var
+    3	XFS	Root
+    4	XFS	/var
 
 We also want to support moving the root partition to new locations by recreating the OSTree at the new location. This
 would involve downloading the OSTree repo contents and doing the deploy between the Ignition disks and files stage if
@@ -38,7 +43,6 @@ the root filesystem has changed. This is currently untested.
    may not work with poorly implemented UEFIs.
  - What is the exact partition layout?
  - Do we make /etc a ro bind mount?
- - What filesystem do we use for / and /var? ext4?
 
 ## Identification in `/etc/os-release`
 
