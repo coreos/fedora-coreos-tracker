@@ -40,6 +40,15 @@ the root filesystem has changed. This is currently untested.
  - Do we make /etc a ro bind mount?
  - What filesystem do we use for / and /var? ext4?
 
+## Identification in `/etc/os-release`
+
+Originally discussed in [#21](https://github.com/coreos/fedora-coreos-tracker/issues/21).
+
+### Summary:
+
+We will identify a Fedora CoreOS server using the `ID=fedora` and `VARIANT_ID=coreos`
+fields in the `/etc/os-release` file.
+
 ## Cloud Agents
 
 Originally discussed in [#12](https://github.com/coreos/fedora-coreos-tracker/issues/12).
