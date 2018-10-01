@@ -3,6 +3,26 @@
 This document captures the design decisions made after discussion in issues. When a design issue is closed, the
 conclusion should be summarized here with a link to the issue.
 
+## OSTree Delivery Format
+
+- Originally discussed in issue [#23](https://github.com/coreos/fedora-coreos-tracker/issues/23). 
+
+### Summary:
+
+There are three proposed delivery models for delivering content to
+end user systems:
+
+- OSTree Repo: OSTree commits are stored in an OSTree repo (like a git
+  repo) on a server and fetched via HTTP requests.
+- rojig: uses a special rojig RPM and re-assembles OSTree commit from RPMs
+  already on mirrors.
+- OCI: OSTree commits are packaged up in OCI container images and delivered 
+  via a container registry.
+
+Currently the plan in Fedora CoreOS is to deliver content via a plain
+OSTree Repo and augment our strategy with either rojig or OCI if it
+proves useful or necessary.
+
 ## Disk Layout
 
 - Originally discussed in issue [#18](https://github.com/coreos/fedora-coreos-tracker/issues/18). 
