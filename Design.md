@@ -57,6 +57,42 @@ We also want to support moving the root partition to new locations by recreating
 would involve downloading the OSTree repo contents and doing the deploy between the Ignition disks and files stage if
 the root filesystem has changed. This is currently untested.
 
+## Approach towards shipping Python
+
+- Originally discussed in [#32](https://github.com/coreos/fedora-coreos-tracker/issues/32).
+
+### Summary:
+
+*TL;DR*
+
+Fedora CoreOS group would really like to not ship python, but if we choose
+that we want to keep a tool or a few tools in Fedora CoreOS that use python
+then we should use an approach that makes python only available to the
+operating system and not to end users.
+
+**Note** that this does not say we will ship python.
+
+
+*Details*
+
+Container Linux has not shipped python in the past. Fedora is python
+heavy and thus python has been shipped in the past in Fedora Atomic
+Host. There are several reasons we've identified as reasons to not
+ship python in Fedora CoreOS:
+
+1. prevent users from running scripts directly on the host
+2. prevent shipping/maintaining python
+3. prevent issues where user's python script needs library X that isn't installed
+4. prevent security issues in python requiring a respin
+5. less space used on disk + less data transmitted for updates
+6. better perception we're a minimal OS
+
+Out of those we decided `#1` and `#3` were our primary concerns with
+shipping python. For `#4` we determined there was not a significant
+number of security issues to make shipping python prohibitive. We can
+achieve the goals for `#1` and `#3` by shipping a *system python* that
+is only accessible to operating system tools and not to end users.
+
 ### Open Questions:
 
  - What do we do about 4k sector disks? We could make a "hybrid" disk image, but it technically breaks the GPT spec and
