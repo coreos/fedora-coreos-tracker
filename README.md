@@ -78,7 +78,7 @@ After open floor, end the meeting.
 - `#endmeeting`
 
 When convenient, send an email to `coreos@lists.fedoraproject.org` with the
-details of the meeting from [meetbot page][https://meetbot.fedoraproject.org/sresults/?group_id=fedora_coreos_meeting&type=team].
+details of the meeting from [meetbot page](https://meetbot.fedoraproject.org/sresults/?group_id=fedora_coreos_meeting&type=team).
 Minutes in textual format are directly available using `.txt` as URL extension.
 
 The usual format follows:
