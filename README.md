@@ -63,11 +63,11 @@ update the status of.
 Do the following for each ticket
 
 - `#topic` Ticket subject
-- `#link` link_to_the_ticket
+- `#link` link\_to\_the\_ticket
 
 During the meeting, you can give people action items for them to complete:
 
-- `#action <username>` description of what needs to be done
+- `#action <nickname>` description of what needs to be done
 
 When all the tickets are over, go for Open floor
 
@@ -78,7 +78,10 @@ After open floor, end the meeting.
 - `#endmeeting`
 
 When convenient, send an email to `coreos@lists.fedoraproject.org` with the
-details of the meeting.  The usual format follows:
+details of the meeting from [meetbot page][https://meetbot.fedoraproject.org/sresults/?group_id=fedora_coreos_meeting&type=team].
+Minutes in textual format are directly available using `.txt` as URL extension.
+
+The usual format follows:
 
 ```
 Subject:  Fedora CoreOS Meeting Minutes year-mm-dd
