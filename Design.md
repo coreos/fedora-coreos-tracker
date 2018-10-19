@@ -124,3 +124,13 @@ Originally discussed in [#12](https://github.com/coreos/fedora-coreos-tracker/is
 ### Open questions:
 
  - What do we do about VMware, which has a very involved and intrusive "agent"?
+
+## Supported Ignition Versions
+
+Originally discussed in [#31](https://github.com/coreos/fedora-coreos-tracker/issues/31).
+
+### Summary:
+
+ - FCOS will only support Ignition spec 3.0.0 and up.
+ - Ignition spec 3.0.0 will break compatibilty with spec 2.x.y, although most configs will only require minor changes.
+ - Tooling should exist to aid converting 2.x.y configs to 3.0.0 configs, although perfect automated translation will not be possible.
