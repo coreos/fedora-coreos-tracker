@@ -92,7 +92,7 @@ Minutes: <URL to meetbot .html>
 Minutes (text): <URL to meetbot .txt>
 Log:  <URL to meetbot .log.html>
 
-<Copy/paste content of Log>
+<Copy/paste content of meetbot .txt>
 ```
 
 You can see examples in the [archives](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
