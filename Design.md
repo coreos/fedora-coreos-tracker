@@ -57,6 +57,13 @@ We also want to support moving the root partition to new locations by recreating
 would involve downloading the OSTree repo contents and doing the deploy between the Ignition disks and files stage if
 the root filesystem has changed. This is currently untested.
 
+### Open Questions:
+
+ - What do we do about 4k sector disks? We could make a "hybrid" disk image, but it technically breaks the GPT spec and
+   may not work with poorly implemented UEFIs.
+ - What is the exact partition layout?
+ - Do we make /etc a ro bind mount?
+
 ## Approach towards shipping Python
 
 - Originally discussed in [#32](https://github.com/coreos/fedora-coreos-tracker/issues/32).
@@ -92,13 +99,6 @@ shipping python. For `#4` we determined there was not a significant
 number of security issues to make shipping python prohibitive. We can
 achieve the goals for `#1` and `#3` by shipping a *system python* that
 is only accessible to operating system tools and not to end users.
-
-### Open Questions:
-
- - What do we do about 4k sector disks? We could make a "hybrid" disk image, but it technically breaks the GPT spec and
-   may not work with poorly implemented UEFIs.
- - What is the exact partition layout?
- - Do we make /etc a ro bind mount?
 
 ## Identification in `/etc/os-release`
 
