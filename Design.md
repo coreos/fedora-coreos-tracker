@@ -3,6 +3,14 @@
 This document captures the design decisions made after discussion in issues. When a design issue is closed, the
 conclusion should be summarized here with a link to the issue.
 
+- [OSTree Delivery Format](#ostree-delivery-format)
+- [Release Streams](#release-streams)
+- [Disk Layout](#disk-layout)
+- [Approach towards shipping Python](#approach-towards-shipping-Python)
+- [Identification in `/etc/os-release`](#identification-in-etcos-release)
+- [Cloud Agents](#cloud-agents)
+- [Supported Ignition Versions](#supported-ignition-versions)
+
 ## OSTree Delivery Format
 
 - Originally discussed in issue [#23](https://github.com/coreos/fedora-coreos-tracker/issues/23). 
