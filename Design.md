@@ -23,6 +23,51 @@ Currently the plan in Fedora CoreOS is to deliver content via a plain
 OSTree Repo and augment our strategy with either rojig or OCI if it
 proves useful or necessary.
 
+## Release Streams
+
+- Originally discussed in [#22](https://github.com/coreos/fedora-coreos-tracker/issues/22).
+
+### Production Refs
+
+Fedora CoreOS will have several refs for use on production machines.  At any given time, each ref will be downstream of a particular Fedora branch, and will consist of a snapshot of Fedora packages plus occasionally a backported fix.
+
+- `testing`: Periodic snapshot of the current Fedora release plus Bodhi `updates`.
+- `stable`: Promotion of a `testing` release, including any needed fixes.
+- `next`:
+  1. After Bodhi is enabled for the upcoming Fedora release, tracks that release; before then, tracks `testing`.
+  2. After the upcoming kernel release has reached rc6 and before it goes final, tracks the rawhide kernel.  After the kernel goes final and before it is included in the tracked Fedora release, tracks the kernel from Bodhi `updates-testing`.
+
+All of these refs will be unversioned, in the sense that their names will not include the current Fedora major version.  The stream cadences are not contractual, but will initially have two weeks between releases.  The stream maintenance policies are also not contractual and may evolve from those described above, but changes will preserve the use cases and intended stability of each stream.
+
+Users will be encouraged to run most of their production systems on `stable`, and a few percent of their systems on each of `next` and `testing` to catch regressions before they reach `stable`.
+
+### Development Refs
+
+There will also be some additional unversioned refs for the convenience of Fedora CoreOS developers.  These will be public, but won't be exposed to users in the same way as production refs: they might be in a different repo, or in the same repo but not listed in the summary file.  None of these are contractual; they might go away if we don't find them useful.
+
+- `rawhide`: Nightly snapshot of rawhide.
+- `bodhi-updates`: Nightly snapshot of Bodhi `updates` for the Fedora release currently tracked by `testing`.
+- `bodhi-updates-testing`: Nightly snapshot of Bodhi `updates-testing` for the Fedora release currently tracked by `testing`.
+
+### Out-of-Cycle Releases
+
+Due to the promotion structure described above, `stable` can contain packages that are as much as four weeks out of date.  Sometimes, however, there will be an important bugfix or security fix that cannot wait a month to reach `stable` (or two weeks to reach `next` or `testing`).  In that case, the fix will be incorporated into out-of-cycle releases on affected streams.  These releases will not affect the regular promotion schedules; for example, a fix might sit in `testing` for only a few days before it is promoted to `stable`.
+
+A fix can take one of two forms:
+
+1. An updated package taken directly from Fedora
+2. A minimal fix applied to the package version already present in the affected stream
+
+We'll need infrastructure for both approaches, and the ability to choose between them on a case-by-case basis.  Option 1 is cleaner and easier, but may not always be safe.  Option 2 is especially useful for the kernel, where we'll want to fix individual bugs without pushing an entire stable kernel update directly to the `stable` stream.
+
+If a fix is important enough for an out-of-cycle `stable` release, other affected release streams should be updated as well.
+
+In some cases it may make sense to apply a fix to `testing` but not issue an out-of-cycle release, allowing the fix to be picked up automatically when `testing` promotes to `stable`.
+
+### Deprecation
+
+Because production refs are unversioned, users will seamlessly upgrade between Fedora major releases, so compatibility must be maintained.  Removal of functionality will require explicitly announced deprecations, potentially with long deprecation windows.
+
 ## Disk Layout
 
 - Originally discussed in issue [#18](https://github.com/coreos/fedora-coreos-tracker/issues/18). 
