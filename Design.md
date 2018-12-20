@@ -174,6 +174,14 @@ Originally discussed in [#12](https://github.com/coreos/fedora-coreos-tracker/is
  - For the short term, if we need to include an agent we will bake it into the image. We will not have any specific
    mechanism for including agents.
 
+### Azure:
+
+Originally discussed in [#65](https://github.com/coreos/fedora-coreos-tracker/issues/65).
+
+- We've identified one major gap with not shipping the [Microsoft Azure Linux Agent](https://github.com/Azure/WALinuxAgent): the machine will not check-in and will eventually be culled by Azure for being stuck in the creation process.
+- This gap will be covered by work done in [coreos-metadata](https://github.com/coreos/coreos-metadata/issues/120).
+- One additional gap which will __not__ be covered is a lack of ephemeral disk support. We plan to ship udev rules but will not have a service which formats the disk unless we receive feature requests in the future. This was discussed in [#97](https://github.com/coreos/fedora-coreos-tracker/issues/97).
+
 ### Open questions:
 
  - What do we do about VMware, which has a very involved and intrusive "agent"?
