@@ -8,6 +8,7 @@ conclusion should be summarized here with a link to the issue.
 - [Disk Layout](#disk-layout)
 - [Approach towards shipping Python](#approach-towards-shipping-Python)
 - [Identification in `/etc/os-release`](#identification-in-etcos-release)
+- [Firewall management](#firewall-management)
 - [Cloud Agents](#cloud-agents)
 - [Supported Ignition Versions](#supported-ignition-versions)
 
@@ -161,6 +162,18 @@ Originally discussed in [#21](https://github.com/coreos/fedora-coreos-tracker/is
 
 We will identify a Fedora CoreOS server using the `ID=fedora` and `VARIANT_ID=coreos`
 fields in the `/etc/os-release` file.
+
+## Firewall management
+
+Originally discussed in [#26](https://github.com/coreos/fedora-coreos-tracker/issues/26).
+
+### Summary:
+
+ - FCOS will ship without any ad-hoc filtering rules. By default, nodes will boot without firewall.
+ - Components for both iptables and nft filtering will be provided (namely `iptables`, `nftables`, and `iptables-nft` packages, plus related kernel modules).
+ - It will be possible to set up static rules (i.e. meant to be valid and unchanged for the whole node lifetime) via Ignition.
+ - Dynamic rules (i.e. mutable at runtime) are out of scope for FCOS own toolings.
+   Container runtimes and orchestrators take ownership of those via their own (containerized) rules managers.
 
 ## Cloud Agents
 
