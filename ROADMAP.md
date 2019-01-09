@@ -23,26 +23,22 @@ can be done after first ship date).
 - 2018-12-23
     - Holidays - Go Rest!!
 - 2018-12-30
-    - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
-        - gce [#67](https://github.com/coreos/fedora-coreos-tracker/issues/67), open new tickets for work items
-    - **H** - **finalize strategy** *ostree mirroring for better UX [#54](https://github.com/coreos/fedora-coreos-tracker/issues/54)*
-    - **M** - **complete** *bare metal installer: POC [#91](https://github.com/coreos/fedora-coreos-tracker/issues/91)*
-        - Proof of concept complete
-    - **H** - **finalize strategy**,**collaborate** *Network Management [#24](https://github.com/coreos/fedora-coreos-tracker/issues/24)*
-        - gaps identified feature work requested
+    - ~~**H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*~~
+        - ~~aws [#66](https://github.com/coreos/fedora-coreos-tracker/issues/66), open new tickets for work items~~
 
 
 ### January
 - 2019-01-07
+    - **M** - **complete** *bare metal installer: POC [#91](https://github.com/coreos/fedora-coreos-tracker/issues/91)*
+        - Proof of concept complete
+    - **H** - **finalize strategy** *ostree mirroring for better UX [#54](https://github.com/coreos/fedora-coreos-tracker/issues/54)*
     - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
-        - aws [#66](https://github.com/coreos/fedora-coreos-tracker/issues/66), open new tickets for work items
-    - **H** - **collaborate** *fedora releng integration [#44](https://github.com/coreos/fedora-coreos-tracker/issues/44)*
-    - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
-        - openstack [#68](https://github.com/coreos/fedora-coreos-tracker/issues/68), packet [#69](https://github.com/coreos/fedora-coreos-tracker/issues/69), open new tickets for work items
+        - openstack [#68](https://github.com/coreos/fedora-coreos-tracker/issues/68), open new tickets for work items 
 - 2019-01-14
+    - **H** - **collaborate** *fedora releng integration [#44](https://github.com/coreos/fedora-coreos-tracker/issues/44)*
+    - **H** - **finalize strategy**,**collaborate** *Network Management [#24](https://github.com/coreos/fedora-coreos-tracker/issues/24)*
+        - gaps identified feature work requested
     - **H** - **finalize strategy** *Kubernetes/OKD strategy [#93](https://github.com/coreos/fedora-coreos-tracker/issues/93)*
-    - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
-        - virtualbox [#73](https://github.com/coreos/fedora-coreos-tracker/issues/), qemu [#74](https://github.com/coreos/fedora-coreos-tracker/issues/74), open new tickets for work items
     - **M** - **finalize strategy** *Collect metrics from Fedora CoreOS machines design [#86](https://github.com/coreos/fedora-coreos-tracker/issues/86)*
 - 2019-01-21
     - Week of Devconf.cz
@@ -50,13 +46,19 @@ can be done after first ship date).
         - vmware [#70](https://github.com/coreos/fedora-coreos-tracker/issues/70), digitalocean [#71](https://github.com/coreos/fedora-coreos-tracker/issues/71), open new tickets for work items
     - **M** - **finalize strategy** *burndown python dependencies [#92](https://github.com/coreos/fedora-coreos-tracker/issues/92)*
     - **L** - **complete** *merge of fedora-toolbox and coreos-toolbox efforts [#90](https://github.com/coreos/fedora-coreos-tracker/issues/90)*
+    - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
+        - gce [#67](https://github.com/coreos/fedora-coreos-tracker/issues/67), open new tickets for work items
 - 2019-01-28
     - **M** - **complete** *Host Installer for Fedora CoreOS (bare metal) [#50](https://github.com/coreos/fedora-coreos-tracker/issues/50)*
         - Action items, gaps identified from POC ([#91](https://github.com/coreos/fedora-coreos-tracker/issues/91)) have been fixed
+    - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
+        - packet [#69](https://github.com/coreos/fedora-coreos-tracker/issues/69), open new tickets for work items
 
 
 ### February 
 - 2019-02-04
+    - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
+        - virtualbox [#73](https://github.com/coreos/fedora-coreos-tracker/issues/), qemu [#74](https://github.com/coreos/fedora-coreos-tracker/issues/74), open new tickets for work items
     - **H** - **finalize strategy** *Container Linux migration tools and documentation [#48](https://github.com/coreos/fedora-coreos-tracker/issues/48)*
     - **M** - **finalize strategy** *Determine how to handle automatic rollback [#47](https://github.com/coreos/fedora-coreos-tracker/issues/47)*
 - 2019-02-11 
