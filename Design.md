@@ -174,6 +174,13 @@ Originally discussed in [#12](https://github.com/coreos/fedora-coreos-tracker/is
  - For the short term, if we need to include an agent we will bake it into the image. We will not have any specific
    mechanism for including agents.
 
+### AWS:
+
+Originally discussed in [#66](https://github.com/coreos/fedora-coreos-tracker/issues/66).
+
+- AWS does not require a cloud agent but does require NVME EBS udev rules
+- The udev rules and script will be packaged in an RPM and included in FCOS with work being tracked in [#104](https://github.com/coreos/fedora-coreos-tracker/issues/104)
+
 ### Azure:
 
 Originally discussed in [#65](https://github.com/coreos/fedora-coreos-tracker/issues/65).
