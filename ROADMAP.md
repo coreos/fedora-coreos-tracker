@@ -73,6 +73,8 @@ can be done after first ship date).
     - **H** - **complete aws, azure** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
         - https://github.com/coreos/coreos-metadata/issues/120
         - https://github.com/coreos/fedora-coreos-tracker/issues/4
+    - **M** - Have Ignition spec 3.0.0 finalized with alpha implementation
+        - https://github.com/coreos/ignition/milestone/5
 
 
 ### March       
