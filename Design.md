@@ -188,6 +188,7 @@ Originally discussed in [#65](https://github.com/coreos/fedora-coreos-tracker/is
 - We've identified one major gap with not shipping the [Microsoft Azure Linux Agent](https://github.com/Azure/WALinuxAgent): the machine will not check-in and will eventually be culled by Azure for being stuck in the creation process.
 - This gap will be covered by work done in [coreos-metadata](https://github.com/coreos/coreos-metadata/issues/120).
 - One additional gap which will __not__ be covered is a lack of ephemeral disk support. We plan to ship udev rules but will not have a service which formats the disk unless we receive feature requests in the future. This was discussed in [#97](https://github.com/coreos/fedora-coreos-tracker/issues/97).
+- As a cosmetic issue, we should also ship a rule to [ignore SR-IOV interfaces](https://github.com/coreos/fedora-coreos-tracker/issues/115).
 
 ### Open questions:
 
