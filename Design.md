@@ -190,6 +190,13 @@ Originally discussed in [#65](https://github.com/coreos/fedora-coreos-tracker/is
 - One additional gap which will __not__ be covered is a lack of ephemeral disk support. We plan to ship udev rules but will not have a service which formats the disk unless we receive feature requests in the future. This was discussed in [#97](https://github.com/coreos/fedora-coreos-tracker/issues/97).
 - As a cosmetic issue, we should also ship a rule to [ignore SR-IOV interfaces](https://github.com/coreos/fedora-coreos-tracker/issues/115).
 
+### OpenStack:
+
+Originally discussed in [#68](https://github.com/coreos/fedora-coreos-tracker/issues/68).
+
+- OpenStack environments do not require a cloud agent
+- We will provide any base level of functionality with ignition and coreos-metadata 
+
 ### Open questions:
 
  - What do we do about VMware, which has a very involved and intrusive "agent"?
