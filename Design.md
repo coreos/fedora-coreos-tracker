@@ -190,6 +190,14 @@ Originally discussed in [#65](https://github.com/coreos/fedora-coreos-tracker/is
 - One additional gap which will __not__ be covered is a lack of ephemeral disk support. We plan to ship udev rules but will not have a service which formats the disk unless we receive feature requests in the future. This was discussed in [#97](https://github.com/coreos/fedora-coreos-tracker/issues/97).
 - As a cosmetic issue, we should also ship a rule to [ignore SR-IOV interfaces](https://github.com/coreos/fedora-coreos-tracker/issues/115).
 
+### DigitalOcean:
+
+Originally discussed in [#71](https://github.com/coreos/fedora-coreos-tracker/issues/71).
+
+- DigitalOcean has an [agent](https://github.com/digitalocean/do-agent) that provides instance metrics back to DO.  We will not ship it.
+- DigitalOcean does not generally offer DHCP.  Network configuration is obtained from an HTTP metadata service on a link-local address.  On other platforms this is handled by cloud-init.
+- Networking should be configured by coreos-metadata running in the initramfs, but coreos-metadata [may need to learn to configure NetworkManager or nm-state](https://github.com/coreos/fedora-coreos-tracker/issues/111) depending on the outcome of [#24](https://github.com/coreos/fedora-coreos-tracker/issues/24).
+
 ### OpenStack:
 
 Originally discussed in [#68](https://github.com/coreos/fedora-coreos-tracker/issues/68).
