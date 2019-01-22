@@ -60,7 +60,7 @@ can be done after first ship date).
 ### February 
 - 2019-02-04
     - **H** - **investigate** *no cloud agents [#95](https://github.com/coreos/fedora-coreos-tracker/issues/95)*
-        - virtualbox [#73](https://github.com/coreos/fedora-coreos-tracker/issues/), qemu [#74](https://github.com/coreos/fedora-coreos-tracker/issues/74), open new tickets for work items
+        - virtualbox [#73](https://github.com/coreos/fedora-coreos-tracker/issues/73), qemu [#74](https://github.com/coreos/fedora-coreos-tracker/issues/74), open new tickets for work items
     - **H** - **finalize strategy** *Container Linux migration tools and documentation [#48](https://github.com/coreos/fedora-coreos-tracker/issues/48)*
     - **M** - **finalize strategy** *Determine how to handle automatic rollback [#47](https://github.com/coreos/fedora-coreos-tracker/issues/47)*
 - 2019-02-11 
