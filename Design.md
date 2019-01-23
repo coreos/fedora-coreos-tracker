@@ -218,6 +218,14 @@ Originally discussed in [#68](https://github.com/coreos/fedora-coreos-tracker/is
 - OpenStack environments do not require a cloud agent
 - We will provide any base level of functionality with ignition and coreos-metadata 
 
+### Packet
+
+Originally discussed in [#69](https://github.com/coreos/fedora-coreos-tracker/issues/69).
+
+- The Packet cloud platform does not have an agent but does require instances to checkin via a [single HTTP POST](https://github.com/coreos/coreos-overlay/blob/1a846fbe914bed4583d02cc322ff011821d2fa8d/coreos-base/oem-packet/files/units/packet-phone-home.service). This will be [done via coreos-metadata](https://github.com/coreos/coreos-metadata/issues/120).
+- For networking a machine's public IPv4 address is available via DHCP, but its private IPv4 and public IPv6 addresses are only available from the Packet metadata server, thus we will need to support configuring network using cloud metadata services [#111](https://github.com/coreos/fedora-coreos-tracker/issues/111).
+- We will also want to supply support cloud-specific grub fragments [#110](https://github.com/coreos/fedora-coreos-tracker/issues/110) so that we can pass in a kernel `console=` argument that specifies `ttyS1`.
+
 ### Open questions:
 
  - What do we do about VMware, which has a very involved and intrusive "agent"?
