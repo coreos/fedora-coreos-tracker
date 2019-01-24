@@ -11,6 +11,7 @@ conclusion should be summarized here with a link to the issue.
 - [Firewall management](#firewall-management)
 - [Cloud Agents](#cloud-agents)
 - [Supported Ignition Versions](#supported-ignition-versions)
+- [Security policies](#security-policies)
 
 ## OSTree Delivery Format
 
@@ -231,3 +232,11 @@ Originally discussed in [#31](https://github.com/coreos/fedora-coreos-tracker/is
  - FCOS will only support Ignition spec 3.0.0 and up.
  - Ignition spec 3.0.0 will break compatibilty with spec 2.x.y, although most configs will only require minor changes.
  - Tooling should exist to aid converting 2.x.y configs to 3.0.0 configs, although perfect automated translation will not be possible.
+
+## Security policies
+
+### No autologin by default
+
+Originally discussed in [#114](https://github.com/coreos/fedora-coreos-tracker/issues/114).
+
+We will not enable autologin on serial or VGA consoles by default, even on platforms (e.g. Azure, DigitalOcean, GCE, Packet) which provide authenticated console access.  Doing so would provide an access vector that could surprise users unfamiliar with their platform's console access mechanism and access control policy.  For users who wish to use the console for debugging, we will provide documentation for using Ignition to enable autologin or to set a user password.
