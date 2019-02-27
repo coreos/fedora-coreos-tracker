@@ -34,6 +34,13 @@ Future Link to download page
 - website at [https://coreos.fedoraproject.org/](https://coreos.fedoraproject.org/)
 - Twitter: [@coreos](https://twitter.com/coreos) (specific to CoreOS and containers) and [@fedora](https://twitter.com/fedora) (all Fedora and other relevant news)
 
+# Roadmap/Plans
+
+The first release of Fedora CoreOS will be a 
+[preview release](https://github.com/coreos/fedora-coreos-tracker/issues/145)
+followed by a subsequent stable release. You can seee a link to
+our project boards in our [ROADMAP.md](./ROADMAP.md).
+
 # Meetings
 
 The Fedora CoreOS Working Group has a weekly meeting. The meeting usually
