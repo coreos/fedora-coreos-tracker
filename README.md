@@ -38,7 +38,7 @@ Future Link to download page
 
 The first release of Fedora CoreOS will be a 
 [preview release](https://github.com/coreos/fedora-coreos-tracker/issues/145)
-followed by a subsequent stable release. You can seee a link to
+followed by a subsequent stable release. You can see a link to
 our project boards in our [ROADMAP.md](./ROADMAP.md).
 
 # Meetings
