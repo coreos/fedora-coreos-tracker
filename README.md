@@ -50,6 +50,16 @@ Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 ## Steps to run the meeting
 
+- [Create an agenda Etherpad](https://public.etherpad-mozilla.org/) named `<YYYYMMDD>-FCOS-Meeting` and using this template:
+
+```
+Meeting Agenda: https://github.com/coreos/fedora-coreos-tracker/labels/meeting
+    - <title>: <link>
+
+Open floor topics:
+    -
+```
+
 - Navigate to `#fedora-meeting-1` on freenode
 - Type `#startmeeting fedora_coreos_meeting`
 - `#topic roll call`
@@ -57,6 +67,7 @@ Currently, meetings are at `16:30 UTC` on Wednesdays.
 Wait for 2-4 minutes for people to check in for the roll call.
 
 - `#chair` all the people present for the meeting
+- `#info Please add items to the meeting agenda at <agenda URL>`
 - `#topic Action items from last meeting`
 
 Find the last meeting log from
@@ -76,9 +87,13 @@ During the meeting, you can give people action items for them to complete:
 
 - `#action <nickname>` description of what needs to be done
 
-When all the tickets are over, go for Open floor
+Then, for each discussion topic in the Etherpad:
 
-- `#topic` Open Floor
+- `#topic` Topic name from Etherpad
+
+When all topics are over, go for open floor:
+
+- `#topic Open Floor`
 
 After open floor, end the meeting.
 
@@ -87,6 +102,8 @@ After open floor, end the meeting.
 When convenient, send an email to `coreos@lists.fedoraproject.org` with the
 details of the meeting from [meetbot page](https://meetbot.fedoraproject.org/sresults/?group_id=fedora_coreos_meeting&type=team).
 Minutes in textual format are directly available using `.txt` as URL extension.
+It's easiest to get the Minutes/Minutes (text)/Log URLs by copying the
+footer that Meetbot prints after `#endmeeting`.
 
 The usual format follows:
 
