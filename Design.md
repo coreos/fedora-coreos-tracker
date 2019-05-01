@@ -11,6 +11,7 @@ conclusion should be summarized here with a link to the issue.
 - [Firewall management](#firewall-management)
 - [Cloud Agents](#cloud-agents)
 - [Supported Ignition Versions](#supported-ignition-versions)
+- [Configuration Language and Transpiler](#configuration-language-and-transpiler)
 - [Security policies](#security-policies)
 
 ## OSTree Delivery Format
@@ -241,6 +242,22 @@ Originally discussed in [#31](https://github.com/coreos/fedora-coreos-tracker/is
  - FCOS will only support Ignition spec 3.0.0 and up.
  - Ignition spec 3.0.0 will break compatibilty with spec 2.x.y, although most configs will only require minor changes.
  - Tooling should exist to aid converting 2.x.y configs to 3.0.0 configs, although perfect automated translation will not be possible.
+
+## Configuration Language and Transpiler
+
+- Originally discussed in issue [#129](https://github.com/coreos/fedora-coreos-tracker/issues/129).
+- Versioning discussed in issue [#89](https://github.com/coreos/fedora-coreos-tracker/issues/89)
+
+### Summary:
+
+Fedora CoreOS will have a configuration language similar to the [Container Linux Configuration Language](https://coreos.com/os/docs/latest/configuration.html) named the Fedora CoreOS Configuration Language (FCCL). There will be a tool, the Fedora CoreOS Configuration Transpiler (FCCT) to convert Fedora CoreOS Configs (FCCs) to Ignition configs.
+
+The FCCL will be versioned using semver, similar to how the Ignition spec is versioned. FCCT will accept all versions of the FCCL. Each FCCL version will target exactly one Ignition spec version.
+This means:
+- Old FCCs will continue to work with new versions of FCCT without modification.
+- Each FCCL version will always emit the same version of Ignition config, regardless of what version of FCCT was used to transpile it.
+- Since FCOS will accept old (down to 3.0.0) versions of Ignition configs, old FCCs will continue to work with new FCOS releases without modification.
+- To use new features in new FCCT releases, users must update their configs to use the new FCCL spec.
 
 ## Security policies
 
