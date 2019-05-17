@@ -266,3 +266,13 @@ This means:
 Originally discussed in [#114](https://github.com/coreos/fedora-coreos-tracker/issues/114).
 
 We will not enable autologin on serial or VGA consoles by default, even on platforms (e.g. Azure, DigitalOcean, GCP, Packet) which provide authenticated console access.  Doing so would provide an access vector that could surprise users unfamiliar with their platform's console access mechanism and access control policy.  For users who wish to use the console for debugging, we will provide documentation for using Ignition to enable autologin or to set a user password.
+
+### Automatically disable SMT when needed to address vulnerabilities
+
+Originally discussed in [#181](https://github.com/coreos/fedora-coreos-tracker/issues/181).
+
+There have been multiple rounds of CPU vulnerabilities (L1TF and MDS) which cannot be completely mitigated without disabling Simultaneous Multi-Threading on affected processors. Disabling SMT has a cost: it reduces system performance and changes the apparent number of processors on the system. However, enabling SMT on affected systems would be an insecure default.
+
+By default, Fedora CoreOS will configure the kernel to disable SMT on vulnerable machines. This conditional approach avoids incurring the performance cost on systems that aren't vulnerable. However, it fails to protect systems affected by undisclosed SMT vulnerabilities, and it allows future OS updates to disable SMT without notice if new vulnerabilities become known.
+
+We will document this policy and its consequences, and provide instructions for unconditionally enabling or disabling SMT for users who prefer a different policy.
