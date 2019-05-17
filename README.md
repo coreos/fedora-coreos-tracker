@@ -22,7 +22,7 @@ technologies and produce Fedora CoreOS.
 
 # Get Fedora CoreOS
 
-Future Link to download page
+There is no official release yet, but there are [nightly images](https://ci.centos.org/artifacts/fedora-coreos/prod/builds/latest/) available.
 
 # Communication channels for Fedora CoreOS
 
