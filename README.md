@@ -50,16 +50,6 @@ Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 ## Steps to run the meeting
 
-- [Create an agenda Etherpad](https://public.etherpad-mozilla.org/) named `<YYYYMMDD>-FCOS-Meeting` and using this template:
-
-```
-Meeting Agenda: https://github.com/coreos/fedora-coreos-tracker/labels/meeting
-    - <title>: <link>
-
-Open floor topics:
-    -
-```
-
 - Navigate to `#fedora-meeting-1` on freenode
 - Type `#startmeeting fedora_coreos_meeting`
 - `#topic roll call`
@@ -67,7 +57,6 @@ Open floor topics:
 Wait for 2-4 minutes for people to check in for the roll call.
 
 - `#chair` all the people present for the meeting
-- `#info Please add items to the meeting agenda at <agenda URL>`
 - `#topic Action items from last meeting`
 
 Find the last meeting log from
@@ -86,10 +75,6 @@ Do the following for each ticket
 During the meeting, you can give people action items for them to complete:
 
 - `#action <nickname>` description of what needs to be done
-
-Then, for each discussion topic in the Etherpad:
-
-- `#topic` Topic name from Etherpad
 
 When all topics are over, go for open floor:
 
