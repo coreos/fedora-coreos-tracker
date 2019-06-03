@@ -88,7 +88,7 @@ Then, when convenient:
 
 - Remove `meeting` labels from [tickets that were discussed](https://github.com/coreos/fedora-coreos-tracker/labels/meeting)
 
-- Send an email to `coreos@lists.fedoraproject.org` with the
+- Send an email to [coreos@lists.fedoraproject.org](mailto:coreos@lists.fedoraproject.org) with the
 details of the meeting from [meetbot page](https://meetbot.fedoraproject.org/sresults/?group_id=fedora_coreos_meeting&type=team).
 Minutes in textual format are directly available using `.txt` as URL extension.
 It's easiest to get the Minutes/Minutes (text)/Log URLs by copying the
