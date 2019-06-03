@@ -84,13 +84,17 @@ After open floor, end the meeting.
 
 - `#endmeeting`
 
-When convenient, send an email to `coreos@lists.fedoraproject.org` with the
+Then, when convenient:
+
+- Remove `meeting` labels from [tickets that were discussed](https://github.com/coreos/fedora-coreos-tracker/labels/meeting)
+
+- Send an email to `coreos@lists.fedoraproject.org` with the
 details of the meeting from [meetbot page](https://meetbot.fedoraproject.org/sresults/?group_id=fedora_coreos_meeting&type=team).
 Minutes in textual format are directly available using `.txt` as URL extension.
 It's easiest to get the Minutes/Minutes (text)/Log URLs by copying the
-footer that Meetbot prints after `#endmeeting`.
-
-The usual format follows:
+footer that Meetbot prints after `#endmeeting`. You can see examples in the
+[archives](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/);
+the usual format follows:
 
 ```
 Subject:  Fedora CoreOS Meeting Minutes year-mm-dd
@@ -103,8 +107,6 @@ Log:  <URL to meetbot .log.html>
 
 <Copy/paste content of meetbot .txt>
 ```
-
-You can see examples in the [archives](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 
 # Voting
 
