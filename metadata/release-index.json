@@ -1,0 +1,17 @@
+{
+   "releases": [
+        {
+            "commit": "<hash>",
+            "version": "<version>",
+            "metadata": "<url endpoint to build release metadata>"
+        },
+        {
+            "commit": "<hash>",
+            "version": "<version>",
+            "metadata": "<url endpoint to build release metadata>"
+        }
+    ],
+    "metadata": {
+        "last-modified": "<timestamp>"
+    }
+}
