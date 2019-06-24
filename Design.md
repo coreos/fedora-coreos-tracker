@@ -13,6 +13,7 @@ conclusion should be summarized here with a link to the issue.
 - [Supported Ignition Versions](#supported-ignition-versions)
 - [Configuration Language and Transpiler](#configuration-language-and-transpiler)
 - [Security policies](#security-policies)
+- [Bucket layout](#bucket-layout)
 
 ## OSTree Delivery Format
 
@@ -276,3 +277,42 @@ There have been multiple rounds of CPU vulnerabilities (L1TF and MDS) which cann
 By default, Fedora CoreOS will configure the kernel to disable SMT on vulnerable machines. This conditional approach avoids incurring the performance cost on systems that aren't vulnerable. However, it fails to protect systems affected by undisclosed SMT vulnerabilities, and it allows future OS updates to disable SMT without notice if new vulnerabilities become known.
 
 We will document this policy and its consequences, and provide instructions for unconditionally enabling or disabling SMT for users who prefer a different policy.
+
+## Bucket Layout
+
+Originally discussed in [#189](https://github.com/coreos/fedora-coreos-tracker/issues/189).
+
+The `fcos-builds` bucket, fronted by http://builds.coreos.fedoraproject.org/ will be structured as follows:
+
+```
+/
+  prod/
+    streams/
+      stable/
+        releases.json
+        builds/
+          builds.json
+          30.1234-5/
+            release.json
+            x86_64/
+              meta.json
+              commitmeta.json
+              fedora-coreos-30.8-qemu.x86_64.qcow2.gz
+              ostree-commit-object
+              ostree-commit.tar
+              ...
+            ppc64le/
+              ...
+            ...
+      testing/
+      next/
+      ...
+  streams/
+    stable.json
+    testing.json
+    ...
+```
+
+The artifacts under e.g. `30.1234-5/x86_64/` come directly from [coreos-assembler](https://github.com/coreos/coreos-assembler). The `/streams/*.json`, `release.json`, and `releases.json` are higher-level generated metadata objects. See [#98](https://github.com/coreos/fedora-coreos-tracker/issues/98) and [#207](https://github.com/coreos/fedora-coreos-tracker/pull/207) for more information about those.
+
+The stream metadata format (under `/streams`) is intended to be stable, and stream metadata objects will contain links to artifacts in the release bucket. *Everything else about the bucket layout, including its directory structure and the formats of other metadata objects, is subject to change without notice. Third-party tooling should not rely on this structure, and should instead read metadata and artifact URLs directly from stream metadata at the officially documented URL*.
