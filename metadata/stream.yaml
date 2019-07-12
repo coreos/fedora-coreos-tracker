@@ -1,0 +1,162 @@
+# Note: the actual document will be JSON
+
+# Include stream name so the document is self-contained
+stream: stable
+metadata:
+  last-modified: "2019-06-04T16:18:34Z"
+architectures:
+  x86_64:
+    artifacts:
+      # Some of these will be useful for many users, such as qemu or
+      # openstack. Some will likely only be useful for cloud operators,
+      # such as digitalocean or packet.  Some, such as aws, are useful
+      # for users in special situations.
+      aws:
+        release: 30.1.2.3
+        formats:
+          # Generally one format per platform, but allow for future expansion
+          # without obscuring the platform ID (as on Container Linux)
+          "vmdk.xz":
+            # Generally only one artifact, but not always
+            disk:
+              location: https://artifacts.example.com/dsB2fnzP7KhqzQ5a.vmdk.xz
+              signature: https://artifacts.example.com/dsB2fnzP7KhqzQ5a.vmdk.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              # Could also include artifact size/uncompressed-size/uncompressed-sha256 from meta.json
+      azure:
+        release: 30.1.2.3
+        formats:
+          "vdi.xz":
+            disk:
+              location: https://artifacts.example.com/aeng0xah6vaaVosh.vdi.xz
+              signature: https://artifacts.example.com/aeng0xah6vaaVosh.vdi.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      digitalocean:
+        release: 30.1.2.3
+        formats:
+          "raw.xz":
+            disk:
+              location: https://artifacts.example.com/ichaloomuHax9ahR.raw.xz
+              signature: https://artifacts.example.com/ichaloomuHax9ahR.raw.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      gcp:
+        release: 30.1.2.3
+        formats:
+          "tar.gz":
+            disk:
+              location: https://artifacts.example.com/ais7tah1aa7Ahvei.tar.gz
+              signature: https://artifacts.example.com/ais7tah1aa7Ahvei.tar.gz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      metal:
+        release: 30.1.2.3
+        formats:
+          "raw.xz":
+            disk:
+              location: https://artifacts.example.com/xTqYJZKCPNvoNs6B.raw.xz
+              signature: https://artifacts.example.com/xTqYJZKCPNvoNs6B.raw.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+          iso:
+            disk:
+              location: https://artifacts.example.com/ADE5GO3bjAXeDcLO.iso
+              signature: https://artifacts.example.com/ADE5GO3bjAXeDcLO.iso.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+          pxe:
+            kernel:
+              location: https://artifacts.example.com/hkIj8FkCydT3lV9h
+              signature: https://artifacts.example.com/hkIj8FkCydT3lV9h.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+            initramfs:
+              location: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz
+              signature: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+          "installer.iso":
+            disk:
+              location: https://artifacts.example.com/KwKye6YW4SIIPrhY.iso
+              signature: https://artifacts.example.com/KwKye6YW4SIIPrhY.iso.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+          installer-pxe:
+            kernel:
+              location: https://artifacts.example.com/EtqI0KsLIwZOHlCx
+              signature: https://artifacts.example.com/EtqI0KsLIwZOHlCx.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+            initramfs:
+              location: https://artifacts.example.com/EhoS1x66RVA2k8y6.cpio.gz
+              signature: https://artifacts.example.com/EhoS1x66RVA2k8y6.cpio.gz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      openstack:
+        release: 30.1.2.3
+        formats:
+          "qcow.xz":
+            disk:
+              location: https://artifacts.example.com/oKooheogobofai8l.qcow.xz
+              signature: https://artifacts.example.com/oKooheogobofai8l.qcow.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      packet:
+        release: 30.1.2.3
+        formats:
+          "raw.xz":
+            disk:
+              location: https://artifacts.example.com/Oofohng0xo2phai5.raw.xz
+              signature: https://artifacts.example.com/Oofohng0xo2phai5.raw.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      qemu:
+        release: 30.1.2.3
+        formats:
+          "qcow.xz":
+            disk:
+              location: https://artifacts.example.com/Siejeeb6ohpu8Eel.qcow.xz
+              signature: https://artifacts.example.com/Siejeeb6ohpu8Eel.qcow.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      virtualbox:
+        release: 30.1.2.3
+        formats:
+          ova:
+            disk:
+              location: https://artifacts.example.com/yohsh2haiquaeYah.ova
+              signature: https://artifacts.example.com/yohsh2haiquaeYah.ova.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      vmware:
+        release: 30.1.2.3
+        formats:
+          ova:
+            disk:
+              location: https://artifacts.example.com/quohgh8ei0uzaD5a.ova
+              signature: https://artifacts.example.com/quohgh8ei0uzaD5a.ova.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+    images:
+      # Cloud images to be launched directly by users.  These are in a
+      # separate section because they might not always in sync with the
+      # release artifacts above.
+      aws:
+        regions:
+          us-east-1:
+            # We know the release because we uploaded it, so might as well
+            # list it.
+            release: 30.1.2.3
+            image: ami-0123456789abcdef
+          us-east-2:
+            release: 30.1.2.3
+            image: ami-0123456789abcdef
+      azure:
+        # We could give a specific image URN here, but we probably want
+        # users to always use a Marketplace URN.  So this is a static
+        # string, and represents advice rather than a value we might
+        # change.
+        image: Fedora:CoreOS:stable:latest
+      gcp:
+        # We could give a specific image name here, but we probably want
+        # users to always use an image family.  So this is a static string,
+        # and represents advice rather than a value we might change.
+        image: projects/fedora-cloud/global/images/family/fedora-coreos-stable
+      digitalocean:
+        # We don't control platform ingest, so an image slug is probably
+        # the best we can do.
+        image: fedora-coreos-stable
+      packet:
+        # Images don't have addressable versions, so an operating system
+        # slug is the best we can do.
+        image: fedora_coreos_stable
+updates:
+  # Primarily meant as input to Cincinnati
+  release: 30.1.2.3

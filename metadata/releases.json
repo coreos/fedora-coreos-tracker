@@ -1,0 +1,18 @@
+{
+    "stream": "stable",
+    "releases": [
+        {
+            "commits": [
+                {
+                    "architecture": "<basearch>",
+                    "checksum": "<hash>"
+                }
+            ],
+            "version": "<version>",
+            "metadata": "<url endpoint to build release metadata>"
+        }
+    ],
+    "metadata": {
+        "last-modified": "<timestamp>"
+    }
+}
