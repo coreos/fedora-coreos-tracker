@@ -45,6 +45,10 @@ The stable release of Fedora CoreOS is expected in late 2019.  Until then,
 Fedora CoreOS might change in incompatible ways, and should not be used for
 production workloads.
 
+We're tracking some upcoming work for Fedora CoreOS on the [stable release
+project board](https://github.com/orgs/coreos/projects/84) and the
+papercuts board](https://github.com/orgs/coreos/projects/83).
+
 # Meetings
 
 The Fedora CoreOS Working Group has a weekly meeting. The meeting usually
