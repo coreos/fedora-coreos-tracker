@@ -31,7 +31,7 @@ Future Link to download page
 - `#fedora-coreos` on IRC (Freenode)
 - forum at [https://discussion.fedoraproject.org/c/server/coreos](https://discussion.fedoraproject.org/c/server/coreos)
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
-- website at [https://coreos.fedoraproject.org/](https://coreos.fedoraproject.org/)
+- website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
 - Twitter: [@coreos](https://twitter.com/coreos) (specific to CoreOS and containers) and [@fedora](https://twitter.com/fedora) (all Fedora and other relevant news)
 
 # Roadmap/Plans
