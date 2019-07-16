@@ -22,7 +22,7 @@ technologies and produce Fedora CoreOS.
 
 # Get Fedora CoreOS
 
-Future Link to download page
+[Download a preview of Fedora CoreOS.](https://getfedora.org/coreos/download/)
 
 # Communication channels for Fedora CoreOS
 
@@ -37,10 +37,17 @@ Future Link to download page
 
 # Roadmap/Plans
 
-The first release of Fedora CoreOS will be a 
-[preview release](https://github.com/coreos/fedora-coreos-tracker/issues/145)
-followed by a subsequent stable release. You can see a link to
-our project boards in our [ROADMAP.md](./ROADMAP.md).
+Fedora CoreOS is currently in preview.  We're continuing to add platforms
+and functionality, fix bugs, and write documentation.  Please try out Fedora
+CoreOS and give us feedback!
+
+The stable release of Fedora CoreOS is expected in late 2019.  Until then,
+Fedora CoreOS might change in incompatible ways, and should not be used for
+production workloads.
+
+We're tracking some upcoming work for Fedora CoreOS on the [stable release
+project board](https://github.com/orgs/coreos/projects/84) and the
+papercuts board](https://github.com/orgs/coreos/projects/83).
 
 # Meetings
 
