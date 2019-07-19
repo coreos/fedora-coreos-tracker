@@ -157,6 +157,3 @@ architectures:
         # Images don't have addressable versions, so an operating system
         # slug is the best we can do.
         image: fedora_coreos_stable
-updates:
-  # Primarily meant as input to Cincinnati
-  release: 30.1.2.3
