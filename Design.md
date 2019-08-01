@@ -55,9 +55,17 @@ Users will be encouraged to run most of their production systems on `stable`, an
 
 ### Development Refs
 
-There will also be some additional unversioned refs for the convenience of Fedora CoreOS developers.  These will be public, but won't be exposed to users in the same way as production refs: they might be in a different repo, or in the same repo but not listed in the summary file.  None of these are contractual; they might go away if we don't find them useful.
+Development for the next `testing` and `next` releases will occur in development refs.  These refs will be public, but will be stored in a different ostree repo from production refs.
+
+- `testing-devel`: Nightly build of the package set that will be snapshotted for the next `testing` release.
+- `next-devel`: Nightly build of the package set that will be snapshotted for the next `next` release.
+
+### Mechanical Refs
+
+There will also be some additional unversioned refs for the convenience of Fedora CoreOS developers.  These will be public and stored in the same ostree repo as development refs.  Unlike production and development refs, mechanical refs are not curated; they're simply a snapshot of the corresponding Bodhi repos, with no package pinning and no backports of fixes.  None of these refs are contractual; they might go away if we don't find them useful.
 
 - `rawhide`: Nightly snapshot of rawhide.
+- `branched`: Nightly snapshot of the upcoming Fedora release after it is branched.
 - `bodhi-updates`: Nightly snapshot of Bodhi `updates` for the Fedora release currently tracked by `testing`.
 - `bodhi-updates-testing`: Nightly snapshot of Bodhi `updates-testing` for the Fedora release currently tracked by `testing`.
 
