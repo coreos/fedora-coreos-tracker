@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:ImportVolume",
+                "ec2:CreateTags",
+                "ec2:RegisterImage",
+                "ec2:CancelConversionTask",
+                "ec2:ImportSnapshot",
+                "ec2:CopyImage",
+                "ec2:ModifyImageAttribute",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeImportSnapshotTasks",
+                "ec2:DescribeImages",
+                "ec2:DeleteVolume",
+                "ec2:ModifySnapshotAttribute",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeVolumes",
+                "ec2:CreateSnapshot",
+                "ec2:DescribeConversionTasks"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "ec2:CreateTags",
+            "Resource": [
+                "arn:aws:ec2:*::snapshot/*",
+                "arn:aws:ec2:*::image/*"
+            ]
+        }
+    ]
+}

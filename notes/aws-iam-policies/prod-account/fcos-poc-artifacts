@@ -1,0 +1,23 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:PutObjectAcl",
+            "Resource": [
+                "arn:aws:s3:::fcos-builds/*",
+                "arn:aws:s3:::fcos-builds"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::fcos-builds/*",
+                "arn:aws:s3:::fcos-builds"
+            ]
+        }
+    ]
+}
