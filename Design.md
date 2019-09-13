@@ -109,18 +109,7 @@ Because production refs are unversioned, users will seamlessly upgrade between F
 FCOS should have a fixed partition layout that Ignition can modify on first boot. The installer will be similar to the
 Container Linux installer; the core of it will be dd'ing an image to the disk.
 
-The partition layout is still undecided, but initial proposals look something like:
-
-    Number	Type	Purpose
-    -----------------------------------
-    1	fat32	Boot partition/ESP
-    2	N/A	Bios Boot partition
-    3	XFS	Root
-    4	XFS	/var
-
-We also want to support moving the root partition to new locations by recreating the OSTree at the new location. This
-would involve downloading the OSTree repo contents and doing the deploy between the Ignition disks and files stage if
-the root filesystem has changed. This is currently untested.
+The partition layout will support "dual EFI/BIOS" on x86_64, and will have a single root partition as XFS by default.  We will support changing the root filesystem storage (but not `/boot`) via Ignition.
 
 ### Open Questions:
 
