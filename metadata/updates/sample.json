@@ -1,0 +1,26 @@
+{
+  "stream": "testing",
+  "metadata": {
+    "last-modified": "2019-09-10T13:49:17+00:00"
+  },
+  "releases": [
+    {
+      "version": "30.20190716.1",
+      "metadata": {
+        "deadend": {
+          "reason": "https://github.com/coreos/fedora-coreos-tracker/issues/215"
+        }
+      }
+    },
+    {
+      "version": "30.20190905.0",
+      "metadata": {
+        "rollout": {
+          "start_epoch": 1568125800,
+          "start_percentage": 0,
+          "duration_minutes": 1440
+        }
+      }
+    }
+  ]
+}
