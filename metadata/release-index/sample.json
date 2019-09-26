@@ -1,0 +1,29 @@
+{
+  "note": "For use only by Fedora CoreOS internal tooling.  All other applications should obtain release info from stream metadata endpoints.",
+  "releases": [
+    {
+      "commits": [
+        {
+          "architecture": "x86_64",
+          "checksum": "a9c8d66d3628d1b9b4c4690777e8b730d08329b4359410cb410a2003296af1ca"
+        }
+      ],
+      "version": "30.20190801.0",
+      "metadata": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/release.json"
+    },
+    {
+      "commits": [
+        {
+          "architecture": "x86_64",
+          "checksum": "b4beca154dab3696fd04f32ddab818102caa9247ec3192403adb9aaecc991bd9"
+        }
+      ],
+      "version": "30.20190905.0",
+      "metadata": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190905.0/release.json"
+    }
+  ],
+  "metadata": {
+    "last-modified": "2019-09-06T15:56:00Z"
+  },
+  "stream": "testing"
+}
