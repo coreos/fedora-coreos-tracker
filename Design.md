@@ -14,6 +14,7 @@ conclusion should be summarized here with a link to the issue.
 - [Configuration Language and Transpiler](#configuration-language-and-transpiler)
 - [Security policies](#security-policies)
 - [Bucket layout](#bucket-layout)
+- [Version numbers](#version-numbers)
 
 ## OSTree Delivery Format
 
@@ -313,3 +314,48 @@ The `fcos-builds` bucket, fronted by http://builds.coreos.fedoraproject.org/ wil
 The artifacts under e.g. `30.1234-5/x86_64/` come directly from [coreos-assembler](https://github.com/coreos/coreos-assembler). The `/streams/*.json`, `release.json`, and `releases.json` are higher-level generated metadata objects. See [#98](https://github.com/coreos/fedora-coreos-tracker/issues/98) and [#207](https://github.com/coreos/fedora-coreos-tracker/pull/207) for more information about those.
 
 The stream metadata format (under `/streams`) is intended to be stable, and stream metadata objects will contain links to artifacts in the release bucket. *Everything else about the bucket layout, including its directory structure and the formats of other metadata objects, is subject to change without notice. Third-party tooling should not rely on this structure, and should instead read metadata and artifact URLs directly from stream metadata at the officially documented URL*.
+
+## Version numbers
+
+Originally discussed in [#81](https://github.com/coreos/fedora-coreos-tracker/issues/81) and [#211](https://github.com/coreos/fedora-coreos-tracker/issues/211).
+
+Fedora CoreOS versions will have the form `X.Y.Z.A`:
+
+- X is the Fedora major version, e.g. `31`.
+- Y is the datestamp that the package set was snapshotted from Fedora, e.g. `20191014`.  For mechanical streams, this is the build date.  For development and production streams, it's the date of the snapshot that was promoted.
+- For official builds, Z is a code number corresponding to the stream:
+
+Stream | Z version
+-- | --
+next | 1
+testing | 2
+stable | 3
+next-devel | 10
+testing-devel | 20
+rawhide | 91
+branched | 92
+bodhi-updates-testing | 93
+bodhi-updates | 94
+
+For developer builds (those not produced by the official pipeline), Z is always `dev`.
+
+These Z codes were chosen to make production versions short and simple, development versions clearly related to production versions, and mechanical versions clearly separated into a distinct group.
+
+- A is a revision number, which starts at 0 and is incremented for each new build with the same X.Y.Z parameters as an existing build.
+
+Some examples:
+
+Stream | Version | Comment
+-- | -- | --
+next | 32.20191018.1.0 | F32-based, first release from this snapshot
+testing | 31.20191018.2.1 | F31-based, second release from this snapshot
+stable | 31.20191001.3.1 | Second stable release from the 20191001 snapshot
+next-devel | 31.20191018.10.10 | 11th build of the day
+testing-devel | 31.20191018.20.0 |
+rawhide | 33.20191018.91.0 | F33-based, first build of the day
+branched | 32.20191018.92.0 |
+bodhi-updates-testing | 31.20191018.93.0 |
+bodhi-updates | 31.20191018.94.0 |
+(any developer build) | 31.20191018.dev.2 | Third build of the day
+
+We are not committing to this version scheme indefinitely, and may change it in future if it proves unworkable.  A new Fedora major release (X bump) would be a good time to make such a change.  We don't intend Fedora CoreOS version numbers to be parsed by machine; they're meant to help humans quickly determine the salient properties of a release.
