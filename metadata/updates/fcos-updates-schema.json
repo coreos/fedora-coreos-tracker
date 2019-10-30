@@ -1,0 +1,116 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "updates",
+  "description": "FCOS updates metadata JSON document.",
+  "required": [
+    "releases",
+    "metadata",
+    "stream"
+  ],
+  "properties": {
+    "releases": {
+      "type": "array",
+      "description": "Each entry MUST have a unique non-empty version field.",
+      "items": {
+        "type": "object",
+        "description": "Release entry.",
+        "required": [
+          "version",
+          "metadata"
+        ],
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "release version",
+            "description": "Release version."
+          },
+          "metadata": {
+            "type": "object",
+            "title": "release updates",
+            "description": "Per-release updates metadata.",
+            "properties": {
+              "barrier": {
+                "type": "object",
+                "title": "barrier",
+                "description": "Details on a release barrier.",
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "title": "barrier reason",
+                    "description": "URL to a document with the reason for this barrier."
+                  }
+                },
+                "required": [
+                  "reason"
+                ]
+              },
+              "deadend": {
+                "type": "object",
+                "title": "deadend",
+                "description": "Details on a release dead-end.",
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "title": "deadend reason",
+                    "description": "URL to a document with the reason for this deadend."
+                  }
+                },
+                "required": [
+                  "reason"
+                ]
+              },
+              "rollout": {
+                "type": "object",
+                "title": "rollout",
+                "description": "Details on a release rollout.",
+                "properties": {
+                  "start_epoch": {
+                    "type": "integer",
+                    "title": "rollout start timestamp",
+                    "description": "UNIX epoch timestamp for the start of this rollout. Default: 0.",
+                    "default": 0
+                  },
+                  "start_percentage": {
+                    "type": "number",
+                    "title": "rollout starting percentage",
+                    "description": "Percentage (ranging from 0.0 to 100.0) for the starting point of this rollout. Default: 0.0.",
+                    "default": 0,
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "duration_minutes": {
+                    "type": "integer",
+                    "title": "rollout duration",
+                    "description": "Duration in minutes for the rollout to progress till reaching 100% completion. Default: 0 (i.e. no progress).",
+                    "default": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "title": "document metadata",
+      "description": "Metadata for this JSON document.",
+      "required": [
+        "last-modified"
+      ],
+      "properties": {
+        "last-modified": {
+          "type": "string",
+          "title": "last change timestamp",
+          "description": "UTC timestamp for the last change, in ISO 8601 format."
+        }
+      }
+    },
+    "stream": {
+      "type": "string",
+      "description": "Name of the release stream."
+    }
+  }
+}
