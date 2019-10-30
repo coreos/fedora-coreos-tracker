@@ -1,0 +1,87 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "release-index",
+  "description": "FCOS release-index JSON document.",
+  "required": [
+    "releases",
+    "metadata",
+    "stream"
+  ],
+  "properties": {
+    "note": {
+      "type": "string",
+      "description": "human-friendly documentation text"
+    },
+    "releases": {
+      "type": "array",
+      "description": "Each entry MUST have a unique non-empty version field. The list MUST be sorted in ascending order, from oldest to latest release.",
+      "items": {
+        "type": "object",
+        "description": "Release entry.",
+        "required": [
+          "commits",
+          "version",
+          "metadata"
+        ],
+        "properties": {
+          "commits": {
+            "type": "array",
+            "title": "OSTree commits",
+            "description": "Release entries. Each entry MUST have a unique non-empty architecture field.",
+            "items": {
+              "type": "object",
+              "title": "commit entry",
+              "required": [
+                "architecture",
+                "checksum"
+              ],
+              "properties": {
+                "architecture": {
+                  "type": "string",
+                  "title": "architecture",
+                  "description": "Relevant base-architecture for this commit."
+                },
+                "checksum": {
+                  "type": "string",
+                  "title": "checksum",
+                  "description": "OSTree commit identifier."
+                }
+              }
+            }
+          },
+          "version": {
+            "type": "string",
+            "title": "release version",
+            "description": "Release version."
+          },
+          "metadata": {
+            "type": "string",
+            "title": "metadata URL",
+            "description": "URL to the release metadata document for this version."
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "title": "document metadata",
+      "description": "Metadata for this JSON document.",
+      "required": [
+        "last-modified"
+      ],
+      "properties": {
+        "last-modified": {
+          "type": "string",
+          "title": "last change timestamp",
+          "description": "UTC timestamp for the last change, in ISO 8601 format."
+        }
+      }
+    },
+    "stream": {
+      "type": "string",
+      "description": "Name of the release stream."
+    }
+  }
+}

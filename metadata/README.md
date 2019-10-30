@@ -42,9 +42,10 @@ This piece of metadata is meant to list all existing releases, on each stream.
  * URL: `https://builds.coreos.fedoraproject.org/prod/streams/${stream}/releases.json`
  * Usage: consumed by Cincinnati to discover valid releases
  * [JSON document specifications][release-index-specs]
- * (TODO) release-index JSON schema
+ * [release-index JSON schema][release-index-schema]
  * [release-index sample][release-index-sample]
 
+[release-index-schema]: ./release-index/fcos-release-index-schema.json
 [release-index-sample]: ./release-index/sample.json
 [release-index-specs]: ./release-index/specifications.md
 
