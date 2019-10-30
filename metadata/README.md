@@ -29,9 +29,10 @@ This document contains details about updates and rollouts, on each stream.
  * URL: `https://builds.coreos.fedoraproject.org/updates/${stream}.json`
  * Usage: consumed by Cincinnati to discover valid update-paths
  * [JSON document specifications][updates-specs]
- * (TODO) updates metadata JSON schema
+ * [updates metadata JSON schema][updates-schema]
  * [updates metadata sample][updates-sample]
 
+[updates-schema]: ./updates/fcos-updates-schema.json
 [updates-sample]: ./updates/sample.json
 [updates-specs]: ./updates/specifications.md
 
