@@ -17,7 +17,7 @@
       "metadata": {
         "rollout": {
           "start_epoch": 1568125800,
-          "start_percentage": 0,
+          "start_percentage": 0.3,
           "duration_minutes": 1440
         }
       }
