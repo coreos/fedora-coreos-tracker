@@ -14,7 +14,7 @@ The updates metadata is a JSON document with a single object containing the foll
       - `reason` (mandatory, string): URL to a resource explaining the reason for this dead-end.
     - `rollout` (optional, object): if present, the corresponding release is marked as an in-progress update rollout.
       - `start_epoch` (optional, signed integer): UNIX epoch timestamp for the start of this rollout. Default: `0`.
-      - `start_percentage` (optional, float): percentage (ranging from `0.0` to `100.0`) for the starting point of this rollout. Default: `0.0`.
+      - `start_percentage` (optional, float): starting point of this rollout, as decimal fraction ranging from `0.0` to `1.0`. Default: `0.0`.
       - `duration_minutes` (optional, unsigned integer): duration in minutes for the rollout to progress till reaching 100% completion. Default: `0` (i.e. no progress).
 
 # Glossary

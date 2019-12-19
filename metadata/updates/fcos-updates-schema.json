@@ -75,10 +75,10 @@
                   "start_percentage": {
                     "type": "number",
                     "title": "rollout starting percentage",
-                    "description": "Percentage (ranging from 0.0 to 100.0) for the starting point of this rollout. Default: 0.0.",
-                    "default": 0,
-                    "minimum": 0,
-                    "maximum": 100
+                    "description": "Starting point of this rollout, as decimal fraction ranging from 0.0 to 1.0. Default: 0.0.",
+                    "default": 0.0,
+                    "minimum": 0.0,
+                    "maximum": 1.0
                   },
                   "duration_minutes": {
                     "type": "integer",
