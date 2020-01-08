@@ -61,6 +61,30 @@
             }
           }
         },
+        "azure": {
+          "release": "30.20190905.0",
+          "formats": {
+            "vhd.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azure.vhd.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azure.vhd.xz.sig",
+                "sha256": "4bb0e1595f66f344c1cc084e163c4352235b2accf3a1385b9eb4b3e4ca5b1d24"
+              }
+            }
+          }
+        },
+        "aliyun": {
+          "release": "30.20190905.0",
+          "formats": {
+            "qcow2.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-aliyun.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-aliyun.qcow2.xz.sig",
+                "sha256": "8f1492f1e9e94ec3f3ecef188c4a2da52348c4b830f6365181bd03e1d969f161"
+              }
+            }
+          }
+        },
         "qemu": {
           "release": "30.20190905.0",
           "formats": {
