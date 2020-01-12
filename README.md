@@ -47,7 +47,7 @@ production workloads.
 
 We're tracking some upcoming work for Fedora CoreOS on the [stable release
 project board](https://github.com/orgs/coreos/projects/84) and the
-papercuts board](https://github.com/orgs/coreos/projects/83).
+[papercuts board](https://github.com/orgs/coreos/projects/83).
 
 # Meetings
 
