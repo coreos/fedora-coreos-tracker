@@ -3,10 +3,10 @@ tail -n +5 $0 | tr '\n' ' ' && echo -e '\nFCOS community meeting in #fedora-meet
 exit 0
 
 darkmuggle
+davdunc
 dustymabe
-lorbus
 jdoss
 jlebon
+lorbus
 miabbott
 skunkerk
-davdunc
