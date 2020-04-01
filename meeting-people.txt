@@ -4,6 +4,7 @@ exit 0
 
 darkmuggle
 dustymabe
+lorbus
 jdoss
 jlebon
 miabbott
