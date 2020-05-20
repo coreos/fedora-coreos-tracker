@@ -22,7 +22,7 @@ technologies and produce Fedora CoreOS.
 
 # Get Fedora CoreOS
 
-[Download a preview of Fedora CoreOS.](https://getfedora.org/coreos/download/)
+[Download Fedora CoreOS.](https://getfedora.org/coreos/download/)
 
 # Communication channels for Fedora CoreOS
 
