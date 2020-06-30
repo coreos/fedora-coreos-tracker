@@ -9,14 +9,7 @@ Other important links:
 
 # Initramfs 
 
-We use [dracut](https://github.com/dracutdevs/dracut/) the same as a number of other (but not all) distributions.  It basically gathers binaries/configuration from the real root and generates an initramfs from them.
-
-The initramfs is critical to CoreOS systems; mainly https://github.com/coreos/ignition/ 
-https://github.com/coreos/ignition-dracut/ handles running Ignition, and then the other key pieces are in the [fedora-coreos-config overlay.d](https://github.com/coreos/fedora-coreos-config), most notably `40ignition-ostree` which "glues together" the Ignition logic with the OSTree logic plus some CoreOS conventions.
-
-The OSTree portion of the initramfs is reading the `ostree=` kernel command line argument to find the target root.  See [ostree-prepare-root.service](https://github.com/ostreedev/ostree/blob/d9fc1dd55d3ae0b71d303dceae9dd23d5b9497c8/src/boot/ostree-prepare-root.service).
-
-A big recent effort is [reprovisioning the root filesystem](https://github.com/coreos/fedora-coreos-tracker/issues/94).
+This topic is big enough to have its own document: [README-initramfs.md](README-initramfs.md).
 
 # CPU microcode
 
