@@ -1,4 +1,3 @@
-
 Welcome to the Fedora CoreOS issue tracker. This tracker will be used
 to discuss new features for Fedora CoreOS and also important bugs that
 are affecting the project. Tickets with the `meeting` label will be
@@ -37,17 +36,13 @@ technologies and produce Fedora CoreOS.
 
 # Roadmap/Plans
 
-Fedora CoreOS is currently in preview.  We're continuing to add platforms
-and functionality, fix bugs, and write documentation.  Please try out Fedora
-CoreOS and give us feedback!
+Fedora CoreOS is available for general use and no longer in preview.  We're
+continuing to add more platforms and functionality, fix bugs, and write
+documentation.  Please try out Fedora CoreOS and give us feedback!
 
-The stable release of Fedora CoreOS is expected in late 2019.  Until then,
-Fedora CoreOS might change in incompatible ways, and should not be used for
-production workloads.
+# Releases
 
-We're tracking some upcoming work for Fedora CoreOS on the [stable release
-project board](https://github.com/orgs/coreos/projects/84) and the
-[papercuts board](https://github.com/orgs/coreos/projects/83).
+See [RELEASES.md](RELEASES.md).
 
 # Meetings
 
