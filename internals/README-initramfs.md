@@ -17,8 +17,7 @@ We use [dracut](https://github.com/dracutdevs/dracut/) the same as a number of o
 Modern systemd has a very clean design for both the initramfs and the real boot. See the ["man bootup"](https://www.freedesktop.org/software/systemd/man/bootup.html) documentation.  The software involved implements these abstract `.target` units.
 
 There are 3 important pieces of software involved in the initramfs:
-
-- [ignition-dracut](https://github.com/coreos/ignition-dracut/) (i.e. Ignition)
+- [30ignition](https://github.com/coreos/ignition/tree/master/dracut/30ignition) (Part of Ignition)
 - [ostree-prepare-root](https://github.com/ostreedev/ostree/blob/master/src/switchroot/ostree-prepare-root.c) (Part of OSTree)
 - [40ignition-ostree dracut module](https://github.com/coreos/fedora-coreos-config/tree/testing-devel/overlay.d/05core/usr/lib/dracut/modules.d/40ignition-ostree) (fedora-coreos-config)
 
@@ -52,6 +51,14 @@ The Live OS setup differs currently between the ISO and PXE: https://github.com/
 Currently when generating the ISO image we inject a label onto the root filesystem, and a `coreos.liveiso` kernel argument matching it.  The initramfs knows to look for that kernel argument, which it then uses to mount the squashfs which contains the root filesystem.
 
 In contrast for PXE the squashfs is in the `live-initramfs` directly.
+
+# /boot in the initramfs
+
+There are multiple services which access the `/boot` partition in the initramfs. They are (in running order):
+- `ignition-setup-user.service`: mounts `/boot` read-only to look for a user Ignition config. This is the first Ignition service to run (in parallel with the `-base` service).
+- `coreos-copy-firstboot-network.service`: mounts `/boot` read-only to look for NetworkManager keyfiles. This unit runs after Ignition's `ignition-fetch-offline.service` but before networking is optionally brought up as part of `dracut-initqueue.service`.
+- (on RHCOS) `rhcos-fips.service`: mounts `/boot` read-write to append `fips=1` to the BLS configs and reboot if FIPS mode is requested. This unit runs after `ignition-fetch.service` but before `ignition-disks.service`.
+- `coreos-inject-rootmap.service`: mounts `/boot` read-write to append rootmap kargs to the BLS configs. This unit runs near the end of the initrd process, after `ignition-files.service.
 
 # SELinux in the initramfs
 
