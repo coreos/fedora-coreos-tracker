@@ -32,7 +32,7 @@ technologies and produce Fedora CoreOS.
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
 - website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
 - documentation at [https://docs.fedoraproject.org/en-US/fedora-coreos/](https://docs.fedoraproject.org/en-US/fedora-coreos/)
-- Twitter: [@fedora](https://twitter.com/fedora)
+- Twitter: [@fedoracoreos](https://twitter.com/fedoracoreos)
 
 # Roadmap/Plans
 
