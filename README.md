@@ -55,7 +55,7 @@ Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 - `cd` to a local checkout of this repo and `git pull`
 - Ping [meeting people](https://github.com/coreos/fedora-coreos-tracker/blob/master/meeting-people.txt) in `#fedora-coreos` on freenode
-    - `bash meeting-people.txt` 
+    - `bash meeting-people.txt`
     - copy lines of output and paste into `#fedora-coreos` channel
 - Navigate to `#fedora-meeting-1` on freenode
 - Type `#startmeeting fedora_coreos_meeting`
@@ -148,4 +148,4 @@ Working days: non-holiday weekdays. Relevant holidays are the national holidays 
 
 # Working Group Members and Points of Contact
 
-TBD
+Please see [meeting-people.txt](https://github.com/jdoss/fedora-coreos-tracker/blob/master/meeting-people.txt).
