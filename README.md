@@ -148,4 +148,4 @@ Working days: non-holiday weekdays. Relevant holidays are the national holidays 
 
 # Working Group Members and Points of Contact
 
-Please see [meeting-people.txt](https://github.com/jdoss/fedora-coreos-tracker/blob/master/meeting-people.txt).
+Please see [meeting-people.txt](https://github.com/coreos/fedora-coreos-tracker/blob/master/meeting-people.txt).
