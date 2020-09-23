@@ -32,7 +32,7 @@ technologies and produce Fedora CoreOS.
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
 - website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
 - documentation at [https://docs.fedoraproject.org/en-US/fedora-coreos/](https://docs.fedoraproject.org/en-US/fedora-coreos/)
-- Twitter: [@fedora](https://twitter.com/fedora)
+- Twitter: [@fedoracoreos](https://twitter.com/fedoracoreos)
 
 # Roadmap/Plans
 
@@ -55,7 +55,7 @@ Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 - `cd` to a local checkout of this repo and `git pull`
 - Ping [meeting people](https://github.com/coreos/fedora-coreos-tracker/blob/master/meeting-people.txt) in `#fedora-coreos` on freenode
-    - `bash meeting-people.txt` 
+    - `bash meeting-people.txt`
     - copy lines of output and paste into `#fedora-coreos` channel
 - Navigate to `#fedora-meeting-1` on freenode
 - Type `#startmeeting fedora_coreos_meeting`
@@ -148,4 +148,4 @@ Working days: non-holiday weekdays. Relevant holidays are the national holidays 
 
 # Working Group Members and Points of Contact
 
-TBD
+Please see [meeting-people.txt](https://github.com/coreos/fedora-coreos-tracker/blob/master/meeting-people.txt).
