@@ -33,3 +33,10 @@ In [this tracker issue](https://github.com/coreos/fedora-coreos-tracker/issues/2
 
 We use chrony, with some [additional custom logic for specific clouds](https://github.com/coreos/fedora-coreos-config/blob/faf387eac89d14924a1e2021d2093d0cdb8af8b3/overlay.d/20platform-chrony/usr/lib/systemd/system-generators/coreos-platform-chrony).
 See also DHCP propagation: https://github.com/coreos/fedora-coreos-config/pull/412
+
+# Aleph version
+
+`rpm-ostree status` will show admins the state of the ostree, but a few things live outside that and are not subject to in place updates.  For example, the on-disk filesystem (default `xfs`) and its specific layout, as well as the bootloader.
+
+See [this pull request](https://github.com/coreos/coreos-assembler/pull/768/commits/2701e91838e18d3eac0694fd0a5f003befcfb218) which added `/sysroot/.coreos-aleph-version.json` that can be used to track the version of that data.
+
