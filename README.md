@@ -40,6 +40,17 @@ Fedora CoreOS is available for general use and no longer in preview.  We're
 continuing to add more platforms and functionality, fix bugs, and write
 documentation.  Please try out Fedora CoreOS and give us feedback!
 
+# Adding Packages to Fedora CoreOS
+
+We often find people asking for a particular package to be added to the base set of
+packages included in Fedora CoreOS. One of the goals of Fedora CoreOS is to
+remain as lean as possible, without impacting overall usability for our users.
+Thus, new package requests are carefully scrutinized to weigh the benefits and
+drawbacks of adding an additional package.
+
+If you would like to propose the inclusion of a new package in the base set of packages,
+please follow the instructions for [requesting a new package](NEWPACKAGE.md).
+
 # Releases
 
 See [RELEASES.md](RELEASES.md).
