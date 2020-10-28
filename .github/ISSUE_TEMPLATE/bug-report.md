@@ -24,7 +24,7 @@ A clear and concise description of what you expected to happen.
  - Fedora CoreOS version
 
 **Ignition Configuration**
-Please attach your Ignition configuration used to provision you system.
+Please attach your FCCT or Ignition configuration used to provision your system. If not using FCCT to generate your Ignition config, does the Ignition config pass validation using [ignition-validate](https://coreos.github.io/ignition/getting-started/#config-validation)?
 
 **Additional context**
 Add any other context about the problem here.
