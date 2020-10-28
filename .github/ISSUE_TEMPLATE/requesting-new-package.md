@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-Please answer the following questions about the package you are requesting:
+Please try to answer the following questions about the package you are requesting:
 
 1. What, if any, are the additional dependencies on the package? (i.e. does it pull in Python, Perl, etc)
 
