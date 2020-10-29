@@ -49,7 +49,7 @@ Thus, new package requests are carefully scrutinized to weigh the benefits and
 drawbacks of adding an additional package.
 
 If you would like to propose the inclusion of a new package in the base set of packages,
-please follow the instructions for [requesting a new package](NEWPACKAGE.md).
+please file a [new package request](https://github.com/coreos/fedora-coreos-tracker/issues/new?labels=kind/enhancement&template=new-package.md&title=New+Package+Request%3A+%3Cpackage+name%3E).
 
 # Releases
 

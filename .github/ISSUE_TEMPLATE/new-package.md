@@ -1,8 +1,8 @@
 ---
-name: Requesting New Package
-about: Request a new package be added to Fedora CoreOS
+name: Request a new package
+about: Ask for a new package to be added to Fedora CoreOS
 title: 'New Package Request: <package name>'
-labels: ''
+labels: 'kind/enhancement'
 assignees: ''
 
 ---
