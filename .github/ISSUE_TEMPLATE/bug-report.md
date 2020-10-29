@@ -2,7 +2,7 @@
 name: Report a bug
 about: Report an issue with Fedora CoreOS
 title: ''
-labels: ''
+labels: 'kind/bug'
 assignees: ''
 
 ---

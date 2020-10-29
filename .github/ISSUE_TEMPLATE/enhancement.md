@@ -2,7 +2,7 @@
 name: Request an enhancement
 about: Request a new feature in Fedora CoreOS
 title: ''
-labels: ''
+labels: 'kind/enhancement'
 assignees: ''
 
 ---
