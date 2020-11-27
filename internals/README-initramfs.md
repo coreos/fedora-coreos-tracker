@@ -58,7 +58,7 @@ There are multiple services which access the `/boot` partition in the initramfs.
 - `ignition-setup-user.service`: mounts `/boot` read-only to look for a user Ignition config. This is the first Ignition service to run (in parallel with the `-base` service).
 - `coreos-copy-firstboot-network.service`: mounts `/boot` read-only to look for NetworkManager keyfiles. This unit runs after Ignition's `ignition-fetch-offline.service` but before networking is optionally brought up as part of `dracut-initqueue.service`.
 - (on RHCOS) `rhcos-fips.service`: mounts `/boot` read-write to append `fips=1` to the BLS configs and reboot if FIPS mode is requested. This unit runs after `ignition-fetch.service` but before `ignition-disks.service`.
-- `coreos-inject-rootmap.service`: mounts `/boot` read-write to append rootmap kargs to the BLS configs. This unit runs near the end of the initrd process, after `ignition-files.service.
+- `coreos-boot-edit.service`: mounts `/boot` read-write late in the initramfs process after `ignition-files.service` to make final edits (e.g. remove firstboot networking configuration files if necessary, append rootmap kargs to the BLS configs).
 
 # SELinux in the initramfs
 
