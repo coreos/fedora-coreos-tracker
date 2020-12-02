@@ -64,6 +64,14 @@ There are multiple services which access the `/boot` partition in the initramfs.
 
 SELinux policy is loaded in the real root.  This means that every file we create in the initramfs must be relabeled.  See this code: https://github.com/coreos/fedora-coreos-config/blob/testing-devel/overlay.d/05core/usr/lib/dracut/modules.d/40ignition-ostree/coreos-relabel
 
+# Networking
+
+By default, the initramfs does not try to enable networking if it's not needed. This is important in the live ISO case. Software may request networking if they require it. For example, if Ignition detects a config which requires the network, it writes a stamp file at `/run/ignition/neednet` which we then detect and translate into `rd.neednet=1` via `coreos-enable-network.service`. For any other situation in which FCOS needs networking, we should add a triggering condition to that service. In the future if more cases are added, we may provide a cleaner API which does not require continuously expanding this list.
+
+For more details of the design, see https://github.com/coreos/fedora-coreos-tracker/issues/460.
+
+Actually configuring the network in the initramfs is discussed in depth in the project [documentation](https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-network-configuration/).
+
 # Reprovisioning the root
 
 A big recent effort is [reprovisioning the root filesystem](https://github.com/coreos/fedora-coreos-tracker/issues/94).  This will make the "subsequent" boot path work differently based on configuration.
