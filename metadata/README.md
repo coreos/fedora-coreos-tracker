@@ -8,19 +8,26 @@ The following types of metadata exist:
  * updates metadata
  * release index
  * release metadata
+ * coreos-assembler builds
 
 ## Stream metadata
 
 This document contains details about latest available artifacts, on each stream.
 
  * URL: `https://builds.coreos.fedoraproject.org/streams/${stream}.json`
- * Usage: consumed by the [getfedora.org download page](https://getfedora.org/en/coreos/download/)
+ * Usage: Primary entrypoint for users.  Documented at https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/
+   and e.g. consumed by the [getfedora.org download page](https://getfedora.org/en/coreos/download/)
  * (TODO) stream metadata JSON schema
  * [stream metadata sample][stream-sample]
  * [comments and rationale][stream-rationale]
 
 [stream-sample]: ./stream/sample.json
 [stream-rationale]: ./stream/rationale.yaml
+
+Projects/Code:
+
+ - https://github.com/coreos/stream-metadata-go
+ - https://github.com/coreos/fedora-coreos-stream-generator/
 
 ## Updates metadata
 
@@ -50,6 +57,10 @@ This piece of metadata is meant to list all existing releases, on each stream.
 [release-index-sample]: ./release-index/sample.json
 [release-index-specs]: ./release-index/specifications.md
 
+Projects/Code:
+
+ - https://github.com/coreos/coreos-assembler/blob/master/mantle/cmd/plume/release.go
+
 ## Release metadata
 
 This document contains details about artifacts belonging to each release.
@@ -60,3 +71,13 @@ This document contains details about artifacts belonging to each release.
  * [release metadata sample][release-sample]
 
 [release-sample]: ./release/sample.json
+
+## CoreOS Assembler builds
+
+This is the primary artifact of coreos-assembler, which turns
+RPMs and our configuration into images and ostree commits.
+
+Projects:
+
+ - https://github.com/coreos/coreos-assembler
+ - https://github.com/coreos/fedora-coreos-releng-automation/blob/master/coreos-meta-translator/trans.py
