@@ -22,7 +22,7 @@ architectures:
               location: https://artifacts.example.com/dsB2fnzP7KhqzQ5a.vmdk.xz
               signature: https://artifacts.example.com/dsB2fnzP7KhqzQ5a.vmdk.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              # Could also include artifact size/uncompressed-size/uncompressed-sha256 from meta.json
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       azure:
         release: 30.1.2.3
         formats:
@@ -31,6 +31,7 @@ architectures:
               location: https://artifacts.example.com/aeng0xah6vaaVosh.vdi.xz
               signature: https://artifacts.example.com/aeng0xah6vaaVosh.vdi.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       digitalocean:
         release: 30.1.2.3
         formats:
@@ -39,6 +40,7 @@ architectures:
               location: https://artifacts.example.com/ichaloomuHax9ahR.raw.xz
               signature: https://artifacts.example.com/ichaloomuHax9ahR.raw.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       gcp:
         release: 30.1.2.3
         formats:
@@ -47,6 +49,7 @@ architectures:
               location: https://artifacts.example.com/ais7tah1aa7Ahvei.tar.gz
               signature: https://artifacts.example.com/ais7tah1aa7Ahvei.tar.gz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       metal:
         release: 30.1.2.3
         formats:
@@ -55,34 +58,41 @@ architectures:
               location: https://artifacts.example.com/xTqYJZKCPNvoNs6B.raw.xz
               signature: https://artifacts.example.com/xTqYJZKCPNvoNs6B.raw.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
           iso:
             disk:
               location: https://artifacts.example.com/ADE5GO3bjAXeDcLO.iso
               signature: https://artifacts.example.com/ADE5GO3bjAXeDcLO.iso.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
           pxe:
             kernel:
               location: https://artifacts.example.com/hkIj8FkCydT3lV9h
               signature: https://artifacts.example.com/hkIj8FkCydT3lV9h.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
             initramfs:
               location: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz
               signature: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
           "installer.iso":
             disk:
               location: https://artifacts.example.com/KwKye6YW4SIIPrhY.iso
               signature: https://artifacts.example.com/KwKye6YW4SIIPrhY.iso.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
           installer-pxe:
             kernel:
               location: https://artifacts.example.com/EtqI0KsLIwZOHlCx
               signature: https://artifacts.example.com/EtqI0KsLIwZOHlCx.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
             initramfs:
               location: https://artifacts.example.com/EhoS1x66RVA2k8y6.cpio.gz
               signature: https://artifacts.example.com/EhoS1x66RVA2k8y6.cpio.gz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       openstack:
         release: 30.1.2.3
         formats:
@@ -91,6 +101,7 @@ architectures:
               location: https://artifacts.example.com/oKooheogobofai8l.qcow.xz
               signature: https://artifacts.example.com/oKooheogobofai8l.qcow.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       packet:
         release: 30.1.2.3
         formats:
@@ -99,6 +110,7 @@ architectures:
               location: https://artifacts.example.com/Oofohng0xo2phai5.raw.xz
               signature: https://artifacts.example.com/Oofohng0xo2phai5.raw.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       qemu:
         release: 30.1.2.3
         formats:
@@ -107,6 +119,7 @@ architectures:
               location: https://artifacts.example.com/Siejeeb6ohpu8Eel.qcow.xz
               signature: https://artifacts.example.com/Siejeeb6ohpu8Eel.qcow.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       virtualbox:
         release: 30.1.2.3
         formats:
@@ -115,6 +128,7 @@ architectures:
               location: https://artifacts.example.com/yohsh2haiquaeYah.ova
               signature: https://artifacts.example.com/yohsh2haiquaeYah.ova.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       vmware:
         release: 30.1.2.3
         formats:
@@ -123,6 +137,7 @@ architectures:
               location: https://artifacts.example.com/quohgh8ei0uzaD5a.ova
               signature: https://artifacts.example.com/quohgh8ei0uzaD5a.ova.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
 
     images:
       # Cloud images to be launched directly by users.  These are in a
