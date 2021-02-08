@@ -1,5 +1,7 @@
 # 20210204_Growing-FCOS-Community
 
+recording: https://www.youtube.com/watch?v=HSuBWeosAvQ
+
 - Execution
     - Stability: we might lose users if we have instability and "manual intervention"
     - Availability in more cloud providers
