@@ -1,5 +1,7 @@
 # Fedora CoreOS Meetup - Fedora CoreOS as an Official Edition
 
+recording : https://www.youtube.com/watch?v=t5VAw8NRXNc
+
 Fedora Change : https://fedoraproject.org/wiki/Changes/FedoraCoreOS
 
 Key concepts :
