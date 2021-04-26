@@ -46,7 +46,7 @@ Fedora CoreOS will have several refs for use on production machines.  At any giv
 
 - `testing`: Periodic snapshot of the current Fedora release plus Bodhi `updates`.
 - `stable`: Promotion of a `testing` release, including any needed fixes.
-- `next`: The `next` stream represents the future. It will often be used to experiment with new features and also test out rebases of our platform on top of the next major version of Fedora.
+- `next`: The `next` stream represents the future. It will often be used to experiment with new features and also test out rebases of our platform on top of the next major version of Fedora. See [Major Fedora Version Rebases](#major-fedora-version-rebases) for more info.
 
 All of these refs will be unversioned, in the sense that their names will not include the current Fedora major version.  The stream cadences are not contractual, but will initially have two weeks between releases.  The stream maintenance policies are also not contractual and may evolve from those described above, but changes will preserve the use cases and intended stability of each stream.
 
@@ -74,11 +74,19 @@ If a fix is important enough for an out-of-cycle `stable` release, other affecte
 
 In some cases it may make sense to apply a fix to `testing` but not issue an out-of-cycle release, allowing the fix to be picked up automatically when `testing` promotes to `stable`.
 
-We'll need infrastructure for both approaches, and the ability to choose between them on a case-by-case basis.  Option 1 is cleaner and easier, but may not always be safe.  Option 2 is especially useful for the kernel, where we'll want to fix individual bugs without pushing an entire stable kernel update directly to the `stable` stream.
+### Major Fedora Version Rebases
 
-If a fix is important enough for an out-of-cycle `stable` release, other affected release streams should be updated as well.
+The release process integrates with Fedora's release milestones in the following ways:
 
-In some cases it may make sense to apply a fix to `testing` but not issue an out-of-cycle release, allowing the fix to be picked up automatically when `testing` promotes to `stable`.
+- Fedora Beta Release
+    - The `next` stream is switched over to the new release.
+- Fedora Final Freeze
+    - The `next` stream switches to weekly releases to closely track the GA content set.
+- Fedora General Availability
+    - Fedora CoreOS re-orients its release schedule in the following way:
+        - Week 0 (GA release): triple release;`next` with latest Fedora N content
+        - Week 1: triple release; `testing` release promoted from previous `next`
+        - Week 3: triple release; `stable` release promoted from previous `testing`, now fully rebased to Fedora N. `next` and `testing` are now in sync.
 
 ### Deprecation
 
