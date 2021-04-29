@@ -76,23 +76,6 @@ architectures:
               signature: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
               uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
-          "installer.iso":
-            disk:
-              location: https://artifacts.example.com/KwKye6YW4SIIPrhY.iso
-              signature: https://artifacts.example.com/KwKye6YW4SIIPrhY.iso.sig
-              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
-          installer-pxe:
-            kernel:
-              location: https://artifacts.example.com/EtqI0KsLIwZOHlCx
-              signature: https://artifacts.example.com/EtqI0KsLIwZOHlCx.sig
-              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
-            initramfs:
-              location: https://artifacts.example.com/EhoS1x66RVA2k8y6.cpio.gz
-              signature: https://artifacts.example.com/EhoS1x66RVA2k8y6.cpio.gz.sig
-              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       openstack:
         release: 30.1.2.3
         formats:
@@ -118,15 +101,6 @@ architectures:
             disk:
               location: https://artifacts.example.com/Siejeeb6ohpu8Eel.qcow.xz
               signature: https://artifacts.example.com/Siejeeb6ohpu8Eel.qcow.xz.sig
-              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
-      virtualbox:
-        release: 30.1.2.3
-        formats:
-          ova:
-            disk:
-              location: https://artifacts.example.com/yohsh2haiquaeYah.ova
-              signature: https://artifacts.example.com/yohsh2haiquaeYah.ova.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
               uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       vmware:
