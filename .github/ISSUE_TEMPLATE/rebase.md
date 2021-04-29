@@ -62,7 +62,7 @@ koji untag-build coreos-pool $untaglist
 ## Ship rebased `next`
 
 - [ ] Ship `next`
-- [ ] Set a new update barrier for N-2 on `next`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-631724629).
+- ~Set a new update barrier for N-2 on `next`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-631724629).~  _(Skip for now, see https://github.com/coreos/fedora-coreos-tracker/issues/749#issuecomment-781449178)_
 
 ## Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `testing-devel`
 
@@ -75,12 +75,12 @@ koji untag-build coreos-pool $untaglist
 ## Ship rebased `testing`
 
 - [ ] Ship `testing`
-- [ ] Set a new update barrier for N-2 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/).
+- ~Set a new update barrier for N-2 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/).~
 
 ## Ship rebased `stable`
 
 - [ ] Ship `stable`
-- [ ] Set a new update barrier for N-2 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/).
+- ~Set a new update barrier for N-2 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/).~
 
 ## Miscellaneous container updates
 
