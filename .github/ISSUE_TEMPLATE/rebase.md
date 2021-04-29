@@ -12,11 +12,13 @@
 - `koji taginfo coreos-pool`
 - `koji edit-tag coreos-pool -x tag2distrepo.keys="12c944d0 9570ff31 45719a39"`
 
-- [ ] `koji untag` N-2 packages from the pool (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). For example the following snippet finds all RPMs signed by the Fedora 31 key and untags them.
+- [ ] `koji untag` N-2 packages from the pool (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). For example the following snippet finds all RPMs signed by the Fedora 32 key and untags them.
+
+Find the key short hash. Usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2). Then:
 
 ```
-f31key=3c3359c4
-key=$f31key
+f32key=12c944d0
+key=$f32key
 untaglist=''
 for build in $(koji list-tagged --quiet coreos-pool | cut -f1 -d' '); do
     if koji buildinfo $build | grep $key 1>/dev/null; then
@@ -24,10 +26,25 @@ for build in $(koji list-tagged --quiet coreos-pool | cut -f1 -d' '); do
         echo "Adding $build to untag list"
     fi
 done
-
-# After verifying the list looks good:
-#   - koji untag-build coreos-pool $untaglist
 ```
+
+Now we have a list of builds to untag. But we need one more sanity check. Let's make sure none of those are actually being used. Fire up the latest FCOS `testing-devel` and run:
+
+```
+f32key=12c944d0
+key=$f32key
+rpm -qai | grep -B 8 $key
+```
+
+If there are any RPMs signed by the old key they'll need to be investigated. Maybe they shouldn't be used any longer. Or maybe they're still needed.
+
+After verifying the list looks good:
+
+```
+koji untag-build coreos-pool $untaglist
+```
+
+Now that untagging is done, give a heads up to rpm-ostree developers that N-2 packages have been untagged and that they may need to update their CI compose tests to freeze on a newer FCOS commit.
 
 ## coreos-installer changes
 
