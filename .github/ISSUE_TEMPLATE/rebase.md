@@ -60,7 +60,6 @@ Now that untagging is done, give a heads up to rpm-ostree developers that N-2 pa
 ## Ship rebased `next`
 
 - [ ] Ship `next`
-- [ ] Set a new update barrier for N-2 on `next`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-631724629).
 
 ## Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `testing-devel`
 
@@ -73,12 +72,10 @@ Now that untagging is done, give a heads up to rpm-ostree developers that N-2 pa
 ## Ship rebased `testing`
 
 - [ ] Ship `testing`
-- [ ] Set a new update barrier for N-2 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/).
 
 ## Ship rebased `stable`
 
 - [ ] Ship `stable`
-- [ ] Set a new update barrier for N-2 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/).
 
 ## Miscellaneous container updates
 
