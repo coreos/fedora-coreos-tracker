@@ -68,8 +68,12 @@ architectures:
               signature: https://artifacts.example.com/hkIj8FkCydT3lV9h.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
             initramfs:
-              location: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz
-              signature: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz.sig
+              location: https://artifacts.example.com/a9ytS8yB4cGZpca1.img
+              signature: https://artifacts.example.com/a9ytS8yB4cGZpca1.img.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+            rootfs:
+              location: https://artifacts.example.com/Seb8em4QU9p6wEFr.img
+              signature: https://artifacts.example.com/Seb8em4QU9p6wEFr.img.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       openstack:
         release: 30.1.2.3
