@@ -40,7 +40,6 @@ architectures:
               location: https://artifacts.example.com/ichaloomuHax9ahR.raw.gz
               signature: https://artifacts.example.com/ichaloomuHax9ahR.raw.gz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       gcp:
         release: 30.1.2.3
         formats:
@@ -49,7 +48,6 @@ architectures:
               location: https://artifacts.example.com/ais7tah1aa7Ahvei.tar.gz
               signature: https://artifacts.example.com/ais7tah1aa7Ahvei.tar.gz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       metal:
         release: 30.1.2.3
         formats:
@@ -64,18 +62,15 @@ architectures:
               location: https://artifacts.example.com/ADE5GO3bjAXeDcLO.iso
               signature: https://artifacts.example.com/ADE5GO3bjAXeDcLO.iso.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
           pxe:
             kernel:
               location: https://artifacts.example.com/hkIj8FkCydT3lV9h
               signature: https://artifacts.example.com/hkIj8FkCydT3lV9h.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
             initramfs:
               location: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz
               signature: https://artifacts.example.com/a9ytS8yB4cGZpca1.cpio.gz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       openstack:
         release: 30.1.2.3
         formats:
@@ -111,7 +106,6 @@ architectures:
               location: https://artifacts.example.com/quohgh8ei0uzaD5a.ova
               signature: https://artifacts.example.com/quohgh8ei0uzaD5a.ova.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
 
     images:
       # Cloud images to be launched directly by users.  These are in a
