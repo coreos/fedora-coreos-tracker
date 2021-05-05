@@ -1,4 +1,4 @@
-The source for this document lives at https://github.com/coreos/fedora-coreos-tracker/blob/master/PRD.txt
+The source for this document lives at https://github.com/coreos/fedora-coreos-tracker/blob/main/PRD.txt
 
 The rendered document lives on the Fedora wiki at https://fedoraproject.org/wiki/CoreOS/PRD
 

@@ -17,8 +17,8 @@ We use [dracut](https://github.com/dracutdevs/dracut/) the same as a number of o
 Modern systemd has a very clean design for both the initramfs and the real boot. See the ["man bootup"](https://www.freedesktop.org/software/systemd/man/bootup.html) documentation.  The software involved implements these abstract `.target` units.
 
 There are 3 important pieces of software involved in the initramfs:
-- [30ignition](https://github.com/coreos/ignition/tree/master/dracut/30ignition) (Part of Ignition)
-- [ostree-prepare-root](https://github.com/ostreedev/ostree/blob/master/src/switchroot/ostree-prepare-root.c) (Part of OSTree)
+- [30ignition](https://github.com/coreos/ignition/tree/main/dracut/30ignition) (Part of Ignition)
+- [ostree-prepare-root](https://github.com/ostreedev/ostree/blob/main/src/switchroot/ostree-prepare-root.c) (Part of OSTree)
 - [40ignition-ostree dracut module](https://github.com/coreos/fedora-coreos-config/tree/testing-devel/overlay.d/05core/usr/lib/dracut/modules.d/40ignition-ostree) (fedora-coreos-config)
 
 Note that Ignition and OSTree are both independent projects consumed by other distributions in addition to Fedora CoreOS.  This means that we want to support using each independently.  The `40ignition-ostree` dracut module *ties those two together* - it's the place where you will find systemd units that have direct ordering relationship around the two projects.

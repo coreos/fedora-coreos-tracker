@@ -35,7 +35,7 @@ Prow is heavily oriented towards testing OpenShift *container* components.  Howe
 
 A specific reason to include Prow is that it contains tight integration with OpenShift which we need for RHCOS, and it is also maintained and staffed by a team that e.g. also contains a budget and secrets for running infrastructure in public clouds.
 
-Examples can be found in the [openshift/release coreos/ folder](https://github.com/openshift/release/tree/master/ci-operator/config/coreos).
+Examples can be found in the [openshift/release coreos/ folder](https://github.com/openshift/release/tree/main/ci-operator/config/coreos).
 
 ### GitHub Actions
 
@@ -45,7 +45,7 @@ A good use case is e.g. validating rustfmt.
 
 Examples:
 
- - https://github.com/coreos/rpm-ostree/blob/master/.github/workflows/rust-lints.yml
+ - https://github.com/coreos/rpm-ostree/blob/main/.github/workflows/rust-lints.yml
 
 ---
 
