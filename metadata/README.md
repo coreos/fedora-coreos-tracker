@@ -59,7 +59,7 @@ This piece of metadata is meant to list all existing releases, on each stream.
 
 Projects/Code:
 
- - https://github.com/coreos/coreos-assembler/blob/master/mantle/cmd/plume/release.go
+ - https://github.com/coreos/coreos-assembler/blob/main/mantle/cmd/plume/release.go
 
 ## Release metadata
 
@@ -80,4 +80,4 @@ RPMs and our configuration into images and ostree commits.
 Projects:
 
  - https://github.com/coreos/coreos-assembler
- - https://github.com/coreos/fedora-coreos-releng-automation/blob/master/coreos-meta-translator/trans.py
+ - https://github.com/coreos/fedora-coreos-releng-automation/blob/main/coreos-meta-translator/trans.py

@@ -22,7 +22,7 @@ We need a way to both (1) fix the content set for a particular stream release, a
 
 ## Current tools at our disposal
 - git
-- rpm-ostree treefiles: manifest fed to rpm-ostree that contains the list of packages to use during a compose. [Example](https://github.com/coreos/fedora-coreos-config/blob/master/fedora-coreos-base.yaml).
+- rpm-ostree treefiles: manifest fed to rpm-ostree that contains the list of packages to use during a compose. [Example](https://github.com/coreos/fedora-coreos-config/blob/main/fedora-coreos-base.yaml).
 - rpm-ostree treefile locks: [pending rpm-ostree patch]( https://github.com/projectatomic/rpm-ostree/pull/1745) adding "lockfile" functionality similar to Cargo.lock/Gopkg.lock. This essentially means that the rpm-ostree compose is guaranteed to use specific package versions (or fail) as described in the lockfile. (To be clear, all of the below could probably be done without a lock file, since the treefile supports fully specifying the NEVRA, but having a separate lockfile allows for more sophisticated tooling and a cleaner treefile.)
 - Koji tags: a way to track packages built in Koji. Koji is capable of creating yum repos from such tags. RPM builds may be "tagged" in so that the next repo regeneration includes it.
 - [dist-git](http://src.fedoraproject.org/): git where RPM spec files are kept and Koji builds source from.
@@ -50,7 +50,7 @@ There is also a second Koji tag, `coreos-release`, for packages which have been 
 
 ### How will the package list be maintained?
 
-We maintain a git repository containing the rpm-ostree treefile and lockfiles. This could be [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config). We have one branch for each stream, and no master branch.
+We maintain a git repository containing the rpm-ostree treefile and lockfiles. This could be [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config). We have one branch for each stream, and no main branch.
 
 For the mechanical streams, a nightly job will run the compose from the corresponding yum repos and SCM refs. This job will output a lockfile for each CPU architecture. Those lockfiles will be committed to Git to preserve a record of the build's contents, and the builds will be pushed to the corresponding ostree refs.  The {bodhi-updates, branched} lockfile will also be PR'd to the {testing-devel, next-devel} branch, the latter only during the part of the cycle where next-devel is maintained.  We want to keep the development branches ready to release, so those PRs are not merged unless green.
 
