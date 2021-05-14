@@ -68,3 +68,32 @@ It's very unlikely that we will change the platform IDs in the future.  However,
 to avoid parsing `ignition.platform.id`.  Generally, higher level code that needs to be
 platform aware will have more platform-specific ways to find this information.
 
+# multipath
+
+A lot of history here.  A TL;DR is that nontrivial multipath setups conceptually conflict
+a bit with the "CoreOS model" of booting into the desired configuration from the start.
+There's also a long related issue in that we want to use a "pristine" initramfs in
+general, and nontrivial multipath configuration needs to be in the initramfs.
+
+What we ended up with is adding an `rd.multipath=default` kernel argument which 
+triggers dracut to do "basic" automatic multipath setup in the stock initramfs:
+https://github.com/dracutdevs/dracut/pull/780
+
+So we still have a model then where the host boots up in a non-multipath
+configuration, Ignition runs and the kernel arguments are applied, then we reboot into the
+final configuration.
+
+We don't yet document multipath for FCOS, but we do document this setup for
+OpenShift that has a kola test:
+
+- https://github.com/coreos/coreos-assembler/blob/60f675ec5037b84c01f17192d773a14166dc6a14/mantle/kola/tests/misc/multipath.go#L57
+
+More links:
+
+- https://github.com/coreos/ignition-dracut/issues/154
+- https://bugzilla.redhat.com/show_bug.cgi?id=1944660
+
+
+An example issue seems to be rooted in our use of labels to find `boot`
+and `root`. The labels seem to be racy in our current code because
+`multipathd.service` may take over the block devices.
