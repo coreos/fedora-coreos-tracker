@@ -42,6 +42,8 @@ See [this pull request](https://github.com/coreos/coreos-assembler/pull/768/comm
 
 # ignition.platform.id
 
+See https://docs.fedoraproject.org/en-US/fedora-coreos/platforms/
+
 The design we have today is that each CoreOS system is the same OS content - the same OSTree commit,
 and beyond that the exact same bootloader version, etc.
 
@@ -63,10 +65,6 @@ Notice in particular how the time synchronization code ends up reconfiguring chr
 For other operating systems which do "per cloud" disk images, it would have been more
 natural to just change `/etc/chrony.conf` per platform.  But that would mean we have a different
 ostree commit checksum per platform, breaking our "image based" update model.
-
-It's very unlikely that we will change the platform IDs in the future.  However, FCOS users are recommended
-to avoid parsing `ignition.platform.id`.  Generally, higher level code that needs to be
-platform aware will have more platform-specific ways to find this information.
 
 # multipath
 
