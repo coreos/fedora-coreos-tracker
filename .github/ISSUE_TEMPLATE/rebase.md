@@ -87,11 +87,11 @@ koji untag-build coreos-pool $untaglist
 These are various containers in use throughout our ecosystem. We should update or open a ticket to track updating them once a new Fedora release is out. If you open a ticket instead of doing the update add a link to the ticket as comment.
 
 - [ ] Update coreos-assembler or open ticket to update:
-	- [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/Dockerfile)
+    - [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/Dockerfile)
 - [ ] Update coreos-installer
-	- [Dockerfile](https://github.com/coreos/coreos-installer/blob/main/Dockerfile)
+    - [Dockerfile](https://github.com/coreos/coreos-installer/blob/main/Dockerfile)
 - [ ] Update fedora-coreos-cincinnati
-	- [Dockerfile](https://github.com/coreos/fedora-coreos-cincinnati/blob/main/dist/fedora-infra/Dockerfile)
+    - [Dockerfile](https://github.com/coreos/fedora-coreos-cincinnati/blob/main/dist/fedora-infra/Dockerfile)
 - [ ] Update config-bot
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/config-bot/Dockerfile)
 - [ ] Update coreos-koji-tagger
