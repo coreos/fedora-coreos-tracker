@@ -84,5 +84,21 @@ koji untag-build coreos-pool $untaglist
 
 ## Miscellaneous container updates
 
-- [ ] Rebase the coreos-assembler Dockerfile onto the new release
-- [ ] Rebase the coreos-installer Dockerfile onto the new release
+These are various containers in use throughout our ecosystem. We should update or open a ticket to track updating them once a new Fedora release is out. If you open a ticket instead of doing the update add a link to the ticket as comment.
+
+- [ ] Update coreos-assembler or open ticket to update:
+	- [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/Dockerfile)
+- [ ] Update coreos-installer
+	- [Dockerfile](https://github.com/coreos/coreos-installer/blob/main/Dockerfile)
+- [ ] Update fedora-coreos-cincinnati
+	- [Dockerfile](https://github.com/coreos/fedora-coreos-cincinnati/blob/main/dist/fedora-infra/Dockerfile)
+- [ ] Update config-bot
+    - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/config-bot/Dockerfile)
+- [ ] Update coreos-koji-tagger
+    - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/coreos-koji-tagger/Dockerfile)
+    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-koji-tagger/templates/imagestream.yml)
+    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-koji-tagger/templates/buildconfig.yml)
+- [ ] Update coreos-ostree-importer
+    - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/coreos-ostree-importer/Dockerfile)
+    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-ostree-importer/templates/imagestream.yml)
+    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-ostree-importer/templates/buildconfig.yml)
