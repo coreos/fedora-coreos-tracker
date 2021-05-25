@@ -77,6 +77,13 @@ koji untag-build coreos-pool $untaglist
 - [ ] Ship `testing`
 - ~Set a new update barrier for N-2 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/).~
 
+## Disable `next-devel` stream
+
+We prefer to disable `next-devel` when there is no difference between `testing-devel` and `next-devel`. This allows us to prevent wasting a bunch of resources (bandwidth, storage, compute) for no reason. After the switch to N if `next-devel` and `testing-devel` are in lockstep, then disable `next-devel`.
+
+- [ ] Remove `next-devel` from the list of "development streams" in [the pipeline](https://github.com/coreos/fedora-coreos-pipeline/blob/main/streams.groovy). [Example PR.](https://github.com/coreos/fedora-coreos-pipeline/pull/343)
+- [ ] Update the [promote-config job](https://github.com/coreos/fedora-coreos-streams/blob/main/.github/workflows/promote-config.yml) to promote `next` from `testing-devel`. [Example PR.](https://github.com/coreos/fedora-coreos-streams/pull/322)
+
 ## Ship rebased `stable`
 
 - [ ] Ship `stable`
