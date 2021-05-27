@@ -27,7 +27,7 @@ technologies and produce Fedora CoreOS.
 
 - main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 - status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
-- `#fedora-coreos` on IRC (Freenode)
+- IRC: [`#fedora-coreos` on Libera.Chat](ircs://irc.libera.chat:6697/#fedora-coreos)
 - forum at [https://discussion.fedoraproject.org/c/server/coreos](https://discussion.fedoraproject.org/c/server/coreos)
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
 - website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
@@ -58,17 +58,17 @@ See [RELEASES.md](RELEASES.md).
 # Meetings
 
 The Fedora CoreOS Working Group has a weekly meeting. The meeting usually
-happens in `#fedora-meeting-1` on irc.freenode.net and the schedule for the
+happens in `#fedora-meeting-1` on irc.libera.chat and the schedule for the
 meeting can be found here: https://apps.fedoraproject.org/calendar/CoreOS
 Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 ## Steps to run the meeting
 
 - `cd` to a local checkout of this repo and `git pull`
-- Ping [meeting people](https://github.com/coreos/fedora-coreos-tracker/blob/main/meeting-people.txt) in `#fedora-coreos` on freenode
+- Ping [meeting people](https://github.com/coreos/fedora-coreos-tracker/blob/main/meeting-people.txt) in `#fedora-coreos` on libera.chat
     - `bash meeting-people.txt`
     - copy lines of output and paste into `#fedora-coreos` channel
-- Navigate to `#fedora-meeting-1` on freenode
+- Navigate to `#fedora-meeting-1` on libera.chat
 - Type `#startmeeting fedora_coreos_meeting`
 - `#topic roll call`
 
