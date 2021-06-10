@@ -97,6 +97,10 @@ These are various containers in use throughout our ecosystem. We should update o
     - [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/Dockerfile)
 - [ ] Update coreos-installer
     - [Dockerfile](https://github.com/coreos/coreos-installer/blob/main/Dockerfile)
+- [ ] Update Ignition
+    - [Dockerfile.validate](https://github.com/coreos/ignition/blob/main/Dockerfile.validate)
+- [ ] Update Butane
+    - [Dockerfile](https://github.com/coreos/butane/blob/main/Dockerfile)
 - [ ] Update fedora-coreos-cincinnati
     - [Dockerfile](https://github.com/coreos/fedora-coreos-cincinnati/blob/main/dist/fedora-infra/Dockerfile)
 - [ ] Update config-bot
