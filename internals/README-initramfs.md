@@ -27,7 +27,7 @@ Note that Ignition and OSTree are both independent projects consumed by other di
 
 Ignition runs only on the first boot.  To account for this, ignition-dracut ships two targets:
 
-`ignition-complete.target`: Enabled on first boot
+`ignition-complete.target`: Enabled on first boot  
 `ignition-subsequent.target`: Enabled on every boot **except** the first
 
 `-complete` will pull in a lot of units, such as `ignition-fetch.service` and `ignition-disks.service`
