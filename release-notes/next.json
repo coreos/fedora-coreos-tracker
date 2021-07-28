@@ -1,0 +1,154 @@
+[
+  {
+    "release": "35.20220313.1.0",
+    "issues": [
+      {
+        "id": "1048",
+        "title": "networking: consider the effects of BOOTIF kernel argument on nm-initrd-generator"
+      }
+    ]
+  },
+  {
+    "release": "35.20220227.1.1",
+    "issues": [
+      {
+        "id": "1118",
+        "title": "CVE-2022-0847 (The Dirty Pipe Vulnerability)"
+      }
+    ]
+  },
+  {
+    "release": "35.20220227.1.0",
+    "issues": []
+  },
+  {
+    "release": "35.20220213.1.0",
+    "issues": [
+      {
+        "id": "759",
+        "title": "Create /dev/disk/* symlink to boot disk, for use by Ignition config"
+      },
+      {
+        "id": "976",
+        "title": "Handle re-invocations of coreos-installer on a new disk"
+      }
+    ]
+  },
+  {
+    "release": "35.20220131.1.0",
+    "issues": [
+      {
+        "id": "1058",
+        "title": "New Package Request: nano (and explicit choice for default editor)"
+      }
+    ]
+  },
+  {
+    "release": "35.20220116.1.1",
+    "issues": [
+      {
+        "id": "1078",
+        "title": "CVE-2021-4034 (polkit) & CVE-2021-45469 (kernel)"
+      }
+    ]
+  },
+  {
+    "release": "35.20220116.1.0",
+    "issues": []
+  },
+  {
+    "release": "35.20220103.1.1",
+    "issues": [
+      {
+        "id": "1066",
+        "title": "AWS m4.large instances fail to boot starting with 35.20211226.20.0"
+      }
+    ]
+  },
+  {
+    "release": "35.20220103.1.0",
+    "issues": [
+      {
+        "id": "1053",
+        "title": "RFE: generate chrony configuration on AzureStack"
+      }
+    ]
+  },
+  {
+    "release": "35.20211215.1.0",
+    "issues": [
+      {
+        "id": "841",
+        "title": "Support firstboot networking configuration in `/etc/coreos-firstboot-network`"
+      },
+      {
+        "id": "1004",
+        "title": "m6i instances fail to boot - kernel crashlooping"
+      },
+      {
+        "id": "1031",
+        "title": "RFE: use ptp_hyperv hardware clock on Azure"
+      },
+      {
+        "id": "1033",
+        "title": "Ignition's \"wrote ssh authorized keys file\" report accumulates in `/etc/issue`"
+      }
+    ]
+  },
+  {
+    "release": "35.20211203.1.0",
+    "issues": [
+      {
+        "id": "977",
+        "title": "\"Ignition previously ran\" warning when reprovisioning using a non-CoreOS live system"
+      },
+      {
+        "id": "1007",
+        "title": "Platform Request: Nutanix AOS with AHV"
+      }
+    ]
+  },
+  {
+    "release": "35.20211119.1.0",
+    "issues": [
+      {
+        "id": "868",
+        "title": "Support converting the live ISO into a minimal live ISO"
+      },
+      {
+        "id": "917",
+        "title": "Ignition kargs helper should succeed on live systems if kargs are already correct"
+      }
+    ]
+  },
+  {
+    "release": "35.20211107.1.0",
+    "issues": [
+      {
+        "id": "929",
+        "title": "NetworkManager and UDEV race condition"
+      },
+      {
+        "id": "1003",
+        "title": "Incorrect mode (SGID bit set) for directories created via overlay.d in fedora-coreos-config"
+      }
+    ]
+  },
+  {
+    "release": "35.20211029.1.0",
+    "issues": [
+      {
+        "id": "943",
+        "title": "initrd: nm-initrd.service fails to spawn depending on console setup"
+      },
+      {
+        "id": "1005",
+        "title": "F35+: hostname gets set to linux by default if no other answers are found"
+      }
+    ]
+  },
+  {
+    "release": "35.20211025.1.0",
+    "issues": []
+  }
+]
