@@ -50,7 +50,7 @@ koji untag-build coreos-pool $untaglist
 
 ## coreos-installer changes
 
-- [ ] Update coreos-installer to know about the signing key used for the future new major version of Fedora (N+1). Note that the signing keys for N+1 may not be created until releng branches and rawhide becomes N+1.
+- [ ] Update coreos-installer to know about the signing key used for the future new major version of Fedora (N+1). Note that the signing keys for N+1 may not be created until releng branches and rawhide becomes N+1. Drop the signing key for the obsolete stable release (N-1).
 
 ## Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `next-devel`
 
