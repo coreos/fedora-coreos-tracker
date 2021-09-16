@@ -1,7 +1,8 @@
 {
     "stream": "stable",
     "metadata": {
-        "last-modified": "2021-04-28T13:46:31Z"
+        "last-modified": "2021-04-28T13:46:31Z",
+        "generator": "fedora-coreos-stream-generator v0.1.0"
     },
     "architectures": {
         "x86_64": {
