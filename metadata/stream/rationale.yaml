@@ -4,6 +4,7 @@
 stream: stable
 metadata:
   last-modified: "2019-06-04T16:18:34Z"
+  generator: "fedora-coreos-stream-generator v0.1.0"
 architectures:
   x86_64:
     artifacts:
