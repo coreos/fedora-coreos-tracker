@@ -283,6 +283,7 @@
                     }
                 },
                 "gcp": {
+                    "release": "33.20210412.3.0",
                     "project": "fedora-coreos-cloud",
                     "family": "fedora-coreos-stable",
                     "name": "fedora-coreos-33-20210412-3-0-gcp-x86-64"
