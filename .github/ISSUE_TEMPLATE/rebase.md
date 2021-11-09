@@ -94,7 +94,7 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 These are various containers in use throughout our ecosystem. We should update or open a ticket to track updating them once a new Fedora release is out. If you open a ticket instead of doing the update add a link to the ticket as comment.
 
 - [ ] Update coreos-assembler or open ticket to update:
-    - [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/Dockerfile)
+    - [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/ci/Dockerfile)
 - [ ] Update coreos-installer
     - [Dockerfile](https://github.com/coreos/coreos-installer/blob/main/Dockerfile)
 - [ ] Update Ignition
