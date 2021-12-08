@@ -3,6 +3,7 @@
 tail -n +5 $0 | tr '\n' ' ' && echo -e '\nFCOS community meeting in #fedora-meeting-1' && echo "If you don't want to be pinged remove your name from this file: https://github.com/coreos/fedora-coreos-tracker/blob/main/meeting-people.txt"
 exit 0
 
+aaradhak
 davdunc
 dustymabe
 gurssing
