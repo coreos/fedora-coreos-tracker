@@ -28,7 +28,7 @@ technologies and produce Fedora CoreOS.
 - main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 - status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
 - IRC/Matrix: [`#fedora-coreos` on Libera.Chat](https://web.libera.chat/#fedora-coreos) (ircs://irc.libera.chat:6697/#fedora-coreos) or [`#coreos:fedoraproject.org` on Matrix](https://matrix.to/#/#coreos:fedoraproject.org)
-- forum at [https://discussion.fedoraproject.org/c/server/coreos](https://discussion.fedoraproject.org/c/server/coreos)
+- forum at [https://discussion.fedoraproject.org/tag/coreos](https://discussion.fedoraproject.org/tag/coreos)
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
 - website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
 - documentation at [https://docs.fedoraproject.org/en-US/fedora-coreos/](https://docs.fedoraproject.org/en-US/fedora-coreos/)
