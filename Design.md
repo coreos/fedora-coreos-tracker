@@ -84,9 +84,16 @@ The release process integrates with Fedora's release milestones in the following
     - The `next` stream switches to weekly releases to closely track the GA content set.
 - Fedora General Availability
     - Fedora CoreOS re-orients its release schedule in the following way:
-        - Week 0 (GA release): triple release;`next` with latest Fedora N content
-        - Week 1: triple release; `testing` release promoted from previous `next`
-        - Week 3: triple release; `stable` release promoted from previous `testing`, now fully rebased to Fedora N. `next` and `testing` are now in sync.
+        - Week -1 (Fedora "Go" Decision): `next` release:
+          - `next` release with final Fedora GA content
+        - Week 0 (GA release): triple release:
+          - `testing` release promoted from previous `next`
+          - `next` release contains latest Fedora N content, including Bodhi updates
+        - Week 2: triple release:
+          - `stable` release promoted from previous `testing`, now fully rebased to Fedora N
+          - `testing` and `next` are now in sync
+
+We have [a checklist](https://github.com/coreos/fedora-coreos-tracker/blob/main/.github/ISSUE_TEMPLATE/rebase.md) to track the exact steps followed during a rebase.
 
 ### Deprecation
 
