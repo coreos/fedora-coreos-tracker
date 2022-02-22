@@ -27,7 +27,7 @@ A clear and concise description of what actually happened.
  - Fedora CoreOS version
 
 **Ignition config**
-Please attach your FCC or Ignition config used to provision your system. Be sure to sanitize any private data. If not using FCCT to generate your Ignition config, does the Ignition config pass validation using [ignition-validate](https://coreos.github.io/ignition/getting-started/#config-validation)?
+Please attach the Butane config or Ignition config used to provision your system. Be sure to sanitize any private data. If not using Butane to generate your Ignition config, does the Ignition config pass validation using [ignition-validate](https://coreos.github.io/ignition/getting-started/#config-validation)?
 
 **Additional information**
 Add any other information about the problem here.
