@@ -11,6 +11,14 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 - `f${N+1}-coreos-signing-pending`
 - `f${N+1}-coreos-continuous`
 
+- [ ] Add and tag a package (any package) which is in the stable repos into the continuous tag. This will create the initial yum repo that's used as input for building the COSA container.
+
+- `koji add-pkg --owner ${FAS_USERNAME} f${N+1}-coreos-continuous $PKG`
+    - example: `koji add-pkg --owner dustymabe f36-coreos-continuous fedora-release`
+    - This example uses the [`fedora-release`](https://src.fedoraproject.org/rpms/fedora-release) RPM, but it could be any other.
+- `koji tag-build f${N+1}-coreos-continuous $BUILD`
+    - example: `koji tag-build f36-coreos-continuous fedora-release-36-0.16`
+
 - [ ] Add the N+1 signing key short hash (usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2)) to the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the 32/33/34/35 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`).
     - `koji taginfo coreos-pool`
     - `koji edit-tag coreos-pool -x tag2distrepo.keys="12c944d0 9570ff31 45719a39 9867c58f"`
