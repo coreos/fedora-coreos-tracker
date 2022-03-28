@@ -87,6 +87,15 @@ architectures:
               signature: https://artifacts.example.com/oKooheogobofai8l.qcow.xz.sig
               sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
               uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
+      kubevirt:
+        release: 30.1.2.3
+        formats:
+          "qcow.xz":
+            disk:
+              location: https://artifacts.example.com/Kiejeeb6ohpu8Eel.qcow.xz
+              signature: https://artifacts.example.com/Kiejeeb6ohpu8Eel.qcow.xz.sig
+              sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+              uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
       packet:
         release: 30.1.2.3
         formats:
@@ -143,6 +152,10 @@ architectures:
         # We don't control platform ingest, so an image slug is probably
         # the best we can do.
         image: fedora-coreos-stable
+      kubevirt:
+        release: 30.1.2.3
+        # ContainerDisk in a container registry
+        image: exampleregistry.io/fcos/fcos@sha256:67a81539946ec0397196c145394553b8e0241acf27b14ae9de43bc56e167f773
       packet:
         # Images don't have addressable versions, so an operating system
         # slug is the best we can do.
