@@ -121,8 +121,6 @@ architectures:
       aws:
         regions:
           us-east-1:
-            # We know the release because we uploaded it, so might as well
-            # list it.
             release: 30.1.2.3
             image: ami-0123456789abcdef
           us-east-2:
