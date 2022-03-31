@@ -121,8 +121,6 @@ architectures:
       aws:
         regions:
           us-east-1:
-            # We know the release because we uploaded it, so might as well
-            # list it.
             release: 30.1.2.3
             image: ami-0123456789abcdef
           us-east-2:
@@ -135,10 +133,14 @@ architectures:
         # change.
         image: Fedora:CoreOS:stable:latest
       gcp:
-        # We could give a specific image name here, but we probably want
-        # users to always use an image family.  So this is a static string,
-        # and represents advice rather than a value we might change.
-        image: projects/fedora-cloud/global/images/family/fedora-coreos-stable
+        # Ideally users use the project + family.  These are static strings,
+        # and represent advice rather than a value we might change.
+        project: fedora-coreos-cloud
+        family: fedora-coreos-stable
+        # As an alternative, we also list the currently recommended image
+        # and its release.
+        release: 30.1.2.3
+        name: fedora-coreos-30-1-2-3-gcp-x86-64
       digitalocean:
         # We don't control platform ingest, so an image slug is probably
         # the best we can do.
