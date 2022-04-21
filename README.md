@@ -59,7 +59,7 @@ See [RELEASES.md](RELEASES.md).
 
 The Fedora CoreOS Working Group has a weekly meeting. The meeting usually
 happens in `#fedora-meeting-1` on irc.libera.chat and the schedule for the
-meeting can be found here: https://apps.fedoraproject.org/calendar/CoreOS
+meeting can be found here: https://calendar.fedoraproject.org/CoreOS/
 Currently, meetings are at `16:30 UTC` on Wednesdays.
 
 ## Steps to run the meeting
