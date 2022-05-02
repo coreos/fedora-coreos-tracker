@@ -60,6 +60,14 @@ There are multiple services which access the `/boot` partition in the initramfs.
 - (on RHCOS) `rhcos-fips.service`: mounts `/boot` read-write to append `fips=1` to the BLS configs and reboot if FIPS mode is requested. This unit runs after `ignition-fetch.service` but before `ignition-disks.service`.
 - `coreos-boot-edit.service`: mounts `/boot` read-write late in the initramfs process after `ignition-files.service` to make final edits (e.g. remove firstboot networking configuration files if necessary, append rootmap kargs to the BLS configs).
 
+# Multipath handling
+
+Currently, the way multipath is supported is to add `rd.multipath=default` and `root=/dev/disk/by-label/dm-mpath-root` to the kernel command-line. They can be added day-1 or day-2, but the former is recommended. These kargs play different roles. The `root` karg ensures that systemd-fstab-generator will wait until multipathd has assembled the device and the symlink shows up (rather than trying to mount a single path). The `rd.multipath=default` karg will cause [the multipath dracut module to generate a default configuration](https://github.com/dracutdevs/dracut/blob/ab798f6785513c33f9a71371ceea65bd782973d5/modules.d/90multipath/multipathd-configure.service#L10) that `multipathd` will then act on.
+
+Crucially, `rd.multipath` on first boot also makes us assume that the `boot` filesystem is multipathed and wait for `/dev/disk/by-label/dm-mpath-boot` to show up. As seen in the previous section, many things need access to the bootfs on first boot. But we can't do any I/O to the boot device if it's multipathed because it's undefined which of the single paths will win the `by-label/boot` race, and it may be a path that is non-optimized (see [this PR](https://github.com/coreos/fedora-coreos-config/pull/1011) and linked RHBZ for details). Instead of trying to automatically determine if the bootfs is on multipath and whether we should wait for `multipathd` to assemble it (which is subject to race conditions), we decide on whether `rd.multipath` is provided (see also [this discussion](https://github.com/coreos/fedora-coreos-config/pull/1022#discussion_r634631063)).
+
+The `dm-mpath-$label` symlinks are created by [a udev rule we ship](https://github.com/coreos/fedora-coreos-config/blob/8fc657ebb9617a1ab9f1b513123d19ea7775ac68/overlay.d/05core/usr/lib/udev/rules.d/90-coreos-device-mapper.rules#L24).
+
 # SELinux in the initramfs
 
 SELinux policy is loaded in the real root.  This means that every file we create in the initramfs must be relabeled.  See this code: https://github.com/coreos/fedora-coreos-config/blob/testing-devel/overlay.d/05core/usr/lib/dracut/modules.d/40ignition-ostree/coreos-relabel
