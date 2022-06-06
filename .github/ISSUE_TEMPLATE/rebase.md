@@ -1,5 +1,13 @@
 # Rebase to a new version of Fedora (N)
 
+## At previous Fedora major release
+
+### Open tickets to track related work for this release
+
+- [ ] Fedora Changes Considerations ([example](https://github.com/coreos/fedora-coreos-tracker/issues/1222))
+- [ ] Package Additions/Removals ([example](https://github.com/coreos/fedora-coreos-tracker/issues/1221))
+- [ ] Test Week ([example](https://github.com/coreos/fedora-coreos-tracker/issues/1123))
+
 ## At Branching
 
 Branching is when a new stream is "branched" off of `rawhide`. This eventually becomes the next major Fedora (N).
@@ -129,6 +137,11 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 
 - [ ] Ship `stable`
 - Set a new update barrier for N-2 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-631724629).
+
+### Open ticket for the next Fedora rebase
+
+- [ ] Create a new ticket from the [rebase template](https://github.com/coreos/fedora-coreos-tracker/issues/new?assignees=&labels=area%2Fplatforms%2C+kind%2Fenhancement&template=rebase.md&title=tracker:+Rebase+onto+Fedora+N)
+    - label with `FN` label where `N` is the Fedora version.
 
 
 ## Miscellaneous container updates
