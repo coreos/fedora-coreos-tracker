@@ -6,7 +6,7 @@
 
 - [ ] Fedora Changes Considerations ([example](https://github.com/coreos/fedora-coreos-tracker/issues/1222))
 - [ ] Package Additions/Removals ([example](https://github.com/coreos/fedora-coreos-tracker/issues/1221))
-- [ ] Test Week ([example](https://github.com/coreos/fedora-coreos-tracker/issues/1123))
+- [ ] Test Week ([template](https://github.com/coreos/fedora-coreos-tracker/issues/new?template=test-week.md&title=tracker:+FN+Test+Week))
 
 ## At Branching
 
