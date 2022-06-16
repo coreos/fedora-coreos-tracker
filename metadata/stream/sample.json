@@ -46,6 +46,19 @@
                         }
                     }
                 },
+                "azurestack": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "vhd.xz": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-azurestack.x86_64.vhd.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-azurestack.x86_64.vhd.xz.sig",
+                                "sha256": "3bd5baf21335ada861b5e01e8628ba40bc04050a436b9eaa0504ba6c33626a05",
+                                "uncompressed-sha256": "de9d7a5b1f0f69746a807148e1dbf64aa2593ac3d4e152fbb4f657da170dcece"
+                            }
+                        }
+                    }
+                },
                 "digitalocean": {
                     "release": "33.20210412.3.0",
                     "formats": {
@@ -96,6 +109,19 @@
                         }
                     }
                 },
+                "kubevirt": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "qcow2.xz": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-kubevirt.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-kubevirt.x86_64.qcow2.xz.sig",
+                                "sha256": "6343b99ca70975bd821050f274aa1db0898fb88aae95a79f63d18a2e2a489e26",
+                                "uncompressed-sha256": "744f25cf86927fe4780b57cd75c2d5b979e15336e4c9bd02fe4f71827d820d4c"
+                            }
+                        }
+                    }
+                },
                 "metal": {
                     "release": "33.20210412.3.0",
                     "formats": {
@@ -141,6 +167,18 @@
                         }
                     }
                 },
+                "nutanix": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "qcow2": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-nutanix.x86_64.qcow2",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-nutanix.x86_64.qcow2.sig",
+                                "sha256": "650bb496c94c3fc815126daaa6beb2270ae870cb036df5b43c348da00e788dab" 
+                            }
+                        }
+                    }
+                },     
                 "openstack": {
                     "release": "33.20210412.3.0",
                     "formats": {
@@ -163,6 +201,18 @@
                                 "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-qemu.x86_64.qcow2.xz.sig",
                                 "sha256": "8dce159f743c777fe9c429648e8a16928b55d0c1bc8e599a82ba71870fdc5e5a",
                                 "uncompressed-sha256": "a21be448bb0ceee7a373cae232c4cadd979c3db844521d3c10888e42c405c684"
+                            }
+                        }
+                    }
+                },
+                "virtualbox": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "ova": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-virtualbox.x86_64.ova",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-virtualbox.x86_64.ova.sig",
+                                "sha256": "a54f52901817165c74b9d265d8ccf0a6c622006e2a13444fc1145970b8c9135d"
                             }
                         }
                     }

@@ -4,6 +4,22 @@
   "architectures": {
     "x86_64": {
       "media": {
+        "aliyun": {
+          "artifacts": {
+            "qcow2.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-aliyun.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-aliyun.qcow2.xz.sig",
+                "sha256": "8f1492f1e9e94ec3f3ecef188c4a2da52348c4b830f6365181bd03e1d969f161"
+              }
+            }
+          },
+          "images": {
+            "us-east-1": {
+              "image": "m-6wedcb2rfmhkcl2bsbz5"
+            }
+          }
+        },
         "aws": {
           "artifacts": {
             "vmdk.xz": {
@@ -20,13 +36,79 @@
             }
           }
         },
-        "qemu": {
+        "azure": {
+          "artifacts": {
+            "vhd.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azure.vhd.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azure.vhd.xz.sig",
+                "sha256": "4bb0e1595f66f344c1cc084e163c4352235b2accf3a1385b9eb4b3e4ca5b1d24"
+              }
+            }
+          }
+        },
+        "azurestack": {
+          "artifacts": {
+            "vhd.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azurestack.vhd.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azurestack.vhd.xz.sig",
+                "sha256": "344c1cc084e163c4352235b2accf34d24bb0e1595f66fa1385b9eb4b3e4ca5b1"
+              }
+            }
+          }
+        },
+        "digitalocean": {
+          "artifacts": {
+            "qcow2.gz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-digitalocean.qcow2.gz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-digitalocean.qcow2.gz.sig",
+                "sha256": "435224bb0e1595f344c1cc05b1d2484e163c66f35b2accf3a1385b9eb4b3e4ca"
+              }
+            }
+          }
+        },
+        "exoscale": {
           "artifacts": {
             "qcow2.xz": {
               "disk": {
-                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-qemu.qcow2.xz",
-                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-qemu.qcow2.xz.sig",
-                "sha256": "4dcc04bd43f48bc74a16bd7d20b47829591a2a2fbe3ee8d59fedef2b1ddd1264"
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-exoscale.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-exoscale.qcow2.xz.sig",
+                "sha256": "435224bb0e1595f344c1cc05b1d2484e163c66f35b2accf3a1385b9eb4b3e4ca"
+              }
+            }
+          }
+        },
+        "gcp": {
+          "artifacts": {
+            "tar.gz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-gcp.tar.gz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-gcp.tar.gz.sig",
+                "sha256": "344c1cc05b1d2484e163c66f35b2accf3a1385b9eb435224bb0e1595f4b3e4ca"
+              }
+            }
+          }
+        },
+        "ibmcloud": {
+          "artifacts": {
+            "qcow2.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-ibmcloud.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-ibmcloud.qcow2.xz.sig",
+                "sha256": "344c1cc05b1d2484e163c66f35b2accf3a1385b9eb435224bb0e1595f4b3e4ca"
+              }
+            }
+          }
+        },
+        "kubevirt": {
+          "artifacts": {
+            "qcow2.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-kubevirt.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-kubevirt.qcow2.xz.sig",
+                "sha256": "2accf3a1385b9eb435224bb0e1595f4b3e4344c1cc05b1d2484e163c66f35bca"
               }
             }
           }
@@ -40,45 +122,39 @@
                 "sha256": "881178a4794816e623b02012a84b11d59a96dd59035508a0986a5b6c6be074ed"
               }
             },
-            "installer.iso": {
+            "iso": {
               "disk": {
-                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-installer.iso",
-                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-installer.iso.sig",
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live.iso",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live.iso.sig",
                 "sha256": "aab20fcafc240fa03f7e43370f8be8c14b99b045eca156a0f5e77286b2e9e8c4"
               }
             },
-            "installer-pxe": {
+            "pxe": {
               "kernel": {
-                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-installer-kernel",
-                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-installer-kernel.sig",
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live-kernel",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live-kernel.sig",
                 "sha256": "bb493370b3716a009628197b7fce41107f1f5349f1a7ef67a8ecc7eebb3d2183"
               },
               "initramfs": {
-                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-installer-initramfs.img",
-                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-installer-initramfs.img.sig",
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live-initramfs.img",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live-initramfs.img.sig",
                 "sha256": "04dde273b9e5d1b361beb44fde337f915509ad8e128fb408f793fdd0ae84c17d"
+              },
+              "rootfs": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live-rootfs.img",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-live-rootfs.img.sig",
+                "sha256": "509ad8e128fb408f793fdd0ae84c17d04dde273b9e5d1b361beb44fde337f915"
               }
             }
           }
         },
-        "azure": {
+        "nutanix": {
           "artifacts": {
-            "vhd.xz": {
+            "qcow2": {
               "disk": {
-                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azure.vhd.xz",
-                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-azure.vhd.xz.sig",
-                "sha256": "4bb0e1595f66f344c1cc084e163c4352235b2accf3a1385b9eb4b3e4ca5b1d24"
-              }
-            }
-          }
-        },
-        "aliyun": {
-          "artifacts": {
-            "qcow2.xz": {
-              "disk": {
-                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-aliyun.qcow2.xz",
-                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-aliyun.qcow2.xz.sig",
-                "sha256": "8f1492f1e9e94ec3f3ecef188c4a2da52348c4b830f6365181bd03e1d969f161"
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-nutanix.qcow2",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-nutanix.qcow2.sig",
+                "sha256": "1b3e4ca5b1d2463c4352235b2accf95f66f344c1cc084e3a1385b9eb4bb0e154"
               }
             }
           }
@@ -94,6 +170,28 @@
             }
           }
         },
+        "qemu": {
+          "artifacts": {
+            "qcow2.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-qemu.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-qemu.qcow2.xz.sig",
+                "sha256": "4dcc04bd43f48bc74a16bd7d20b47829591a2a2fbe3ee8d59fedef2b1ddd1264"
+              }
+            }
+          }
+        },
+        "virtualbox": {
+          "artifacts": {
+            "ova": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-virtualbox.ova",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-virtualbox.ova.sig",
+                "sha256": "54729f458c1552c19aa2f2b905860fadbe0a714df45d1d49731725038895094c"
+              }
+            }
+          }
+        },
         "vmware": {
           "artifacts": {
             "ova": {
@@ -101,6 +199,17 @@
                 "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-vmware.ova",
                 "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-vmware.ova.sig",
                 "sha256": "b905860fadbe0a754729f458c1552c19aa2f214df45d1d49731725038895094c"
+              }
+            }
+          }
+        },
+        "vultr": {
+          "artifacts": {
+            "raw.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-vultr.raw.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-vultr.raw.xz.sig",
+                "sha256": "d7d20b47829591a2a2fbe3ee8d59fe4dcc04bd43f48bc74a16bdef2b1ddd1264"
               }
             }
           }
