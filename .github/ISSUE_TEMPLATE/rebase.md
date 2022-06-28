@@ -130,6 +130,10 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 
 - [ ] Follow the instructions [here](https://github.com/coreos/fedora-coreos-pipeline/tree/main/next-devel) to disable `next-devel`
 
+### Switch upstream packages to shipping release binaries from Fedora (N)
+
+- [ ] Update [repo-templates](https://github.com/coreos/repo-templates) [config.yaml](https://github.com/coreos/repo-templates/blob/main/config.yaml) with the version number and GPG key ID for Fedora (N).
+
 
 ## After Fedora (N) GA
 
