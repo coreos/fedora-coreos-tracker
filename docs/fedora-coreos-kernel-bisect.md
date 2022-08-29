@@ -54,7 +54,7 @@ environment directly in the VM. If not you'll probably want to use a
 container for your kernel builds. Here's how to start up a container:
 
 ```
-podman run -it --name=kbuild -v /path/to/kernel/git/:/path/to/kernel/git/ registry.fedoraproject.org/fedora:35
+podman run -it --name=kbuild -v /path/to/kernel/git/:/path/to/kernel/git/ registry.fedoraproject.org/fedora:37
 ```
 
 NOTE: try to use the same Fedora Cloud or Fedora container version as
@@ -71,13 +71,13 @@ sudo dnf builddep -y kernel
 
 We can now make changes to the git repo (revert commits, etc) and run a few
 commands to build the kernel. Before building we need to copy down the config
-from the kernel dist-git repo and disable DEBUG symbols if they were enabled
-(makes very large files): 
+from the kernel dist-git repo and disable making a DEBUG kernel if it was enabled,
+which makes very large files:
 
 ```
 cd /path/to/kernel/git/
-curl https://src.fedoraproject.org/rpms/kernel/raw/f35/f/kernel-x86_64-fedora.config > .config
-sed -i 's/CONFIG_DEBUG_INFO=y/CONFIG_DEBUG_INFO=n/' .config
+curl https://src.fedoraproject.org/rpms/kernel/raw/f37/f/kernel-x86_64-fedora.config > .config
+sed -i 's/CONFIG_DEBUG_KERNEL=y/CONFIG_DEBUG_KERNEL=n/' .config
 ```
 
 ## 1. Directly Building and Installing the Kernel from Kernel Source git repo
@@ -151,39 +151,10 @@ sudo rpm-ostree override replace ./kernel-5.17.0_rc8-1.x86_64.rpm --remove=kerne
 ### Doing a Build with COSA
 
 Then copy the built RPM into the `overrides/rpm` folder under the COSA build directory.
-Update the `manifest-lock.overrides.yaml` to specify the kernel and also update the manifest
-to not specify `kernel-core` and `kernel-modules`. Here is an example:
-
-
-```diff
-diff --git a/manifest-lock.overrides.yaml b/manifest-lock.overrides.yaml
-index 62cfbe5..81de60f 100644
---- a/manifest-lock.overrides.yaml
-+++ b/manifest-lock.overrides.yaml
-@@ -8,4 +8,6 @@
- # in the `metadata.reason` key, though it's acceptable to omit a `reason`
- # for FCOS-specific packages (ignition, afterburn, etc.).
- 
--packages: {}
-+packages:
-+  kernel:
-+    evr: 5.17.0_rc8+-2
-diff --git a/manifests/bootable-rpm-ostree.yaml b/manifests/bootable-rpm-ostree.yaml
-index 784acd4..734f374 100644
---- a/manifests/bootable-rpm-ostree.yaml
-+++ b/manifests/bootable-rpm-ostree.yaml
-@@ -7,7 +7,8 @@
- packages:
-  # Kernel + systemd.  Note we explicitly specify kernel-{core,modules}
-  # because otherwise depsolving could bring in kernel-debug.
-- - kernel kernel-core kernel-modules systemd
-+ - kernel systemd
-  # linux-firmware now a recommends so let's explicitly include it
-  # https://gitlab.com/cki-project/kernel-ark/-/commit/32271d0cd9bd52d386eb35497c4876a8f041f70b
-  # https://src.fedoraproject.org/rpms/kernel/c/f55c3e9ed8605ff28cb9a922efbab1055947e213?branch=rawhide
-```
-
 After that you should be able to `cosa fetch --with-cosa-overrides && cosa build` like normal.
+
+While iterating you should be able to skip the `cosa fetch` step. Just delete the old
+RPM out of `overrides/rpm`, put the new one in place and then `cosa build`.
 
 
 ## Performing a Kernel Bisect
@@ -192,3 +163,25 @@ Now that we know how to build and use a kernel in various ways the bisect is
 the easy part. Just follow the
 [upstream kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/bug-bisect.html)
 for doing a `git bisect` and repeat the build/test steps in between each step.
+
+## Reporting issues upstream
+
+Unfortunately the kernel doesn't have any git forge structure. It's
+mostly email and mailing lists. If you want to report an issue
+upstream you can run a command to give you what people/lists to email:
+
+```
+commit=abcdef
+git format-patch --stdout "${commit}^..${commit}" | \
+            ./scripts/get_maintainer.pl --norolestats
+```
+
+example:
+
+```
+$ commit=a09b314
+$ git format-patch --stdout "${commit}^..${commit}" | ./scripts/get_maintainer.pl --norolestats
+Jens Axboe <axboe@kernel.dk>
+linux-block@vger.kernel.org
+linux-kernel@vger.kernel.org
+```
