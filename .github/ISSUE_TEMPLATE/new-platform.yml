@@ -1,0 +1,87 @@
+name: Request a new platform
+description: Ask for Fedora CoreOS to support a new cloud environment
+title: "Platform Request: <platform name>"
+labels: ["area/platforms", "kind/enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        In order to implement support for a new cloud platform in Fedora CoreOS, we need to know several things about the platform. Please try to answer as many questions as you can.
+
+  - type: textarea
+    id: newplatform-user
+    attributes:
+      label: Why is the platform important?  Who uses it?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-name
+    attributes:
+      label: What is the official name of the platform?  Is there a short name that's commonly used in client API implementations?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-userdata
+    attributes:
+      label: How can the OS retrieve instance userdata?  What happens if no userdata is provided?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-sshkeys
+    attributes:
+      label: Does the platform provide a way to configure SSH keys for the instance?  How can the OS retrieve them?  What happens if none are provided?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-network
+    attributes:
+      label: How can the OS retrieve network configuration?  Is DHCP sufficient, or is there some other network-accessible metadata service?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-hostname
+    attributes:
+      label: In particular, how can the OS retrieve the system hostname?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-console
+    attributes:
+      label: Does the platform require the OS to have a specific console configuration?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-boot-success
+    attributes:
+      label: Is there a mechanism for the OS to report to the platform that it has successfully booted?  Is the mechanism required?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-agent
+    attributes:
+      label: Does the platform have an agent that runs inside the instance?  Is it required?  What does it do?  What language is it implemented in, and where is the source code repository?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-image-upload
+    attributes:
+      label: How are VM images uploaded to the platform and published to other users?  Is there an API?  What disk image format is expected?
+    validations:
+      required: false
+
+  - type: textarea
+    id: newplatform-quirks
+    attributes:
+      label: Are there any other platform quirks we should know about?
+    validations:
+      required: false
