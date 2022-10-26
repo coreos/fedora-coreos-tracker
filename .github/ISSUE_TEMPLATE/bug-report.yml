@@ -1,0 +1,70 @@
+name: Report a bug
+description: Report an issue with Fedora CoreOS
+labels: ["kind/bug"]
+assignees: []
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+      placeholder: I'm using foo on bar and it fails with foobar.
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-reproduction
+    attributes:
+      label: Reproduction steps
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-expected
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+      placeholder: Foo should succeed without errors.
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-actual
+    attributes:
+      label: Actual behavior
+      description: A clear and concise description of what actually happened.
+      placeholder: Foo failed with ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-system
+    attributes:
+      label: System details
+      description: Version (`rpm-ostree status -b`) and platform (Bare Metal/QEMU/AWS/GCP/etc.) where you've seen the issue.
+      placeholder: |
+       - Bare Metal/QEMU/AWS/GCP/etc.
+       - Fedora CoreOS version
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-ignition
+    attributes:
+      label: Ignition config
+      description: The Butane config or Ignition config used to provision your system. Be sure to sanitize any private data. If not using Butane to generate your Ignition config, does the Ignition config pass validation using [ignition-validate](https://coreos.github.io/ignition/getting-started/#config-validation)?
+    validations:
+      required: false
+
+  - type: textarea
+    id: bug-additional
+    attributes:
+      label: Additional information
+      description: Add any other information about the problem here.
+    validations:
+      required: false

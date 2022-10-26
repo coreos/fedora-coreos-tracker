@@ -1,0 +1,84 @@
+name: Request a new package
+description: Ask for a new package to be added to Fedora CoreOS
+title: "New Package Request: <package name>"
+labels: ["kind/enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please try to answer the following questions about the package you are requesting.
+
+  - type: textarea
+    id: newpackage-dependencies
+    attributes:
+      label: What, if any, are the additional dependencies on the package? (i.e. does it pull in Python, Perl, etc)
+      description: Paste here the output of `rpm-ostree install --dry-run <package>` from a fresh Fedora CoreOS node.
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-size
+    attributes:
+      label: What is the size of the package and its dependencies?
+      description: Paste here the output of `rpm -qi <package>` for each package mentioned above.
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-solution
+    attributes:
+      label: What problem are you trying to solve with this package? Or what functionality does the package provide?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-container
+    attributes:
+      label: Can the software provided by the package be run from a container?  Explain why or why not.
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-debug-container
+    attributes:
+      label: Can the tool(s) provided by the package be helpful in debugging container runtime issues?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-debug-network
+    attributes:
+      label: Can the tool(s) provided by the package be helpful in debugging networking issues?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-day2
+    attributes:
+      label: Is it possible to layer the package onto the base OS as a day 2 operation?  Explain why or why not.
+      description: Can the package be installed on first boot or later with `rpm-ostree install <package>`?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-service
+    attributes:
+      label: In the case of packages providing services and binaries, can the packaging be adjusted to just deliver binaries?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-interpreter
+    attributes:
+      label: Can the tool(s) provided by the package be used to do things we’d rather users not be able to do in FCOS?
+      description: E.g. can it be abused as a Turing complete interpreter?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-
+    attributes:
+      label: Does the software provided by the package have a history of CVEs?
+    validations:
+      required: true

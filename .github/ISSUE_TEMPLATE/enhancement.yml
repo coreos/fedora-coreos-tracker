@@ -1,0 +1,32 @@
+name: Request an enhancement
+description: Request a new feature in Fedora CoreOS
+labels: ["kind/enhancement"]
+assignees: []
+body:
+  - type: textarea
+    id: enhancement-description
+    attributes:
+      label: Describe the enhancement
+      description: A clear and concise description of the desired feature.
+      placeholder: I want to use foo with bar on Fedora CoreOS.
+    validations:
+      required: true
+
+  - type: textarea
+    id: enhancement-system
+    attributes:
+      label: System details
+      description: Platform (Bare Metal/QEMU/AWS/GCP/etc.) where you'd want to see this feature. Version you've tried that does not have it.
+      placeholder: |
+       - Bare Metal/QEMU/AWS/GCP/etc.
+       - Fedora CoreOS version
+    validations:
+      required: false
+
+  - type: textarea
+    id: enhancement-additional
+    attributes:
+      label: Additional information
+      description: Add any other information about the problem here.
+    validations:
+      required: false
