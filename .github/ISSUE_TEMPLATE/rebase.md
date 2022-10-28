@@ -43,7 +43,7 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 ### Enable `branched` stream
 
 - [ ] Update [manifest.yaml](https://github.com/coreos/fedora-coreos-config/blob/branched/manifest.yaml) to list N as the releasever.
-- [ ] Update [streams.groovy](https://github.com/coreos/fedora-coreos-pipeline/blob/main/streams.groovy) to include the `branched` stream in the list of mechanical refs.
+- [ ] Update [config.yaml](https://github.com/coreos/fedora-coreos-pipeline/blob/main/config.yaml) to un-comment out the `branched` stream definition.
 
 
 ## At Fedora (N) Beta
@@ -52,13 +52,19 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 
 - [ ] Bump `releasever` in `manifest.yaml`
 - [ ] Update the repos in `manifest.yaml` if needed
-- [ ] Run `cosa fetch --update-lockfile`
+- [ ] Run `cosa fetch --dry-run --update-lockfile`
+    - this updates the x86_64 lockfile - the others will get updated when `bump-lockfile` runs.
+    - in the future we may support [this](https://github.com/coreos/coreos-assembler/issues/3088) in `cosa fetch` directly
 - [ ] PR the result
+
+- [ ] Re-enable `next-devel` if needed ([docs](https://github.com/coreos/fedora-coreos-pipeline/tree/main/next-devel))
+- [ ] Disable `branched` stream since it is no longer needed.
+    - Update [config.yaml](https://github.com/coreos/fedora-coreos-pipeline/blob/main/config.yaml) to comment out the `branched` stream definition.
 
 ### Ship rebased `next`
 
 - [ ] Ship `next`
-- Set a new update barrier for N-2 on `next`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-631724629).
+- [ ] Set a new update barrier for the final release of N-1 on `next`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
 
 ## Preparing for Fedora (N) GA
@@ -67,7 +73,7 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 
 - [ ] Bump `releasever` in `manifest.yaml`
 - [ ] Update the repos in `manifest.yaml` if needed
-- [ ] Run `cosa fetch --update-lockfile`
+- [ ] Sync the lockfiles for all arches from `next-devel`
 - [ ] Bump the base Fedora version in `ci/buildroot/Dockerfile`
 - [ ] PR the result
 
@@ -77,7 +83,7 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 ### Ship rebased `testing`
 
 - [ ] Ship `testing`
-- Set a new update barrier for N-2 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-631724629).
+- [ ] Set a new update barrier for the final release of N-1 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
 ### Disable `branched` stream
 
@@ -92,29 +98,46 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 ```
 f32key=12c944d0
 key=$f32key
-untaglist=''
+echo > untaglist # create or empty out file
 for build in $(koji list-tagged --quiet coreos-pool | cut -f1 -d' '); do
     if koji buildinfo $build | grep $key 1>/dev/null; then
-        untaglist+="${build} "
         echo "Adding $build to untag list"
+        echo "${build}" >> untaglist
     fi
 done
 ```
 
-- [ ] Now we have a list of builds to untag. But we need one more sanity check. Let's make sure none of those are actually being used. Fire up the latest FCOS `testing-devel` and run:
+Now we have a list of builds to untag. But we need a few more sanity checks.
+
+- [ ] Make sure none of the builds are used in `N` based FCOS. Check by running:
 
 ```
 f32key=12c944d0
 key=$f32key
-rpm -qai | grep -B 8 $key
+podman run -it --rm quay.io/fedora/fedora-coreos:testing-devel rpm -qai | grep -B 9 $key
+podman rmi quay.io/fedora/fedora-coreos:testing-devel
 ```
 
 If there are any RPMs signed by the old key they'll need to be investigated. Maybe they shouldn't be used any longer. Or maybe they're still needed.
 
-- [ ] After verifying the list looks good:
+- [ ] For any RPMS still used by `N-1` based FCOS let's remove them from the untaglist. Check by running:
 
 ```
-koji untag-build coreos-pool $untaglist
+f32key=12c944d0
+key=$f32key
+podman run -it --rm quay.io/fedora/fedora-coreos:stable rpm -qai | grep -B 9 $key
+podman rmi quay.io/fedora/fedora-coreos:stable
+```
+
+NOTE: This assumes `stable` is still on `N-1`.
+
+Remove any entries from the `untaglist` file that are still being used.
+
+- [ ] After verifying the list looks good, untag:
+
+```
+# use xargs so we don't exhaust bash string limit
+cat untaglist | xargs -L50 koji untag-build coreos-pool
 ```
 
 - [ ] Now that untagging is done, give a heads up to rpm-ostree developers that N-2 packages have been untagged and that they may need to update their CI compose tests to freeze on a newer FCOS commit.
@@ -140,7 +163,7 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 ### Ship rebased `stable`
 
 - [ ] Ship `stable`
-- Set a new update barrier for N-2 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-631724629).
+- [ ] Set a new update barrier for the final release of N-1 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
 ### Open ticket for the next Fedora rebase
 
