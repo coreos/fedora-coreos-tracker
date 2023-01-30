@@ -205,6 +205,19 @@
                         }
                     }
                 },
+                "qemu-secex": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "qcow2.xz": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-qemu-secex.x86_64.qcow2.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-qemu-secex.x86_64.qcow2.xz.sig",
+                                "sha256": "2afbb0ac4a19f58a55db35db0a690d488f065664e9bcba1b802966f0ae6aad57",
+                                "uncompressed-sha256": "2b1cb667f3468ef7b462e5ec8395fcd2982e424d1727336e95f74c611d8bbd53"
+                            }
+                        }
+                    }
+                },
                 "virtualbox": {
                     "release": "33.20210412.3.0",
                     "formats": {
