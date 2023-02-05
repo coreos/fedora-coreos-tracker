@@ -57,7 +57,10 @@ body:
     id: bug-ignition
     attributes:
       label: Ignition config
-      description: The Butane config or Ignition config used to provision your system. Be sure to sanitize any private data. If not using Butane to generate your Ignition config, does the Ignition config pass validation using [ignition-validate](https://coreos.github.io/ignition/getting-started/#config-validation)?
+      description: The Butane config or Ignition config used to provision your system. Be sure to sanitize any private data. If not using Butane to generate your Ignition config, ensure the Ignition config passes validation using [ignition-validate](https://coreos.github.io/ignition/getting-started/#config-validation).
+      # Might be Butane YAML or Ignition JSON, which is upward-compatible
+      # with YAML
+      render: yaml
     validations:
       required: false
 
