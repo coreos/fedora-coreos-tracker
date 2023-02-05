@@ -181,6 +181,17 @@
             }
           }
         },
+        "qemu-secex": {
+          "artifacts": {
+            "qcow2.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-qemu-secex.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-qemu-secex.qcow2.xz.sig",
+                "sha256": "2afbb0ac4a19f58a55db35db0a690d488f065664e9bcba1b802966f0ae6aad57"
+              }
+            }
+          }
+        },
         "virtualbox": {
           "artifacts": {
             "ova": {
