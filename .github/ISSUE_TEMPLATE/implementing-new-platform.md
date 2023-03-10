@@ -4,30 +4,22 @@
 
 Create PR's addressing the following:
 
-- [ ] [stream-metadata-go](https://github.com/coreos/stream-metadata-go)
-  - [Example PR](https://github.com/coreos/stream-metadata-go/pull/45/)
+- [ ] [stream-metadata-go](https://github.com/coreos/stream-metadata-go) ([example PR](https://github.com/coreos/stream-metadata-go/pull/45/))
   - [ ] Add platform to the `Media` struct in `release/release.go`
   - [ ] Add supporting code for new platform to `toStreamArch` func in `release/translate.go`
   - [ ] (Cloud Only) Cloud Images need to have an `Images` field
-- [ ] (Cloud Only) [stream-metadata-rust](https://github.com/coreos/stream-metadata-rust/)
-  - [Example PR](https://github.com/coreos/stream-metadata-rust/pull/16)
-- [ ] [fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker/)
-  - [Example PR](https://github.com/coreos/fedora-coreos-tracker/pull/1213/)
+- [ ] (Cloud Only) [stream-metadata-rust](https://github.com/coreos/stream-metadata-rust/) ([example PR](https://github.com/coreos/stream-metadata-rust/pull/16))
+- [ ] [fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker/) ([example PR](https://github.com/coreos/fedora-coreos-tracker/pull/1213))
   - [ ] Update the metadata for the new platform
-- [ ] [coreos-assembler](https://github.com/coreos/coreos-assembler)
-  - [Example PR](https://github.com/coreos/coreos-assembler/pull/2489)
+- [ ] [coreos-assembler](https://github.com/coreos/coreos-assembler) ([example PR](https://github.com/coreos/coreos-assembler/pull/2489))
   - [ ] Implement required functionality to support new platform
-- [ ] [fedora-web](https://pagure.io/fedora-web/websites)
-  - [Example PR](https://pagure.io/fedora-web/websites/pull-request/221#request_diff)
+- [ ] [fedora-web](https://pagure.io/fedora-web/websites) ([example PR](https://pagure.io/fedora-web/websites/pull-request/221#request_diff))
   - [ ] Add platform to `sites/static/js/coreos-download.js`
-- [ ] [fedora-coreos-browser](https://github.com/coreos/fedora-coreos-browser)
-  - [Example PR](https://github.com/coreos/fedora-coreos-browser/pull/35)
+- [ ] [fedora-coreos-browser](https://github.com/coreos/fedora-coreos-browser) ([example PR](https://github.com/coreos/fedora-coreos-browser/pull/35))
   - [ ] Add a list element for new platform in `browser/index.html`
-- [ ] [build pipeline](https://github.com/coreos/fedora-coreos-pipeline)
-  - [Example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/500)
+- [ ] [build pipeline](https://github.com/coreos/fedora-coreos-pipeline) ([example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/500))
   - [ ] Add platform to the list found in `jobs/build.Jenkinsfile` for building the new artifact
-- [ ] [fedora-coreos-docs](https://github.com/coreos/fedora-coreos-docs)
-  - [Example PR](https://github.com/coreos/fedora-coreos-docs/pull/377)
+- [ ] [fedora-coreos-docs](https://github.com/coreos/fedora-coreos-docs) ([example PR](https://github.com/coreos/fedora-coreos-docs/pull/377))
   - [ ] Add a `provisioning-<platform>.adoc` that walks through how to setup the new platform
   - [ ] Add an entry in the `modules/ROOT/nav.adoc` that points to new documentation
 
