@@ -4,6 +4,14 @@
 
 Create PR's addressing the following:
 
+- [ ] [Ignition](https://github.com/coreos/ignition/) ([example PR](https://github.com/coreos/ignition/pull/918))
+  - [ ] Add userdata fetch
+  - [ ] If the platform supports it (unlikely), add userdata deletion
+- [ ] [Afterburn](https://github.com/coreos/afterburn/) ([example PR](https://github.com/coreos/afterburn/pull/451))
+  - [ ] (Cloud Only) Add relevant attributes
+  - [ ] (Cloud Only) Add SSH key support if available
+  - [ ] (Cloud Only) Add hostname support if available
+  - [ ] (Cloud Only) Add check-in if needed (unlikely)
 - [ ] [stream-metadata-go](https://github.com/coreos/stream-metadata-go) ([example PR](https://github.com/coreos/stream-metadata-go/pull/45/))
   - [ ] Add platform to the `Media` struct in `release/release.go`
   - [ ] Add supporting code for new platform to `toStreamArch` func in `release/translate.go`
@@ -13,18 +21,23 @@ Create PR's addressing the following:
   - [ ] Update the metadata for the new platform
 - [ ] [coreos-assembler](https://github.com/coreos/coreos-assembler) ([example PR](https://github.com/coreos/coreos-assembler/pull/2489))
   - [ ] Implement required functionality to support new platform
+- [ ] [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/)
+  - [ ] Add a stanza to `platforms.yaml` if the system should use a serial console, or both serial and graphical consoles
 - [ ] [fedora-web](https://pagure.io/fedora-web/websites) ([example PR](https://pagure.io/fedora-web/websites/pull-request/221#request_diff))
   - [ ] Add platform to `sites/static/js/coreos-download.js`
 - [ ] [fedora-coreos-browser](https://github.com/coreos/fedora-coreos-browser) ([example PR](https://github.com/coreos/fedora-coreos-browser/pull/35))
   - [ ] Add a list element for new platform in `browser/index.html`
-- [ ] [build pipeline](https://github.com/coreos/fedora-coreos-pipeline) ([example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/500))
-  - [ ] Add platform to the list found in `jobs/build.Jenkinsfile` for building the new artifact
+- [ ] [build pipeline](https://github.com/coreos/fedora-coreos-pipeline) ([example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/815))
+  - [ ] Add platform to the list found in `config.yaml` for building the new artifact
 - [ ] [fedora-coreos-docs](https://github.com/coreos/fedora-coreos-docs) ([example PR](https://github.com/coreos/fedora-coreos-docs/pull/377))
   - [ ] Add a `provisioning-<platform>.adoc` that walks through how to setup the new platform
   - [ ] Add an entry in the `modules/ROOT/nav.adoc` that points to new documentation
 
 ## At Release
 
+1. Merge upstream changes and put out a release:
+   - [ ] Ignition
+   - [ ] Afterburn
 1. Merge metadata changes:
    - [ ] stream-metadata-go
    - [ ] stream-metadata-rust
