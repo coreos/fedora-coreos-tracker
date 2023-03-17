@@ -104,10 +104,10 @@
         },
         "kubevirt": {
           "artifacts": {
-            "qcow2.xz": {
+            "ociarchive": {
               "disk": {
-                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-kubevirt.qcow2.xz",
-                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-kubevirt.qcow2.xz.sig",
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-kubevirt.ociarchive",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-kubevirt.ociarchive.sig",
                 "sha256": "2accf3a1385b9eb435224bb0e1595f4b3e4344c1cc05b1d2484e163c66f35bca"
               }
             }

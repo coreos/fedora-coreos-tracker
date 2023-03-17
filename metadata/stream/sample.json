@@ -112,12 +112,11 @@
                 "kubevirt": {
                     "release": "33.20210412.3.0",
                     "formats": {
-                        "qcow2.xz": {
+                        "ociarchive": {
                             "disk": {
-                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-kubevirt.x86_64.qcow2.xz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-kubevirt.x86_64.qcow2.xz.sig",
-                                "sha256": "6343b99ca70975bd821050f274aa1db0898fb88aae95a79f63d18a2e2a489e26",
-                                "uncompressed-sha256": "744f25cf86927fe4780b57cd75c2d5b979e15336e4c9bd02fe4f71827d820d4c"
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-kubevirt.x86_64.ociarchive",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-kubevirt.x86_64.ociarchive.sig",
+                                "sha256": "6343b99ca70975bd821050f274aa1db0898fb88aae95a79f63d18a2e2a489e26"
                             }
                         }
                     }
