@@ -85,6 +85,24 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 - [ ] Ship `testing`
 - [ ] Set a new update barrier for the final release of N-1 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
+### Disable `next-devel` stream
+
+We prefer to disable `next-devel` when there is no difference between `testing-devel` and `next-devel`. This allows us to prevent wasting a bunch of resources (bandwidth, storage, compute) for no reason. After the switch to N if `next-devel` and `testing-devel` are in lockstep, then disable `next-devel`.
+
+- [ ] Follow the instructions [here](https://github.com/coreos/fedora-coreos-pipeline/tree/main/next-devel) to disable `next-devel`
+
+### Switch upstream packages to shipping release binaries from Fedora (N)
+
+- [ ] Update [repo-templates](https://github.com/coreos/repo-templates) [config.yaml](https://github.com/coreos/repo-templates/blob/main/config.yaml) with the version number and GPG key ID for Fedora (N).
+
+
+## After Fedora (N) GA
+
+### Ship rebased `stable`
+
+- [ ] Ship `stable`
+- [ ] Set a new update barrier for the final release of N-1 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
+
 ### Untag old packages
 
 `koji untag` N-2 packages from the pool (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). For example the following snippet finds all RPMs signed by the Fedora 32 key and untags them. Use this process:
@@ -141,25 +159,6 @@ cat untaglist | xargs -L50 koji untag-build coreos-pool
 - [ ] Remove the N-2 signing key from the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the 33/34/35 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`).
     - `koji taginfo coreos-pool`
     - `koji edit-tag coreos-pool -x tag2distrepo.keys="9570ff31 45719a39 9867c58f"`
-
-
-### Disable `next-devel` stream
-
-We prefer to disable `next-devel` when there is no difference between `testing-devel` and `next-devel`. This allows us to prevent wasting a bunch of resources (bandwidth, storage, compute) for no reason. After the switch to N if `next-devel` and `testing-devel` are in lockstep, then disable `next-devel`.
-
-- [ ] Follow the instructions [here](https://github.com/coreos/fedora-coreos-pipeline/tree/main/next-devel) to disable `next-devel`
-
-### Switch upstream packages to shipping release binaries from Fedora (N)
-
-- [ ] Update [repo-templates](https://github.com/coreos/repo-templates) [config.yaml](https://github.com/coreos/repo-templates/blob/main/config.yaml) with the version number and GPG key ID for Fedora (N).
-
-
-## After Fedora (N) GA
-
-### Ship rebased `stable`
-
-- [ ] Ship `stable`
-- [ ] Set a new update barrier for the final release of N-1 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
 ### Open ticket for the next Fedora rebase
 
