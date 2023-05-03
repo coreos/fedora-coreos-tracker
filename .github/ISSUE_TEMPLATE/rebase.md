@@ -85,10 +85,6 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 - [ ] Ship `testing`
 - [ ] Set a new update barrier for the final release of N-1 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
-### Disable `branched` stream
-
-- [ ] Update [streams.groovy](https://github.com/coreos/fedora-coreos-pipeline/blob/main/streams.groovy) to remove the `branched` stream in the list of mechanical refs.
-
 ### Untag old packages
 
 `koji untag` N-2 packages from the pool (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). For example the following snippet finds all RPMs signed by the Fedora 32 key and untags them. Use this process:
