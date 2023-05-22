@@ -169,6 +169,9 @@ These are various containers in use throughout our ecosystem. We should update o
     - [Dockerfile](https://github.com/coreos/butane/blob/main/Dockerfile)
 - [ ] Update fedora-coreos-cincinnati
     - [Dockerfile](https://github.com/coreos/fedora-coreos-cincinnati/blob/main/dist/fedora-infra/Dockerfile)
+    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-cincinnati/templates/imagestream.yml)
+    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-cincinnati/templates/buildconfig.yml)
+    - [Git Hash Variables (Optional)](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-cincinnati/vars)
 - [ ] Update config-bot
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/config-bot/Dockerfile)
 - [ ] Update coreos-koji-tagger
@@ -179,3 +182,7 @@ These are various containers in use throughout our ecosystem. We should update o
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/coreos-ostree-importer/Dockerfile)
     - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-ostree-importer/templates/imagestream.yml)
     - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-ostree-importer/templates/buildconfig.yml)
+- [ ] Update fedora-ostree-pruner
+    - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/fedora-ostree-pruner/Dockerfile)
+    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/fedora-ostree-pruner/templates/imagestream.yml)
+    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/fedora-ostree-pruner/templates/buildconfig.yml)
