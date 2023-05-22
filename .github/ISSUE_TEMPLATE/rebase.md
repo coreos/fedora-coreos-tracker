@@ -140,7 +140,7 @@ If there are any RPMs signed by the old key they'll need to be investigated. May
 
 ```
 # use xargs so we don't exhaust bash string limit
-cat untaglist | xargs -L50 koji untag-build coreos-pool
+cat untaglist | xargs -L50 koji untag-build -v coreos-pool
 ```
 
 - [ ] Now that untagging is done, give a heads up to rpm-ostree developers that N-2 packages have been untagged and that they may need to update their CI compose tests to freeze on a newer FCOS commit.
