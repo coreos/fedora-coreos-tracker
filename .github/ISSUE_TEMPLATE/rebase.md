@@ -132,20 +132,9 @@ podman run -it --rm quay.io/fedora/fedora-coreos:testing-devel rpm -qai | grep -
 podman rmi quay.io/fedora/fedora-coreos:testing-devel
 ```
 
-If there are any RPMs signed by the old key they'll need to be investigated. Maybe they shouldn't be used any longer. Or maybe they're still needed.
+If there are any RPMs signed by the old key they'll need to be investigated. Maybe they shouldn't be used any longer. Or maybe they're still needed. One example of this is the shim RPM where the same build could be used for many Fedora releases. In this case you'll need to untag the RPM from `coreos-pool`, run a `koji distrepo`, which will remove that RPM from the repo metadata, and then re-tag it into the pool. The RPM in the repo will now be signed with a newer signing key.
 
-- [ ] For any RPMS still used by `N-1` based FCOS let's remove them from the untaglist. Check by running:
 
-```
-f32key=12c944d0
-key=$f32key
-podman run -it --rm quay.io/fedora/fedora-coreos:stable rpm -qai | grep -B 9 $key
-podman rmi quay.io/fedora/fedora-coreos:stable
-```
-
-NOTE: This assumes `stable` is still on `N-1`.
-
-Remove any entries from the `untaglist` file that are still being used.
 
 - [ ] After verifying the list looks good, untag:
 
