@@ -37,7 +37,7 @@ Here's a summary of what those branches are used for:
 
 - `os-build`
     - The latest bits that track the under development yet to be release kernel.
-- `fedora-5.16`
+- `fedora-6.3`
     - Follows a particular released kernel stream. This is where things are
       merged before they are fed into dist-git. If you want a commit reverted
       this is where it will land first.
@@ -54,7 +54,7 @@ environment directly in the VM. If not you'll probably want to use a
 container for your kernel builds. Here's how to start up a container:
 
 ```
-podman run -it --name=kbuild -v /path/to/kernel/git/:/path/to/kernel/git/ registry.fedoraproject.org/fedora:37
+podman run -it --name=kbuild -v /path/to/kernel/git/:/path/to/kernel/git/ registry.fedoraproject.org/fedora:38
 ```
 
 NOTE: try to use the same Fedora Cloud or Fedora container version as
