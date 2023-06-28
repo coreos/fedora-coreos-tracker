@@ -23,8 +23,10 @@ Create PR's addressing the following:
   - [ ] Implement required functionality to support new platform
 - [ ] [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/)
   - [ ] Add a stanza to `platforms.yaml` if the system should use a serial console, or both serial and graphical consoles
-- [ ] [fedora-web](https://pagure.io/fedora-web/websites) ([example PR](https://pagure.io/fedora-web/websites/pull-request/221#request_diff))
-  - [ ] Add platform to `sites/static/js/coreos-download.js`
+- [ ] [fedora-websites-3.0](https://gitlab.com/fedora/websites-apps/fedora-websites/fedora-websites-3.0/)
+  - [ ] Add friendly name for platform to `components/utilities/FpDownloadItem.vue`
+  - [ ] Add artifact to `pages/coreos/download.vue`
+  - [ ] Possibly add logo to `content/editions/coreos/home.yml`
 - [ ] [fedora-coreos-browser](https://github.com/coreos/fedora-coreos-browser) ([example PR](https://github.com/coreos/fedora-coreos-browser/pull/35))
   - [ ] Add a list element for new platform in `browser/index.html`
 - [ ] [build pipeline](https://github.com/coreos/fedora-coreos-pipeline) ([example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/815))
@@ -44,27 +46,12 @@ Create PR's addressing the following:
    - [ ] fedora-coreos-tracker
    - [ ] fedora website
    - [ ] fedora-coreos-browser
-1. Create and push signed tags with appropriate versions
-   ```
-   # Ensure gpg key for signing in github settings that is associated to redhat email.
-   # Verify you are on the upstream repo's main branch.
-
-   git status
-
-   RELEASE_VER=vx.y.z
-   # Replace 'x.y.z' with the appropriate numbers.
-
-   git tag -s ${RELEASE_VER}
-   # Give appropriate detail to tag, check previous tags with 'git show ${RELEASE_VER}'
-
-   git push git@github.com:coreos/targeted-repo.git ${RELEASE_VER}
-   # Navigate to the targeted-repo's tag section to ensure a valid signed tag is listed.
-   # e.g. https://github.com/...repo/tags
-   ```
-   1. [ ] Tag stream-metadata-go following the above steps. After tagging, ensure that dependabot has picked up latest version, and merged it into fedora-coreos-stream-generator && coreos-assembler.
-      - These can be triggered manually by navigating to [fedora-coreos-stream-generator's Dependabot](https://github.com/coreos/fedora-coreos-stream-generator/network/updates/) and [coreos-assembler's Dependabot](https://github.com/coreos/coreos-assembler/network/updates) respectively; then, clicking "Check for updates".
-        - This might need to be done a few times, as the Dependabot might not pickup tag changes for a few attempts after initial tagging.
-   2. [ ] Tag fedora-coreos-stream-generator following the above steps.
+1. Release updated components
+   - [ ] Create and follow release checklist for [stream-metadata-go](https://github.com/coreos/stream-metadata-go/blob/main/docs/development.md#release-process)
+   - [ ] Ensure that Dependabot has PRed stream-metadata-go into fedora-coreos-stream-generator and coreos-assembler.  Merge the update PRs.
+     - This can be triggered manually by navigating to [fedora-coreos-stream-generator's Dependabot](https://github.com/coreos/fedora-coreos-stream-generator/network/updates/) and [coreos-assembler's Dependabot](https://github.com/coreos/coreos-assembler/network/updates) respectively, then clicking "Check for updates".
+       - This might need to be done a few times, as Dependabot might not pick up tag changes for a few attempts after initial tagging.
+   - [ ] Create and follow release checklist for [fedora-coreos-stream-generator](https://github.com/coreos/fedora-coreos-stream-generator/blob/main/docs/development.md#release-process)
 1. Merge the following changes:
    - [ ] coreos-assembler
 1. Wait for updates made to coreos-assembler to be propagated to latest container
