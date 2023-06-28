@@ -23,8 +23,10 @@ Create PR's addressing the following:
   - [ ] Implement required functionality to support new platform
 - [ ] [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/)
   - [ ] Add a stanza to `platforms.yaml` if the system should use a serial console, or both serial and graphical consoles
-- [ ] [fedora-web](https://pagure.io/fedora-web/websites) ([example PR](https://pagure.io/fedora-web/websites/pull-request/221#request_diff))
-  - [ ] Add platform to `sites/static/js/coreos-download.js`
+- [ ] [fedora-websites-3.0](https://gitlab.com/fedora/websites-apps/fedora-websites/fedora-websites-3.0/)
+  - [ ] Add friendly name for platform to `components/utilities/FpDownloadItem.vue`
+  - [ ] Add artifact to `pages/coreos/download.vue`
+  - [ ] Possibly add logo to `content/editions/coreos/home.yml`
 - [ ] [fedora-coreos-browser](https://github.com/coreos/fedora-coreos-browser) ([example PR](https://github.com/coreos/fedora-coreos-browser/pull/35))
   - [ ] Add a list element for new platform in `browser/index.html`
 - [ ] [build pipeline](https://github.com/coreos/fedora-coreos-pipeline) ([example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/815))
