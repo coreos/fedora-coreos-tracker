@@ -96,6 +96,18 @@
                         }
                     }
                 },
+                "hyperv": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "vhdx.zip": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-hyperv.x86_64.vhdx.zip",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-hyperv.x86_64.vhdx.zip.sig",
+                                "sha256": "728e876d87ec71de27fc1d882840e6877346423433339a2b8606fa28e57413fd"
+                            }
+                        }
+                    }
+                },
                 "ibmcloud": {
                     "release": "33.20210412.3.0",
                     "formats": {
