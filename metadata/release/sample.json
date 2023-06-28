@@ -91,6 +91,17 @@
             }
           }
         },
+        "hyperv": {
+          "artifacts": {
+            "vhdx.zip": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-hyperv.vhdx.zip",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-hyperv.vhdx.zip.sig",
+                "sha256": "a889159d661339e635372b807f0a98bb93c64aabfaf89a801b2f03491488f0ef"
+              }
+            }
+          }
+        },
         "ibmcloud": {
           "artifacts": {
             "qcow2.xz": {
