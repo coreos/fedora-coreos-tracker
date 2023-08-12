@@ -64,7 +64,7 @@ Once inside the VM or container we need to install some software to build the ke
 
 ```
 sudo dnf update -y && \
-sudo dnf install -y rpm-build rsync 'dnf-command(builddep)' && \
+sudo dnf install -y make rpm-build rsync 'dnf-command(builddep)' && \
 sudo dnf builddep -y kernel
 # reboot here if in a VM
 ```
@@ -76,7 +76,9 @@ which makes very large files:
 
 ```
 cd /path/to/kernel/git/
-curl https://src.fedoraproject.org/rpms/kernel/raw/f37/f/kernel-x86_64-fedora.config > .config
+RELEASE=f38 # or RELEASE=rawhide
+curl "https://src.fedoraproject.org/rpms/kernel/raw/${RELEASE}/f/kernel-x86_64-fedora.config" > .config.fedora
+cp .config.fedora .config
 sed -i 's/CONFIG_DEBUG_KERNEL=y/CONFIG_DEBUG_KERNEL=n/' .config
 ```
 
@@ -86,8 +88,10 @@ To build and install the kernel directly on the system (i.e. on Fedora Cloud Bas
 you can run the following:
 
 ```
+# Set make target. See https://src.fedoraproject.org/rpms/kernel/blob/rawhide/f/kernel.spec
+make_target=bzImage # for x86_64 or vmlinux(ppc64le) or vmlinuz.efi(aarch64)
 make olddefconfig
-make -j$(nproc) bzImage
+make -j$(nproc) $make_target
 make -j$(nproc) modules
 sudo make modules_install
 sudo make install
@@ -109,7 +113,12 @@ Then run the following script to build and install the kernel:
 cat build.sh
 #!/bin/bash
 set -eux -o pipefail
-make -j$(nproc) bzImage
+cp .config.fedora .config
+sed -i 's/CONFIG_DEBUG_KERNEL=y/CONFIG_DEBUG_KERNEL=n/' .config
+# Set make target. See https://src.fedoraproject.org/rpms/kernel/blob/rawhide/f/kernel.spec
+make_target=bzImage # for x86_64 or vmlinux(ppc64le) or vmlinuz.efi(aarch64)
+make olddefconfig
+make -j$(nproc) $make_target
 make -j$(nproc) modules
 sudo make modules_install
 sudo make install
@@ -125,6 +134,12 @@ set -eux -o pipefail
 sudo cp /boot/grub2/grub.cfg.bak /boot/grub2/grub.cfg 
 sudo rm -vf /boot/initramfs*bisect* /boot/vmlinuz-*bisect* /boot/System.map-*bisect*
 sudo rm -rf /lib/modules/*bisect*
+```
+
+Then you can automate with:
+
+```
+bash clean.sh && bash build.sh
 ```
 
 ## 2. Directly Building and Creating an RPM from the Kernel Source git repo
@@ -185,3 +200,30 @@ Jens Axboe <axboe@kernel.dk>
 linux-block@vger.kernel.org
 linux-kernel@vger.kernel.org
 ```
+
+## Testing out fixes with Fedora's kernel
+
+Once you have a proposed fix/patch you can easily build a Fedora kernel RPM by
+adding your patch to the [`linux-kernel-test.patch` file](https://docs.fedoraproject.org/en-US/quick-docs/kernel/testing-patches/#_applying_the_patch)
+in the [kernel distgit repo](https://src.fedoraproject.org/rpms/kernel).
+
+After adding your patch you can then use `fedpkg` to build a new
+kernel for your target architecture. For example:
+
+```
+fedpkg scratch-build --srpm --arch=x86_64
+```
+
+Once the build is complete you can grab the RPMs using the `koji` CLI:
+
+```
+koji download-task <task_id>
+```
+
+Placing these RPMs into the `overrides/rpm` directory and do a new COSA build
+will give you a CoreOS build with the patched kernel.
+
+After the tested patch looks good you can then open a PR to the `fedora-X.Y`
+branch in the `kernel-ark` repo. See the above
+[Kernel Source git Repos](#kernel-source-git-repos)
+section for more details.
