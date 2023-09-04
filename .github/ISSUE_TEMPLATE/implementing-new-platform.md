@@ -2,7 +2,7 @@
 
 ## During Development
 
-Create PR's addressing the following:
+Create PRs addressing the following:
 
 - [ ] [Ignition](https://github.com/coreos/ignition/) ([example PR](https://github.com/coreos/ignition/pull/918))
   - [ ] Add userdata fetch
