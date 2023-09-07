@@ -51,7 +51,7 @@ Examples:
 
 ## quay.io/coreos-assembler namespace
 
-A key aspect of Fedora CoreOS as well as RHEL CoreOS is [coreos-assembler](https://github.com/coreos/coreos-assembler).  As of today, we build it in quay.io and deliver it that way in the `quay.io/coreos-assembler` namespace.  The list of administrators for this namespace is managed independently of anything else.  If you think you need administrator access, file a ticket or ask on #fedora-coreos IRC.
+A key aspect of Fedora CoreOS as well as RHEL CoreOS is [coreos-assembler](https://github.com/coreos/coreos-assembler).  As of today, we build it in quay.io and deliver it that way in the `quay.io/coreos-assembler` namespace.  The list of administrators for this namespace is managed independently of anything else.  If you think you need administrator access, file a ticket or ask on `#coreos:fedoraproject.org` on Matrix.
 
 ### The buildroot container: quay.io/coreos-assembler/fcos-buildroot:testing-devel
 
