@@ -25,14 +25,14 @@ technologies and produce Fedora CoreOS.
 
 # Communication channels for Fedora CoreOS
 
-- main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
-- status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
+- Main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
+- Status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
 - Chat room: [`#coreos:fedoraproject.org` on Matrix](https://matrix.to/#/#coreos:fedoraproject.org)
   - Note that meetings still happen on IRC for now (see below).
-- forum at [https://discussion.fedoraproject.org/tag/coreos](https://discussion.fedoraproject.org/tag/coreos)
-- feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
-- website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
-- documentation at [https://docs.fedoraproject.org/en-US/fedora-coreos/](https://docs.fedoraproject.org/en-US/fedora-coreos/)
+- Forum at [https://discussion.fedoraproject.org/tag/coreos](https://discussion.fedoraproject.org/tag/coreos)
+- Feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
+- Website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
+- Documentation at [https://docs.fedoraproject.org/en-US/fedora-coreos/](https://docs.fedoraproject.org/en-US/fedora-coreos/)
 - Twitter: [@fedoracoreos](https://twitter.com/fedoracoreos)
 
 # Roadmap/Plans
