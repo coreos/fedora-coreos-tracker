@@ -27,7 +27,7 @@ technologies and produce Fedora CoreOS.
 
 - Main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 - Status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
-- Chat room: [`#coreos:fedoraproject.org` on Matrix](https://matrix.to/#/#coreos:fedoraproject.org)
+- Chat room: [`#coreos:fedoraproject.org` on Matrix](https://chat.fedoraproject.org/#/room/#coreos:fedoraproject.org)
   - Note that meetings still happen on IRC for now (see below).
 - Forum at [https://discussion.fedoraproject.org/tag/coreos](https://discussion.fedoraproject.org/tag/coreos)
 - Feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
