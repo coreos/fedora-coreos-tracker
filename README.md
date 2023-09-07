@@ -27,15 +27,8 @@ technologies and produce Fedora CoreOS.
 
 - main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 - status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
-- Chat rooms:
-  - Matrix: [`#coreos:fedoraproject.org` on Matrix](https://matrix.to/#/#coreos:fedoraproject.org)
-  - IRC: [`#fedora-coreos` on Libera.Chat](https://web.libera.chat/#fedora-coreos) (ircs://irc.libera.chat:6697/#fedora-coreos)
-  - As of 2023-08-06 14UTC, the two rooms are not bridged together anymore thus
-    writing a message to IRC will not reach Matrix users (and vice versa). Note
-    that a lot of CoreOS developers have moved to Matrix thus the IRC channel
-    is likely to get less attention and we recommend joining via Matrix. See
-    [Matrix to libera.chat (IRC) bridge unavailable](https://communityblog.fedoraproject.org/matrix-to-libera-chat-irc-bridge-unavailable/).
-    The meetings still happen on IRC for now.
+- Chat room: [`#coreos:fedoraproject.org` on Matrix](https://matrix.to/#/#coreos:fedoraproject.org)
+  - Note that meetings still happen on IRC for now (see below).
 - forum at [https://discussion.fedoraproject.org/tag/coreos](https://discussion.fedoraproject.org/tag/coreos)
 - feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
 - website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
