@@ -70,11 +70,17 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 
 ## Preparing for Fedora (N) GA
 
+Do these steps as soon as we have a Go confirmation for GA, usually the Thursday of the week before GA.
+
 ### Ship a final `next` release
 
 If the packages in `next-devel` don't exactly match the last `next` release that was done, we need to do a release with the final GA content. This ensures that what we'll promote to `testing` has the exact content in GA (plus version fast-tracks). This usually happens on the Thursday of the announcement of Go.
 
 - [ ] Ensure final `next` release has GA content
+
+### Build rebased `testing`
+
+- [ ] Build `testing`; promote it from the `next` branch instead of `testing-devel`. Don't release it yet (i.e. don't run the `release` job).
 
 ### Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `testing-devel`
 
@@ -87,12 +93,14 @@ If the packages in `next-devel` don't exactly match the last `next` release that
 
 ## At Fedora (N) GA
 
-### Ship rebased `testing`
+Do these steps on GA day.
 
-- [ ] Ship `testing`; promote it from the `next` branch instead of `testing-devel`
+### Release rebased `testing`
+
+- [ ] Run the `release` job and start rollout.
 - [ ] Set a new update barrier for the final release of N-1 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
-### Disable `next-devel` stream
+### Disable `next-devel` stream if not needed
 
 We prefer to disable `next-devel` when there is no difference between `testing-devel` and `next-devel`. This allows us to prevent wasting a bunch of resources (bandwidth, storage, compute) for no reason. After the switch to N if `next-devel` and `testing-devel` are in lockstep, then disable `next-devel`.
 
