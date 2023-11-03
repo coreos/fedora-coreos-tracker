@@ -70,6 +70,12 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 
 ## Preparing for Fedora (N) GA
 
+### Ship a final `next` release
+
+If the packages in `next-devel` don't exactly match the last `next` release that was done, we need to do a release with the final GA content. This ensures that what we'll promote to `testing` has the exact content in GA (plus version fast-tracks). This usually happens on the Thursday of the announcement of Go.
+
+- [ ] Ensure final `next` release has GA content
+
 ### Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `testing-devel`
 
 - [ ] Bump `releasever` in `manifest.yaml`
