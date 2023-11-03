@@ -51,6 +51,7 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 ### Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `next-devel`
 
 - [ ] Bump `releasever` in `manifest.yaml`
+- [ ] Add the `fedora-candidate-compose` repo in `manifest.yaml` ([example PR](https://github.com/coreos/fedora-coreos-config/pull/2706))
 - [ ] Update the repos in `manifest.yaml` if needed
 - [ ] Run `cosa fetch --dry-run --update-lockfile`
     - this updates the x86_64 lockfile - the others will get updated when `bump-lockfile` runs.
@@ -95,6 +96,9 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 
 - [ ] Update [repo-templates](https://github.com/coreos/repo-templates) [config.yaml](https://github.com/coreos/repo-templates/blob/main/config.yaml) with the version number and GPG key ID for Fedora (N).
 
+### Disable the `fedora-candidate-compose` repo
+
+- [ ] Remove from the `manifest.yaml` of `next-devel` the `fedora-candidate-compose` repo
 
 ## After Fedora (N) GA
 
