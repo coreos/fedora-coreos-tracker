@@ -89,7 +89,7 @@ If the packages in `next-devel` don't exactly match the last `next` release that
 
 ### Ship rebased `testing`
 
-- [ ] Ship `testing`
+- [ ] Ship `testing`; promote it from the `next` branch instead of `testing-devel`
 - [ ] Set a new update barrier for the final release of N-1 on `testing`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
 ### Disable `next-devel` stream
