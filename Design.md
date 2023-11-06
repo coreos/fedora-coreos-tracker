@@ -87,6 +87,7 @@ The release process integrates with Fedora's release milestones in the following
         - Week -1 (Fedora "Go" Decision): `next` release:
           - `next` release with final Fedora GA content
         - Week 0 (GA release): triple release:
+          - `stable` release promoted from previous `testing` (on N-1)
           - `testing` release promoted from previous `next`
           - `next` release contains latest Fedora N content, including Bodhi updates
         - Week 2: triple release:
