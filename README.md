@@ -73,6 +73,14 @@ meeting on IRC.
 
 ## Steps to run the meeting
 
+The fedora meeting host can follow the guide which is curated by the [fcos-meeting-action](https://github.com/coreos/fcos-meeting-action) repo.
+Every Wednesday a new checklist will be available in the form of a issue in the fcos-meeting-action repo, which can be used to run the meeting.
+
+If the action meeting repo is not available for some reason, the host can follow the below steps to run the meeting.
+<details>
+<summary>Legacy Meeting steps</summary>
+## Steps to run the meeting
+
 - `cd` to a local checkout of this repo and `git pull`
 - Ping [meeting people](https://github.com/coreos/fedora-coreos-tracker/blob/main/meeting-people.txt) in `#fedora-coreos` on libera.chat
     - `bash meeting-people.txt`
@@ -134,6 +142,7 @@ Log:  <URL to meetbot .log.html>
 
 <Copy/paste content of meetbot .txt>
 ```
+</details>
 
 # Voting
 
