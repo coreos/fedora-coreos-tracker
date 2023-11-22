@@ -28,7 +28,6 @@ technologies and produce Fedora CoreOS.
 - Main mailing list: [coreos@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/)
 - Status mailing list: [coreos-status@lists.fedoraproject.org](https://lists.fedoraproject.org/archives/list/coreos-status@lists.fedoraproject.org/) (announcements/important messages)
 - Chat room: [`#coreos:fedoraproject.org` on Matrix](https://chat.fedoraproject.org/#/room/#coreos:fedoraproject.org)
-  - Note that meetings still happen on IRC for now (see below).
 - Forum at [https://discussion.fedoraproject.org/tag/coreos](https://discussion.fedoraproject.org/tag/coreos)
 - Feature planning and important issue tracking at [github.com/coreos/fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker)
 - Website at [https://getfedora.org/coreos/](https://getfedora.org/coreos/)
@@ -59,17 +58,16 @@ See [RELEASES.md](RELEASES.md).
 # Meetings
 
 The Fedora CoreOS Working Group has a weekly meeting. The meeting usually
-happens in `#fedora-meeting-1` on irc.libera.chat
-([Webchat](https://web.libera.chat/#fedora-meeting-1)) and the schedule for the
-meeting can be found here: https://calendar.fedoraproject.org/CoreOS/
-Currently, meetings are at `16:30 UTC` on Wednesdays.
+happens in
+[#meeting-1:fedoraproject.org](https://matrix.to/#/#meeting-1:fedoraproject.org)
+on Matrix and the schedule for the meeting can be found here:
+https://calendar.fedoraproject.org/CoreOS/ Currently, meetings are at `16:30
+UTC` on Wednesdays.
 
 As the
 [Matrix/IRC bridge is down](https://communityblog.fedoraproject.org/matrix-to-libera-chat-irc-bridge-unavailable/),
-it is currently not possible to attend the meeting from a Matrix account and
-you have to join using IRC. You can use the
-[Webchat](https://web.libera.chat/#fedora-meeting-1) to temporarily join the
-meeting on IRC.
+it is currently not possible to attend the meeting from IRC and you have to
+join using Matrix.
 
 ## Steps to run the meeting
 
@@ -84,47 +82,49 @@ If the action meeting repo is not available for some reason, the host can follow
 - `cd` to a local checkout of this repo and `git pull`
 - Ping [meeting people](https://github.com/coreos/fedora-coreos-tracker/blob/main/meeting-people.txt) in `#fedora-coreos` on libera.chat
     - `bash meeting-people.txt`
-    - copy lines of output and paste into `#fedora-coreos` channel
-- Navigate to `#fedora-meeting-1` on libera.chat
-- Type `#startmeeting fedora_coreos_meeting`
-- `#topic roll call`
+    - copy lines of output and paste into
+      [`#coreos:fedoraproject.org`](https://chat.fedoraproject.org/#/room/#coreos:fedoraproject.org)
+      on Matrix
+- Navigate to
+  [`#meeting-1:fedoraproject.org`](https://matrix.to/#/#meeting-1:fedoraproject.org)
+  on Matrix
+- Type:
+  - `!startmeeting fedora_coreos_meeting`
+  - `!topic roll call`
 
 Wait for 2-4 minutes for people to check in for the roll call.
 
-- `#chair` all the people present for the meeting
-- `#topic Action items from last meeting`
+- `!topic Action items from last meeting`
 
-Find the last meeting log from
-[meetbot](https://meetbot-raw.fedoraproject.org/teams/fedora_coreos_meeting)
-and post the action items in the meeting for people to
-update the status of.
+Find the last meeting log from [meetbot](https://meetbot.fedoraproject.org/)
+and post the action items in the meeting for people to update the status of.
 
 - After they are done move to each `meeting` ticket from
   [this tracker](https://github.com/coreos/fedora-coreos-tracker/labels/meeting)
 
 Do the following for each ticket
 
-- `#topic` Ticket subject
-- `#link` link\_to\_the\_ticket
+- `!topic` Ticket subject
+- `!link <link_to_the_ticket>`
 
 During the meeting, you can give people action items for them to complete:
 
-- `#action <nickname>` description of what needs to be done
+- `!action <nickname>` description of what needs to be done
 
 When all topics are over, go for open floor:
 
-- `#topic Open Floor`
+- `!topic Open Floor`
 
 After open floor, end the meeting.
 
-- `#endmeeting`
+- `!endmeeting`
 
 Then, when convenient:
 
 - Remove `meeting` labels from [tickets that were discussed](https://github.com/coreos/fedora-coreos-tracker/labels/meeting)
 
 - Send an email to [coreos@lists.fedoraproject.org](mailto:coreos@lists.fedoraproject.org) with the
-details of the meeting from [meetbot page](https://meetbot.fedoraproject.org/sresults/?group_id=fedora_coreos_meeting&type=team).
+details of the meeting from [meetbot page](https://meetbot.fedoraproject.org/).
 Minutes in textual format are directly available using `.txt` as URL extension.
 It's easiest to get the Minutes/Minutes (text)/Log URLs by copying the
 footer that Meetbot prints after `#endmeeting`. You can see examples in the
