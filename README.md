@@ -65,9 +65,8 @@ https://calendar.fedoraproject.org/CoreOS/ Currently, meetings are at `16:30
 UTC` on Wednesdays.
 
 As the
-[Matrix/IRC bridge is down](https://communityblog.fedoraproject.org/matrix-to-libera-chat-irc-bridge-unavailable/),
-it is currently not possible to attend the meeting from IRC and you have to
-join using Matrix.
+[Matrix bridge to Libera Chat is shutdown](https://matrix.org/blog/2023/11/28/shutting-down-bridge-to-libera-chat/),
+you can not attend the meeting from IRC and you have to join using Matrix.
 
 ## Steps to run the meeting
 
@@ -75,9 +74,9 @@ The fedora meeting host can follow the guide which is curated by the [fcos-meeti
 Every Wednesday a new checklist will be available in the form of a issue in the fcos-meeting-action repo, which can be used to run the meeting.
 
 If the action meeting repo is not available for some reason, the host can follow the below steps to run the meeting.
+
 <details>
 <summary>Legacy Meeting steps</summary>
-## Steps to run the meeting
 
 - `cd` to a local checkout of this repo and `git pull`
 - Ping [meeting people](https://github.com/coreos/fedora-coreos-tracker/blob/main/meeting-people.txt) in `#fedora-coreos` on libera.chat
