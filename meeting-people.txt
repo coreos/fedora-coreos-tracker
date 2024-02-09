@@ -12,6 +12,7 @@ guidon
 gursewak
 jaimelm
 jbrooks
+jbtrystram
 jcajka
 jdoss
 jlebon
