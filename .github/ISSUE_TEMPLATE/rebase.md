@@ -34,6 +34,8 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 ### coreos-installer changes
 
 - [ ] Update coreos-installer to know about the signing key used for the future new major version of Fedora (N+1).
+    - The current set of trusted signing keys is available at https://fedoraproject.org/security/.
+    - If the Fedora (N+1) signing key isn't available yet at that site, you can also get it from https://src.fedoraproject.org/rpms/fedora-repos/tree/rawhide.
 - [ ] Drop the signing key for the obsolete stable release (N-2).
 
 Example PR: https://github.com/coreos/coreos-installer/pull/1113
