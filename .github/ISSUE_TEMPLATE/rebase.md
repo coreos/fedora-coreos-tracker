@@ -36,15 +36,16 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 - [ ] Update coreos-installer to know about the signing key used for the future new major version of Fedora (N+1).
 - [ ] Drop the signing key for the obsolete stable release (N-2).
 
+Example PR: https://github.com/coreos/coreos-installer/pull/1113
+
 ### Update `rawhide` stream
 
-- [ ] Update [manifest.yaml](https://github.com/coreos/fedora-coreos-config/blob/rawhide/manifest.yaml) to list N+1 as the releasever.
+- [ ] Update [manifest.yaml](https://github.com/coreos/fedora-coreos-config/blob/rawhide/manifest.yaml) to list N+1 as the releasever ([example PR](https://github.com/coreos/fedora-coreos-config/pull/2855))
 
 ### Enable `branched` stream
 
-- [ ] Update [manifest.yaml](https://github.com/coreos/fedora-coreos-config/blob/branched/manifest.yaml) to list N as the releasever.
-- [ ] Update [config.yaml](https://github.com/coreos/fedora-coreos-pipeline/blob/main/config.yaml) to un-comment out the `branched` stream definition.
-
+- [ ] Update [manifest.yaml](https://github.com/coreos/fedora-coreos-config/blob/branched/manifest.yaml) to list N as the releasever ([example PR](https://github.com/coreos/fedora-coreos-config/pull/2549))
+- [ ] Update [config.yaml](https://github.com/coreos/fedora-coreos-pipeline/blob/main/config.yaml) to un-comment out the `branched` stream definition ([example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/904))
 
 ## At Fedora (N) Beta
 
