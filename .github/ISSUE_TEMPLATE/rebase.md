@@ -184,6 +184,7 @@ These are various containers in use throughout our ecosystem. We should update o
 
 - [ ] Update coreos-assembler or open ticket to update:
     - [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/Dockerfile)
+    - [Dockerfiles for kola test containers](https://github.com/coreos/coreos-assembler/tree/main/tests/containers)
 - [ ] Update coreos-installer
     - [Dockerfile](https://github.com/coreos/coreos-installer/blob/main/Dockerfile)
 - [ ] Update Ignition
