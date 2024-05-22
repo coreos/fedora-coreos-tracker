@@ -18,7 +18,7 @@ conclusion should be summarized here with a link to the issue.
 
 ## OSTree Delivery Format
 
-- Originally discussed in issue [#23](https://github.com/coreos/fedora-coreos-tracker/issues/23). 
+- Originally discussed in issue [#23](https://github.com/coreos/fedora-coreos-tracker/issues/23).
 
 ### Summary:
 
@@ -29,7 +29,7 @@ end user systems:
   repo) on a server and fetched via HTTP requests.
 - rojig: uses a special rojig RPM and re-assembles OSTree commit from RPMs
   already on mirrors.
-- OCI: OSTree commits are packaged up in OCI container images and delivered 
+- OCI: OSTree commits are packaged up in OCI container images and delivered
   via a container registry.
 
 Currently the plan in Fedora CoreOS is to deliver content via a plain
@@ -102,7 +102,7 @@ Because production refs are unversioned, users will seamlessly upgrade between F
 
 ## Disk Layout
 
-- Originally discussed in issue [#18](https://github.com/coreos/fedora-coreos-tracker/issues/18). 
+- Originally discussed in issue [#18](https://github.com/coreos/fedora-coreos-tracker/issues/18).
   See also [dustymabe's comment](https://github.com/coreos/fedora-coreos-tracker/issues/18#issuecomment-409668929)
   summarizing the discussion in the FCOS meeting.
 - Filesystem details were discussed in [#33](https://github.com/coreos/fedora-coreos-tracker/issues/33).
@@ -228,7 +228,7 @@ Originally discussed in [#71](https://github.com/coreos/fedora-coreos-tracker/is
 Originally discussed in [#68](https://github.com/coreos/fedora-coreos-tracker/issues/68).
 
 - OpenStack environments do not require a cloud agent
-- We will provide any base level of functionality with ignition and coreos-metadata 
+- We will provide any base level of functionality with ignition and coreos-metadata
 
 ### Packet:
 
@@ -345,8 +345,6 @@ next-devel | 10
 testing-devel | 20
 rawhide | 91
 branched | 92
-bodhi-updates-testing | 93
-bodhi-updates | 94
 
 For developer builds (those not produced by the official pipeline), Z is always `dev`.
 
@@ -365,8 +363,6 @@ next-devel | 31.20191018.10.10 | 11th build of the day
 testing-devel | 31.20191018.20.0 |
 rawhide | 33.20191018.91.0 | F33-based, first build of the day
 branched | 32.20191018.92.0 |
-bodhi-updates-testing | 31.20191018.93.0 |
-bodhi-updates | 31.20191018.94.0 |
 (any developer build) | 31.20191018.dev.2 | Third build of the day
 
 We are not committing to this version scheme indefinitely, and may change it in future if it proves unworkable.  A new Fedora major release (X bump) would be a good time to make such a change.  We don't intend Fedora CoreOS version numbers to be parsed by machine; they're meant to help humans quickly determine the salient properties of a release.
