@@ -126,6 +126,10 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 - [ ] Ship `stable`
 - [ ] Set a new update barrier for the final release of N-1 on `stable`. In the barrier entry set a link to [the docs](https://docs.fedoraproject.org/en-US/fedora-coreos/update-barrier-signing-keys/). See [discussion](https://github.com/coreos/fedora-coreos-tracker/issues/480#issuecomment-1247314065)
 
+### Update CoreOS Greenwave settings
+
+- [ ] Open an MR against https://pagure.io/fedora-infra/ansible to remove the N-1 Fedora release from the version list in [fedora.yaml](https://pagure.io/fedora-infra/ansible/blob/c636c0581319b655cdc49079bd3793eb78abbe78/f/roles/openshift-apps/greenwave/templates/fedora.yaml#_528) (see https://pagure.io/fedora-infra/ansible/pull-request/2036 for context).
+
 ### Untag old packages
 
 `koji untag` N-2 packages from the pool (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). For example the following snippet finds all RPMs signed by the Fedora 32 key and untags them. Use this process:
