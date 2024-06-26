@@ -80,4 +80,3 @@ RPMs and our configuration into images and ostree commits.
 Projects:
 
  - https://github.com/coreos/coreos-assembler
- - https://github.com/coreos/fedora-coreos-releng-automation/blob/main/coreos-meta-translator/trans.py
