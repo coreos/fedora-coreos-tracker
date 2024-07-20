@@ -19,3 +19,4 @@
 @ravanelli:fedora.im
 @walters:fedora.im
 @ydesouza:fedora.im
+@yves:siegrist.io
