@@ -93,6 +93,7 @@ If the packages in `next-devel` don't exactly match the last `next` release that
 - [ ] Update the repos in `manifest.yaml` if needed
 - [ ] Sync the lockfiles for all arches from `next-devel`
 - [ ] Bump the base Fedora version in `ci/buildroot/Dockerfile`
+- [ ] Bump the Fedora version for the test containers in `tests/kola/data/commonlib.sh`
 - [ ] PR the result
 
 
