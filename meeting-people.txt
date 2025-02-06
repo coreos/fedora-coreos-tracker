@@ -2,6 +2,7 @@
 # Please keep this list in alphabetical order.
 @aaradhak:matrix.org
 @apiaseck:matrix.org
+@bri:transfem.dev
 @davdunc:fedora.im
 @dustymabe:matrix.org
 @guidon:guidon.ems.host
