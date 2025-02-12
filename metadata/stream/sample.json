@@ -26,7 +26,7 @@
                         "raw.gz": {
                             "disk": {
                                 "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-applehv.x86_64.raw.gz",
-                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-hyperv.x86_64.raw.gz.sig",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-applehv.x86_64.raw.gz.sig",
                                 "sha256": "728e876d87ec71de27fc1d882840e6877346423433339a2b8606fa28e57413fd"
                             }
                         }
@@ -104,6 +104,18 @@
                                 "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-gcp.x86_64.tar.gz",
                                 "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-gcp.x86_64.tar.gz.sig",
                                 "sha256": "76fcc10bbba4517678217a81f95095702e83dc8ed3a2bc2d10062de214b55396"
+                            }
+                        }
+                    }
+                },
+                "hetzner": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "raw.xz": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-hetzner.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-hetzner.x86_64.raw.xz.sig",
+                                "sha256": "728e876d87ec71de27fc1d882840e6877346423433339a2b8606fa28e57413fd"
                             }
                         }
                     }
