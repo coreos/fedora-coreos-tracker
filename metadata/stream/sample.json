@@ -108,6 +108,18 @@
                         }
                     }
                 },
+                "hetzner": {
+                    "release": "33.20210412.3.0",
+                    "formats": {
+                        "raw.xz": {
+                            "disk": {
+                                "location": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-hetzner.x86_64.raw.xz",
+                                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/33.20210412.3.0/x86_64/fedora-coreos-33.20210412.3.0-hetzner.x86_64.raw.xz.sig",
+                                "sha256": "728e876d87ec71de27fc1d882840e6877346423433339a2b8606fa28e57413fd"
+                            }
+                        }
+                    }
+                },
                 "hyperv": {
                     "release": "33.20210412.3.0",
                     "formats": {
