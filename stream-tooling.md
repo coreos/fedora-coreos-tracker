@@ -2,7 +2,7 @@
 
 ## Introduction
 
-FCOS have multiple streams:
+FCOS has multiple streams:
 
 | Type | Name (SCM branch and ostree ref) | ostree repo |
 | -- | -- | -- |
@@ -66,7 +66,7 @@ The **testing-devel** content is propagated to the **testing** and **next** stre
 
 #### When Fedora Branched exist
 
-Before every released, there is a stabilisation period. A branch is created from rawhide, the next release enters it's [branched](https://docs.fedoraproject.org/en-US/releases/branched/) state.
+Before every release, there is a stabilisation period. A branch is created from rawhide, the next release enters its [branched](https://docs.fedoraproject.org/en-US/releases/branched/) state.
 During that time, the **next-devel** stream is enabled.
 The **branched** stream is built daily with the content of the `fedora-branched` repository. If the build successfully pass the tests,
 the resulting lockfiles are committed to the **next-devel** branch of `fedora-coreos-config`.
@@ -75,7 +75,7 @@ When the branched release of fedora is promoted to `beta`, the **next-devel** co
 
 #### Rawhide
 
-The **rawhide** stream is daily built from the `fedora rawhide packages. When there is no `fedora-branched` release, the **branched** stream mirrors
+The **rawhide** stream is daily built from the `fedora rawhide` packages. When there is no `fedora-branched` release, the **branched** stream mirrors
 **rawhide**. This stream allow us to monitor changes early and react accordingly. The results are not used in any lockfiles.
 
 ### How will releases happen?
