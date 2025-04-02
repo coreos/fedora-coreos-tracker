@@ -20,7 +20,8 @@ Create PRs addressing the following:
 - [ ] [fedora-coreos-tracker](https://github.com/coreos/fedora-coreos-tracker/) ([example PR](https://github.com/coreos/fedora-coreos-tracker/pull/1213))
   - [ ] Update the metadata for the new platform
 - [ ] [coreos-assembler](https://github.com/coreos/coreos-assembler) ([example PR](https://github.com/coreos/coreos-assembler/pull/2489))
-  - [ ] Implement required functionality to support new platform
+  - [ ] Updated `cmd-generate-release-meta`
+  - [ ] `cosa osbuild <platform>` works
 - [ ] [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/)
   - [ ] Add a stanza to `platforms.yaml` if the system should use a serial console, or both serial and graphical consoles
 - [ ] [fedora-websites-3.0](https://gitlab.com/fedora/websites-apps/fedora-websites/fedora-websites-3.0/)
