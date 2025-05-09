@@ -22,3 +22,4 @@
 @walters:fedora.im
 @ydesouza:fedora.im
 @yves:siegrist.io
+@bipinbn:fedora.im
