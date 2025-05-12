@@ -177,3 +177,23 @@ Working days: non-holiday weekdays. Relevant holidays are the national holidays 
 # Working Group Members and Points of Contact
 
 Please see [meeting-people.txt](https://github.com/coreos/fedora-coreos-tracker/blob/main/meeting-people.txt).
+
+# Metrics
+
+To view CountME stats you can use a tool called
+[sqlitevis](https://sqliteviz.com/) to view the
+CountME database and make graphs. This can easily be done with a
+single URL but due to [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS)
+you have to run your browser in a specific mode to allow the
+application to download the database and the inquiries file:
+
+```
+chromium-browser --disable-web-security --user-data-dir ~/chrome-disable-web-security/
+# OR
+google-chrome-stable --disable-web-security --user-data-dir ~/chrome-disable-web-security/
+```
+
+Now navigate to
+[this](https://sqliteviz.com/app/#/load?data_url=https%3A%2F%2Fdata-analysis.fedoraproject.org%2Fcsv-reports%2Fcountme%2Ftotals-countme.db&data_format=sqlite&inquiry_url=https%3A%2F%2Fraw.githubusercontent.com%2Fcoreos%2Ffedora-coreos-tracker%2Frefs%2Fheads%2Fmain%2Fmetrics%2Ffcos-sqlitevis.json)
+URL in the browser and it should autoload the database and the inquiries. This
+URL was generated from the [sqlitevis docs](https://sqliteviz.com/docs/sharing/).

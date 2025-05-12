@@ -1,0 +1,711 @@
+{
+    "version": 2,
+    "inquiries": [
+        {
+            "id": "WUPD4gZdu-j4mFgxjHG0P",
+            "query": "SELECT os_variant FROM countme_totals \n    WHERE weeknum = (SELECT MAX(weeknum) FROM countme_totals)\n    AND os_variant REGEXP ''\n    GROUP BY os_variant;",
+            "viewType": "chart",
+            "viewOptions": {
+                "data": [],
+                "layout": {
+                    "autosize": true,
+                    "xaxis": {
+                        "range": [
+                            -1,
+                            6
+                        ],
+                        "autorange": true
+                    },
+                    "yaxis": {
+                        "range": [
+                            -1,
+                            4
+                        ],
+                        "autorange": true
+                    }
+                },
+                "frames": []
+            },
+            "name": "All OS Variants",
+            "createdAt": "2025-05-12T20:54:27.120Z"
+        },
+        {
+            "id": "tcIRiJz5gn5ci4DJyHgqU",
+            "query": "SELECT date(julianday('1970-01-05')+weeknum*7 + 6) AS date, weeknum, os_variant, repo_arch, SUM(hits) FROM countme_totals \n    WHERE os_variant IS 'coreos'\n    AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' \n    AND weeknum = (SELECT MAX(weeknum) FROM countme_totals)\n    GROUP BY repo_arch;",
+            "viewType": "chart",
+            "viewOptions": {
+                "data": [
+                    {
+                        "type": "pie",
+                        "mode": "markers",
+                        "values": null,
+                        "valuessrc": "SUM(hits)",
+                        "meta": {
+                            "columnNames": {
+                                "values": "SUM(hits)",
+                                "labels": "repo_arch",
+                                "text": ""
+                            }
+                        },
+                        "labels": null,
+                        "labelssrc": "repo_arch",
+                        "opacity": 1,
+                        "textinfo": "label+value+percent",
+                        "textfont": {
+                            "size": 26,
+                            "family": "sans-serif"
+                        },
+                        "hoverinfo": "percent+label+value",
+                        "hoverlabel": {
+                            "align": "auto"
+                        },
+                        "direction": "counterclockwise",
+                        "rotation": 0,
+                        "hole": 0.52,
+                        "pull": 0,
+                        "marker": {
+                            "line": {
+                                "width": 1
+                            }
+                        },
+                        "insidetextorientation": "radial"
+                    }
+                ],
+                "layout": {
+                    "xaxis": {
+                        "range": [
+                            -1,
+                            6
+                        ],
+                        "autorange": true
+                    },
+                    "yaxis": {
+                        "range": [
+                            -1,
+                            4
+                        ],
+                        "autorange": true
+                    },
+                    "autosize": true,
+                    "mapbox": {
+                        "style": "open-street-map"
+                    },
+                    "title": {
+                        "text": "Fedora CoreOS Node Architecture Breakdown Week of <i>2025-05-04</i>",
+                        "font": {
+                            "size": 25
+                        }
+                    },
+                    "hiddenlabels": [
+                        "ppc64le",
+                        "s390x"
+                    ],
+                    "legend": {
+                        "x": 0.7407924239291469,
+                        "y": 0.8257272143643333,
+                        "font": {
+                            "size": 20
+                        },
+                        "yanchor": "middle"
+                    },
+                    "annotations": [],
+                    "meta": [
+                        "2023-10-08",
+                        "2023-10-08",
+                        "2023-10-08",
+                        "2023-10-08"
+                    ],
+                    "metasrc": "date",
+                    "extendpiecolors": true
+                },
+                "frames": []
+            },
+            "name": "FCOS Architectures",
+            "createdAt": "2025-05-12T20:55:12.622Z"
+        },
+        {
+            "id": "wEj338NrufIRE-3UBDXPK",
+            "query": "SELECT date(julianday('1970-01-05')+weeknum*7 + 6) AS date, weeknum, SUM(transient_hits), SUM(static_hits), SUM(transient_hits + static_hits) FROM (\n    SELECT weeknum, SUM(hits) AS transient_hits, 0 AS static_hits FROM countme_totals WHERE os_variant IS 'coreos' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age = 1 GROUP BY weeknum\n    UNION\n    SELECT weeknum, 0 AS transient_hits, SUM(hits) AS static_hits FROM countme_totals WHERE os_variant IS 'coreos' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age > 1 GROUP BY weeknum\n) WHERE date > '2020-01-01' GROUP BY weeknum",
+            "viewType": "chart",
+            "viewOptions": {
+                "data": [
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(static_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(static_hits)",
+                        "stackgroup": 1,
+                        "name": "Static Nodes",
+                        "hoveron": "points"
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(transient_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(transient_hits)",
+                        "stackgroup": 1,
+                        "name": "Transient Nodes",
+                        "fillcolor": "rgba(205, 96, 52, 0.5)",
+                        "line": {
+                            "color": "rgb(180, 38, 5)"
+                        }
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(transient_hits + static_hits)",
+                                "text": ""
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(transient_hits + static_hits)",
+                        "name": "Total Nodes",
+                        "line": {
+                            "width": 3,
+                            "color": "rgb(95, 100, 96)"
+                        },
+                        "hovertemplate": "",
+                        "error_x": {
+                            "_template": null,
+                            "visible": false,
+                            "type": "percent",
+                            "symmetric": true,
+                            "value": 10,
+                            "color": "rgb(95, 100, 96)",
+                            "thickness": 2,
+                            "width": 4
+                        }
+                    }
+                ],
+                "layout": {
+                    "xaxis": {
+                        "range": [
+                            "2021-09-19 23:38:29.3717",
+                            "2025-05-22 01:49:05.1712"
+                        ],
+                        "autorange": false,
+                        "rangeselector": {
+                            "visible": false,
+                            "buttons": [
+                                {}
+                            ]
+                        },
+                        "showspikes": false,
+                        "rangeslider": {
+                            "visible": false,
+                            "yaxis": {},
+                            "autorange": true,
+                            "range": [
+                                "2020-05-03",
+                                "2023-11-28 23:10:02.9513"
+                            ]
+                        },
+                        "type": "date",
+                        "tickfont": {
+                            "size": 28
+                        },
+                        "title": {
+                            "font": {
+                                "size": 17
+                            }
+                        }
+                    },
+                    "yaxis": {
+                        "range": [
+                            -1419.2166576673771,
+                            123989.902612791
+                        ],
+                        "autorange": false,
+                        "ticks": "",
+                        "showspikes": false,
+                        "showline": false,
+                        "zeroline": true,
+                        "type": "linear",
+                        "tickfont": {
+                            "size": 28
+                        }
+                    },
+                    "autosize": true,
+                    "mapbox": {
+                        "style": "open-street-map"
+                    },
+                    "dragmode": "pan",
+                    "title": {
+                        "text": "Fedora CoreOS Node Count",
+                        "font": {
+                            "size": 33
+                        }
+                    },
+                    "legend": {
+                        "font": {
+                            "size": 28
+                        },
+                        "orientation": "h",
+                        "x": 0.2471859552265083,
+                        "y": 0.9623782823483056
+                    }
+                },
+                "frames": []
+            },
+            "name": "FCOS Node Count",
+            "createdAt": "2025-05-12T20:55:20.874Z"
+        },
+        {
+            "id": "rcnNNlpFRfhIaX27ownZa",
+            "query": "SELECT date(julianday('1970-01-05')+weeknum*7 + 6) AS date, upper(trim(repo_tag, 'updates-releaseed-')) as repo_tag, os_variant, SUM(hits) FROM countme_totals\n    WHERE os_variant IS 'coreos'\n    AND repo_tag REGEXP 'updates-released-f[3-4][0-9]'\n    AND weeknum = (SELECT MAX(weeknum) FROM countme_totals)\n    GROUP BY repo_tag;",
+            "viewType": "chart",
+            "viewOptions": {
+                "data": [
+                    {
+                        "type": "pie",
+                        "mode": "markers",
+                        "values": null,
+                        "valuessrc": "SUM(hits)",
+                        "meta": {
+                            "columnNames": {
+                                "values": "SUM(hits)",
+                                "labels": "repo_tag"
+                            }
+                        },
+                        "labels": null,
+                        "labelssrc": "repo_tag",
+                        "hole": 0.5,
+                        "pull": 0,
+                        "marker": {
+                            "line": {
+                                "width": 2
+                            }
+                        },
+                        "textinfo": "label",
+                        "textfont": {
+                            "size": 25
+                        },
+                        "sort": false,
+                        "direction": "clockwise",
+                        "rotation": -90,
+                        "legendgroup": 1,
+                        "showlegend": true,
+                        "hoverinfo": "percent+label+value",
+                        "opacity": 1,
+                        "textposition": "inside"
+                    }
+                ],
+                "layout": {
+                    "xaxis": {
+                        "range": [
+                            -1,
+                            6
+                        ],
+                        "autorange": true
+                    },
+                    "yaxis": {
+                        "range": [
+                            -1,
+                            4
+                        ],
+                        "autorange": true
+                    },
+                    "autosize": true,
+                    "mapbox": {
+                        "style": "open-street-map"
+                    },
+                    "title": {
+                        "text": "Fedora CoreOS Release Breakdown",
+                        "x": 0.5,
+                        "font": {
+                            "size": 31
+                        }
+                    },
+                    "showlegend": true,
+                    "legend": {
+                        "font": {
+                            "family": "monospace",
+                            "size": 22
+                        },
+                        "title": {
+                            "text": "<br>",
+                            "font": {
+                                "size": 34
+                            }
+                        },
+                        "y": 0.04329087951849141,
+                        "x": 0.20084040421902638,
+                        "yanchor": "bottom",
+                        "orientation": "v"
+                    },
+                    "hiddenlabels": [],
+                    "hoverlabel": {
+                        "align": "auto"
+                    },
+                    "uniformtext": {
+                        "mode": false
+                    },
+                    "modebar": {
+                        "orientation": "h"
+                    },
+                    "margin": {
+                        "pad": 0,
+                        "r": 80
+                    },
+                    "extendpiecolors": true,
+                    "piecolorway": [
+                        "#1b9e77",
+                        "#d95f02",
+                        "#7570b3",
+                        "#e7298a",
+                        "#66a61e",
+                        "#e6ab02",
+                        "#a6761d",
+                        "#666666"
+                    ]
+                },
+                "frames": []
+            },
+            "name": "FCOS Release Breakdown",
+            "createdAt": "2025-05-12T20:55:31.761Z"
+        },
+        {
+            "id": "BZlflOgPAYGoaKwjBpIe8",
+            "query": "SELECT date(julianday('1970-01-05')+weeknum*7 + 6) AS date, weeknum, SUM(coreos_hits), SUM(cloud_hits), SUM(server_hits) FROM (\n    SELECT weeknum, 0 AS server_hits, 0 AS cloud_hits, SUM(hits) AS coreos_hits FROM countme_totals WHERE os_variant IS 'coreos' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age > 1 GROUP BY weeknum\n    UNION\n    SELECT weeknum, 0 AS server_hits, SUM(hits) AS cloud_hits, 0 AS coreos_hits FROM countme_totals WHERE os_variant IS 'cloud' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age > 1 GROUP BY weeknum\n    UNION\n    SELECT weeknum, SUM(hits) AS server_hits, 0 AS cloud_hits, 0 AS coreos_hits FROM countme_totals WHERE os_variant IS 'server' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age > 1 GROUP BY weeknum\n) WHERE date > '2022-01-01' GROUP BY weeknum",
+            "viewType": "chart",
+            "viewOptions": {
+                "data": [
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "stackgroup": null,
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(cloud_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(cloud_hits)",
+                        "name": "Cloud",
+                        "line": {
+                            "width": 5
+                        }
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(coreos_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(coreos_hits)",
+                        "name": "CoreOS",
+                        "line": {
+                            "width": 5
+                        }
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "stackgroup": null,
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(server_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(server_hits)",
+                        "name": "Server",
+                        "line": {
+                            "width": 5
+                        }
+                    }
+                ],
+                "layout": {
+                    "xaxis": {
+                        "range": [
+                            "2023-05-18 21:13:31.5607",
+                            "2025-05-04"
+                        ],
+                        "autorange": false,
+                        "type": "date",
+                        "tickfont": {
+                            "size": 22
+                        }
+                    },
+                    "yaxis": {
+                        "range": [
+                            -4149.444444444446,
+                            85743.15981948335
+                        ],
+                        "autorange": false,
+                        "type": "linear",
+                        "tickfont": {
+                            "size": 22
+                        }
+                    },
+                    "autosize": true,
+                    "mapbox": {
+                        "style": "open-street-map"
+                    },
+                    "title": {
+                        "text": "Static Node Count for Fedora Cloud/CoreOS/Server"
+                    },
+                    "dragmode": "zoom",
+                    "legend": {
+                        "font": {
+                            "size": 28
+                        },
+                        "orientation": "h",
+                        "x": 0.4185161699429296,
+                        "y": 0.988780487804878
+                    }
+                },
+                "frames": []
+            },
+            "name": "Static Node Count By Edition",
+            "createdAt": "2025-05-12T20:56:19.303Z"
+        },
+        {
+            "id": "r6KJ-g1sxjbqtOYuWRJoK",
+            "query": "SELECT date(julianday('1970-01-05')+weeknum*7 + 6) AS date, weeknum, SUM(coreos_hits), SUM(cloud_hits), SUM(server_hits) FROM (\n    SELECT weeknum, 0 AS server_hits, 0 AS cloud_hits, SUM(hits) AS coreos_hits FROM countme_totals WHERE os_variant IS 'coreos' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age = 1 GROUP BY weeknum\n    UNION\n    SELECT weeknum, 0 AS server_hits, SUM(hits) AS cloud_hits, 0 AS coreos_hits FROM countme_totals WHERE os_variant IS 'cloud' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age = 1 GROUP BY weeknum\n    UNION\n    SELECT weeknum, SUM(hits) AS server_hits, 0 AS cloud_hits, 0 AS coreos_hits FROM countme_totals WHERE os_variant IS 'server' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' AND sys_age = 1 GROUP BY weeknum\n) WHERE date > '2022-01-01' GROUP BY weeknum",
+            "viewType": "chart",
+            "viewOptions": {
+                "data": [
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(cloud_hits)"
+                            }
+                        },
+                        "x": null,
+                        "xsrc": "date",
+                        "name": "Cloud",
+                        "y": null,
+                        "ysrc": "SUM(cloud_hits)",
+                        "line": {
+                            "width": 5
+                        }
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(coreos_hits)"
+                            }
+                        },
+                        "x": null,
+                        "xsrc": "date",
+                        "y": null,
+                        "ysrc": "SUM(coreos_hits)",
+                        "name": "CoreOS",
+                        "line": {
+                            "width": 5
+                        }
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "stackgroup": null,
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(server_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(server_hits)",
+                        "x": null,
+                        "xsrc": "date",
+                        "name": "Server",
+                        "line": {
+                            "width": 5
+                        }
+                    }
+                ],
+                "layout": {
+                    "xaxis": {
+                        "range": [
+                            "2023-05-14 20:40:13.8728",
+                            "2025-05-04"
+                        ],
+                        "autorange": false,
+                        "type": "date",
+                        "tickfont": {
+                            "size": 22
+                        }
+                    },
+                    "yaxis": {
+                        "range": [
+                            -7660.833333333334,
+                            155839.15818339647
+                        ],
+                        "autorange": false,
+                        "type": "linear",
+                        "tickfont": {
+                            "size": 22
+                        }
+                    },
+                    "autosize": true,
+                    "mapbox": {
+                        "style": "open-street-map"
+                    },
+                    "title": {
+                        "text": "Transient Node Count for Fedora Cloud/CoreOS/Server"
+                    },
+                    "dragmode": "zoom",
+                    "legend": {
+                        "font": {
+                            "size": 28
+                        },
+                        "orientation": "h",
+                        "x": 0.388712745719721,
+                        "y": 1.0030674846625767
+                    }
+                },
+                "frames": []
+            },
+            "name": "Transient Node Count By Edition",
+            "createdAt": "2025-05-12T20:56:34.411Z"
+        },
+        {
+            "id": "8C93FoFqg3Zpw4wcxyS2e",
+            "query": "SELECT date(julianday('1970-01-05')+weeknum*7 + 6) AS date, weeknum, SUM(coreos_hits), SUM(cloud_hits), SUM(server_hits) FROM (\n    SELECT weeknum, 0 AS server_hits, 0 AS cloud_hits, SUM(hits) AS coreos_hits FROM countme_totals WHERE os_variant IS 'coreos' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' GROUP BY weeknum\n    UNION\n    SELECT weeknum, 0 AS server_hits, SUM(hits) AS cloud_hits, 0 AS coreos_hits FROM countme_totals WHERE os_variant IS 'cloud' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' GROUP BY weeknum\n    UNION\n    SELECT weeknum, SUM(hits) AS server_hits, 0 AS cloud_hits, 0 AS coreos_hits FROM countme_totals WHERE os_variant IS 'server' AND repo_tag REGEXP 'updates-released-f[3-4][0-9]' GROUP BY weeknum\n) WHERE date > '2022-01-01' GROUP BY weeknum",
+            "viewType": "chart",
+            "viewOptions": {
+                "data": [
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(cloud_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(cloud_hits)",
+                        "name": "Cloud",
+                        "line": {
+                            "width": 5
+                        }
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "stackgroup": null,
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(coreos_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(coreos_hits)",
+                        "name": "CoreOS",
+                        "line": {
+                            "width": 5
+                        }
+                    },
+                    {
+                        "type": "scatter",
+                        "mode": "lines",
+                        "stackgroup": null,
+                        "x": null,
+                        "xsrc": "date",
+                        "meta": {
+                            "columnNames": {
+                                "x": "date",
+                                "y": "SUM(server_hits)"
+                            }
+                        },
+                        "y": null,
+                        "ysrc": "SUM(server_hits)",
+                        "name": "Server",
+                        "line": {
+                            "width": 5
+                        }
+                    }
+                ],
+                "layout": {
+                    "xaxis": {
+                        "range": [
+                            "2023-05-17 21:05:12.1387",
+                            "2025-05-04"
+                        ],
+                        "autorange": false,
+                        "type": "date",
+                        "tickfont": {
+                            "size": 22
+                        }
+                    },
+                    "yaxis": {
+                        "range": [
+                            -10802.38888888889,
+                            229205.70535714284
+                        ],
+                        "autorange": false,
+                        "type": "linear",
+                        "tickfont": {
+                            "size": 22
+                        }
+                    },
+                    "autosize": true,
+                    "mapbox": {
+                        "style": "open-street-map"
+                    },
+                    "title": {
+                        "text": "Total Node Count for Fedora Cloud/CoreOS/Server"
+                    },
+                    "legend": {
+                        "orientation": "h",
+                        "x": 0.4578313253012048,
+                        "y": 0.9863986313088109,
+                        "font": {
+                            "size": 28
+                        }
+                    }
+                },
+                "frames": []
+            },
+            "name": "Total Node Count for Fedora Cloud/CoreOS/Server",
+            "createdAt": "2025-05-12T20:56:53.783Z"
+        }
+    ]
+}
