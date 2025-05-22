@@ -2,6 +2,7 @@
 # Please keep this list in alphabetical order.
 @aaradhak:matrix.org
 @apiaseck:matrix.org
+@bipinbn:fedora.im
 @bri:transfem.dev
 @davdunc:fedora.im
 @dustymabe:matrix.org
@@ -22,4 +23,3 @@
 @walters:fedora.im
 @ydesouza:fedora.im
 @yves:siegrist.io
-@bipinbn:fedora.im
