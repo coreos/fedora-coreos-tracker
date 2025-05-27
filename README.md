@@ -188,9 +188,9 @@ you have to run your browser in a specific mode to allow the
 application to download the database and the inquiries file:
 
 ```
-chromium-browser --disable-web-security --user-data-dir ~/chrome-disable-web-security/
+chromium-browser --disable-web-security --user-data-dir=~/chrome-disable-web-security/
 # OR
-google-chrome-stable --disable-web-security --user-data-dir ~/chrome-disable-web-security/
+google-chrome-stable --disable-web-security --user-data-dir=~/chrome-disable-web-security/
 ```
 
 Now navigate to
