@@ -163,6 +163,14 @@ architectures:
               signature: https://artifacts.example.com/oKooheogobofai8l.qcow2.xz.sig
               sha256: ae41e4649b934ca495991b785e3b0c44298fc1c149afbf4c8996fb924272b855
               uncompressed-sha256: 38acb15d02d5ac0f2a2789602e9df950c380d2799b4bdb59394e4eeabdd3a662
+      proxmoxve:
+        release: 30.1.2.3
+        formats:
+          "qcow2.xz":
+            disk:
+              location: https://artifacts.example.com/TieshohWah0aewai/.qcow2.xz
+              signature: https://artifacts.example.com/TieshohWah0aewai/.qcow2.xz.sig
+              sha256: 394cd6431b19c82a46a7215ebead15960faf9814092203456d56960a1b4d8777
       qemu:
         release: 30.1.2.3
         formats:
