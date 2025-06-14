@@ -203,6 +203,17 @@
             }
           }
         },
+        "proxmoxve": {
+          "artifacts": {
+            "raw.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-proxmoxve.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-proxmoxve.qcow2.xz.sig",
+                "sha256": "394cd6431b19c82a46a7215ebead15960faf9814092203456d56960a1b4d8777"
+              }
+            }
+          }
+        },
         "qemu": {
           "artifacts": {
             "qcow2.xz": {

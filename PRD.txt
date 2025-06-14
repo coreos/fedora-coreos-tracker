@@ -117,7 +117,7 @@ All artifacts will be downloadable from the getfedora.org website. Similarly, fo
 
 === Delivery Format ===
 
-Artifacts will be delivered as cloud images on Amazon EC2, Azure, DigitalOcean, Google Compute Engine, and Packet; as downloadable images for OpenStack, QEMU, VirtualBox, and VMware; and as ISO images, netboot images, and installable raw images for bare metal systems. We may add other public cloud images and downloadable formats to meet demand or anticipated need.
+Artifacts will be delivered as cloud images on Amazon EC2, Azure, DigitalOcean, and Google Compute Engine; as downloadable images for OpenStack, QEMU, VirtualBox, and VMware; and as ISO images, netboot images, and installable raw images for bare metal systems. We may add other public cloud images and downloadable formats to meet demand or anticipated need.
 
 === Architectures ===
 
