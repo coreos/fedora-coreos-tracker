@@ -230,15 +230,6 @@ Originally discussed in [#68](https://github.com/coreos/fedora-coreos-tracker/is
 - OpenStack environments do not require a cloud agent
 - We will provide any base level of functionality with ignition and coreos-metadata
 
-### Packet:
-
-Originally discussed in [#69](https://github.com/coreos/fedora-coreos-tracker/issues/69).
-
-- On the first boot, Packet requires the machine to phone home to report a successful boot.  This will be [handled by coreos-metadata](https://github.com/coreos/coreos-metadata/issues/120).
-- Packet provides the IPv4 public address via DHCP, allowing a machine to acquire network via standard mechanisms.  However, to obtain a private IPv4 address or a public IPv6 address (on the same interface), networking must be configured using metadata from an HTTP metadata service.  This can be handled by coreos-metadata in the initramfs, but it [may need to learn to configure NetworkManager or nm-state](https://github.com/coreos/fedora-coreos-tracker/issues/111) depending on the outcome of [#24](https://github.com/coreos/fedora-coreos-tracker/issues/24).
-- Packet needs the serial console on x86 to be directed to `ttyS1`, not `ttyS0`, requiring [cloud-specific bootloader configuration](https://github.com/coreos/fedora-coreos-tracker/issues/110).  A different serial console configuration is required on ARM64.
-- On many Linux OSes, Packet sets a randomized root password which is then available from the Packet console for 24 hours.  This allows the serial (SOS) console to be used for interactive debugging.  Container Linux, instead, enables autologin on the console by default.  To avoid surprising users, Fedora CoreOS will do neither.  For interactive console access, users can use Ignition to enable autologin or to set a password on the `core` account, and we'll document how to do that.
-
 ### Open questions:
 
  - What do we do about VMware, which has a very involved and intrusive "agent"?
@@ -275,7 +266,7 @@ This means:
 
 Originally discussed in [#114](https://github.com/coreos/fedora-coreos-tracker/issues/114).
 
-We will not enable autologin on serial or VGA consoles by default, even on platforms (e.g. Azure, DigitalOcean, GCP, Packet) which provide authenticated console access.  Doing so would provide an access vector that could surprise users unfamiliar with their platform's console access mechanism and access control policy.  For users who wish to use the console for debugging, we will provide documentation for using Ignition to enable autologin or to set a user password.
+We will not enable autologin on serial or VGA consoles by default, even on platforms (e.g. Azure, DigitalOcean, GCP) which provide authenticated console access.  Doing so would provide an access vector that could surprise users unfamiliar with their platform's console access mechanism and access control policy.  For users who wish to use the console for debugging, we will provide documentation for using Ignition to enable autologin or to set a user password.
 
 ### Automatically disable SMT when needed to address vulnerabilities
 
