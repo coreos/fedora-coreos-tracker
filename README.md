@@ -62,7 +62,7 @@ happens in
 [#meeting-1:fedoraproject.org](https://matrix.to/#/#meeting-1:fedoraproject.org)
 on Matrix and the schedule for the meeting can be found here:
 https://calendar.fedoraproject.org/CoreOS/ Currently, meetings are at
-[`16:30 UTC`](https://time.is/16:30+UTC) on Wednesdays.
+[`15:30 UTC`](https://time.is/15:30+UTC) on Wednesdays.
 
 As the
 [Matrix bridge to Libera Chat is shutdown](https://matrix.org/blog/2023/11/28/shutting-down-bridge-to-libera-chat/),
