@@ -203,6 +203,17 @@
             }
           }
         },
+        "oraclecloud": {
+          "artifacts": {
+            "qcow2.xz": {
+              "disk": {
+                "location": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-oraclecloud.qcow2.xz",
+                "signature": "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190801.0/x86_64/fedora-coreos-30.20190801.0-oracecloud.qcow2.xz.sig",
+                "sha256": "868da197ae9179aded982ea6445d7d5e30acf8d03cdcdc32acfe2003d2c65491"
+              }
+            }
+          }
+        },
         "proxmoxve": {
           "artifacts": {
             "raw.xz": {
