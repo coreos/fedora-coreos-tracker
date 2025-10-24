@@ -105,6 +105,7 @@ Example PR: https://github.com/coreos/coreos-installer/pull/1113
 - [ ] Bump `releasever` in `manifest.yaml`
 - [ ] Add the `fedora-candidate-compose` repo in `manifest.yaml` ([example PR](https://github.com/coreos/fedora-coreos-config/pull/2706))
 - [ ] Update the repos in `manifest.yaml` if needed
+- [ ] Bump the Fedora version and `BUILDER_IMG` tag in `build-args.conf`
 - [ ] Run `cosa fetch --dry-run --update-lockfile`
     - this updates the x86_64 lockfile - the others will get updated when `bump-lockfile` runs.
     - in the future we may support [this](https://github.com/coreos/coreos-assembler/issues/3088) in `cosa fetch` directly
@@ -142,6 +143,7 @@ If the packages in `next-devel` don't exactly match the last `next` release that
 - [ ] Sync the lockfiles for all arches from `next-devel`
 - [ ] Bump the base Fedora version in `ci/buildroot/Dockerfile`
 - [ ] Bump the Fedora version for the test containers in `tests/kola/data/commonlib.sh`
+- [ ] Bump the Fedora version and `BUILDER_IMG` tag in `build-args.conf`
 - [ ] PR the result
 
 
