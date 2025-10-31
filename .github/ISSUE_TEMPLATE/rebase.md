@@ -76,7 +76,7 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 - `koji tag-build f${N+1}-coreos-continuous $BUILD`
     - example: `koji tag-build f36-coreos-continuous fedora-release-36-0.16`
 
-- [ ] Add the N+1 signing key short hash (usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2)) to the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the 32/33/34/35 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`).
+- [ ] Add the N+1 signing key short hash (usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2)) to the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the 32/33/34/35 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`). An example request looks [like this](https://pagure.io/releng/issue/10635).
     - `koji taginfo coreos-pool`
     - `koji edit-tag coreos-pool -x tag2distrepo.keys="12c944d0 9570ff31 45719a39 9867c58f"`
 
