@@ -216,5 +216,3 @@ These are various containers in use throughout our ecosystem. We should update o
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/fedora-ostree-pruner/Dockerfile)
     - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/fedora-ostree-pruner/templates/imagestream.yml)
     - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/fedora-ostree-pruner/templates/buildconfig.yml)
-- [ ] Update RHCOS extensions container
-    - [Dockerfile](https://github.com/openshift/os/blob/master/extensions/Dockerfile)
