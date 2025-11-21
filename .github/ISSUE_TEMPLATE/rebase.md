@@ -182,6 +182,12 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 - [ ] Create a new ticket from the [rebase template](https://github.com/coreos/fedora-coreos-tracker/issues/new?assignees=&labels=area%2Fplatforms%2C+kind%2Fenhancement&template=rebase.md&title=tracker:+Rebase+onto+Fedora+N)
     - label with `FN` label where `N` is the Fedora version.
 
+### Update the FCOS Meeting-Action Template
+
+Now that Fedora N is GA, we need to start tracking the release schedule of Fedora N+1 during the weekly [Fedora CoreOS Community Meeting](https://github.com/coreos/fedora-coreos-tracker/blob/main/README.md#meetings).
+
+- [ ] Update the "Review Fedora N Release Schedule" topic and link to point to Fedora N+1 in the [FCOS meeting-action template](https://github.com/coreos/fcos-meeting-action/blob/main/static/meeting-template.md)
+
 
 ## Miscellaneous container updates
 
