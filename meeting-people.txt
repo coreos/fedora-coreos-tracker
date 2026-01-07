@@ -18,6 +18,7 @@
 @marmijo:fedora.im
 @miabbott:fedora.im
 @quentin9696:matrix.org
+@rapneset:matrix.org
 @ravanelli:fedora.im
 @tlbueno:fedora.im
 @walters:fedora.im
