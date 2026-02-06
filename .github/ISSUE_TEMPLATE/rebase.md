@@ -91,21 +91,20 @@ Example PR: https://github.com/coreos/coreos-installer/pull/1113
 
 ### Update `rawhide` stream
 
-- [ ] Update [manifest.yaml](https://github.com/coreos/fedora-coreos-config/blob/rawhide/manifest.yaml) to list N+1 as the releasever ([example PR](https://github.com/coreos/fedora-coreos-config/pull/2855))
+- [ ] Update `VERSION`, `MUTATE_OS_RELEASE`, `BUILDER_IMG` in [build-args.conf](https://github.com/coreos/fedora-coreos-config/blob/rawhide/build-args.conf) ([example PR](https://github.com/coreos/fedora-coreos-config/pull/4003))
 
 ### Enable `branched` stream
 
-- [ ] Update [manifest.yaml](https://github.com/coreos/fedora-coreos-config/blob/branched/manifest.yaml) to list N as the releasever ([example PR](https://github.com/coreos/fedora-coreos-config/pull/2549))
+- [ ] Update `VERSION`, `MUTATE_OS_RELEASE`, `BUILDER_IMG` in [build-args.conf](https://github.com/coreos/fedora-coreos-config/blob/branched/build-args.conf) ([example PR](https://github.com/coreos/fedora-coreos-config/pull/4005))
 - [ ] Update [config.yaml](https://github.com/coreos/fedora-coreos-pipeline/blob/main/config.yaml) to un-comment out the `branched` stream definition ([example PR](https://github.com/coreos/fedora-coreos-pipeline/pull/904))
 
 ## At Fedora (N) Beta
 
 ### Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `next-devel`
 
-- [ ] Bump `releasever` in `manifest.yaml`
+- [ ] Bump `VERSION`, `MUTATE_OS_RELEASE`, `BUILDER_IMG` in `build-args.conf`
 - [ ] Add the `fedora-candidate-compose` repo in `manifest.yaml` ([example PR](https://github.com/coreos/fedora-coreos-config/pull/2706))
 - [ ] Update the repos in `manifest.yaml` if needed
-- [ ] Bump the Fedora version and `BUILDER_IMG` tag in `build-args.conf`
 - [ ] Run `cosa fetch --dry-run --update-lockfile`
     - this updates the x86_64 lockfile - the others will get updated when `bump-lockfile` runs.
     - in the future we may support [this](https://github.com/coreos/coreos-assembler/issues/3088) in `cosa fetch` directly
@@ -138,12 +137,11 @@ If the packages in `next-devel` don't exactly match the last `next` release that
 
 ### Update [fedora-coreos-config](https://github.com/coreos/fedora-coreos-config/) `testing-devel`
 
-- [ ] Bump `releasever` in `manifest.yaml`
+- [ ] Bump `VERSION`, `MUTATE_OS_RELEASE`, `BUILDER_IMG` in `build-args.conf`
 - [ ] Update the repos in `manifest.yaml` if needed
 - [ ] Sync the lockfiles for all arches from `next-devel`
 - [ ] Bump the base Fedora version in `ci/buildroot/Dockerfile`
 - [ ] Bump the Fedora version for the test containers in `tests/kola/data/commonlib.sh`
-- [ ] Bump the Fedora version and `BUILDER_IMG` tag in `build-args.conf`
 - [ ] PR the result
 
 
