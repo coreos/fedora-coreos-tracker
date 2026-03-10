@@ -114,6 +114,10 @@ Example PR: https://github.com/coreos/coreos-installer/pull/1113
 - [ ] Disable `branched` stream since it is no longer needed.
     - Update [config.yaml](https://github.com/coreos/fedora-coreos-pipeline/blob/main/config.yaml) to comment out the `branched` stream definition.
 
+### Prepare Fedora CoreOS (N) Beta announcement
+
+- [ ] Draft an announcement that contains information found in the "Communications Tracker", created in a step above, to inform users of Fedora CoreOS of upcoming changes in the Fedora (N) version. [(example)](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/thread/GK4RMQ3UFMLJGKMBUVTTWGNFVFNNSH5E/)
+
 ### Ship rebased `next`
 
 - [ ] Ship `next`
