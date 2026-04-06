@@ -14,7 +14,6 @@
 @jdoss:fedora.im
 @jlebon:fedora.im
 @jmarrero:matrix.org
-@lorbus:matrix.org
 @marmijo:fedora.im
 @miabbott:fedora.im
 @quentin9696:matrix.org
