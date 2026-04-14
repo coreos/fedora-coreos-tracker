@@ -13,16 +13,22 @@
 
 ### Untag old packages
 
-`koji untag` N-2 packages from the pool (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). For example the following snippet finds all RPMs signed by the Fedora 32 key and untags them. Use this process:
+`koji untag` packages from the pool that are not signed by any "active" release key (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). Active releases are N-1 and N. If branching for N+1 has already occurred, N+1 is also considered active. Use this process:
 
-- [ ] Find the key short hash. Usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2). Then:
+- [ ] First, coordinate with releng to let them know you'll be untagging N-2 packages and that you'll need them to update `tag2distrepo.keys` on the `coreos-pool` tag promptly afterward (to drop the N-2 key). This minimizes the window where the key list is out of sync with what's tagged. Check the current state with:
+    - `koji taginfo coreos-pool`
+
+- [ ] Find the key short hashes for all active releases. Usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2). Then build the untaglist of packages not signed by any active key:
 
 ```
-f32key=12c944d0
-key=$f32key
+fN2key=<N-2 key hash>  # the key being removed
+fN1key=<N-1 key hash>  # active
+fNkey=<N key hash>     # active
+fNp1key=<N+1 key hash> # active if branching has already occurred
+
 echo > untaglist # create or empty out file
 for build in $(koji list-tagged --quiet coreos-pool | cut -f1 -d' '); do
-    if koji buildinfo $build | grep -i $key 1>/dev/null; then
+    if ! koji buildinfo $build | grep -iE "($fN1key|$fNkey|$fNp1key)" 1>/dev/null; then
         echo "Adding $build to untag list"
         echo "${build}" >> untaglist
     fi
@@ -31,18 +37,19 @@ done
 
 Now we have a list of builds to untag. But we need a few more sanity checks.
 
-- [ ] Make sure none of the builds are used in `N` based FCOS. Check by running:
+- [ ] Check the current `testing-devel` image for packages signed with the N-2 key:
 
 ```
-f32key=12c944d0
-key=$f32key
-podman run -it --rm quay.io/fedora/fedora-coreos:testing-devel rpm -qai | grep -i -B 9 $key
+fN2key=<N-2 key hash>
+podman run -it --rm quay.io/fedora/fedora-coreos:testing-devel rpm -qai | grep -i -B 9 $fN2key
 podman rmi quay.io/fedora/fedora-coreos:testing-devel
 ```
 
-If there are any RPMs signed by the old key they'll need to be investigated. Maybe they shouldn't be used any longer. Or maybe they're still needed. One example of this is the shim RPM where the same build could be used for many Fedora releases. In this case you'll need to untag the RPM from `coreos-pool`, run a `koji distrepo`, which will remove that RPM from the repo metadata, and then re-tag it into the pool. The RPM in the repo will now be signed with a newer signing key.
+If there are any packages in the output, there are two possible cases:
 
+1. **The package is signed by multiple keys** including an older one. This is OK, but add it to the untaglist anyway so it gets retagged into `coreos-pool` with a newer key/signature. You'll need to untag the RPM from `coreos-pool`, run a `koji dist-repo --non-latest coreos-pool key1 key2 key3` (which will remove that RPM from the repo metadata), and then re-tag it into the pool. The RPM in the repo will now be signed with a newer signing key.
 
+2. **The package is only signed by an older (non-active) key**. This needs investigation. Something in the compose may be pulling in a stale package (dep issue?). It should not be untagged until the root cause is understood.
 
 - [ ] After verifying the list looks good, untag:
 
@@ -53,9 +60,9 @@ cat untaglist | xargs -L50 koji untag-build -v coreos-pool
 
 - [ ] Now that untagging is done, give a heads up to rpm-ostree developers that N-2 packages have been untagged and that they may need to update their CI compose tests to freeze on a newer FCOS commit.
 
-- [ ] Remove the N-2 signing key from the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the 33/34/35 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`).
+- [ ] Remove the N-2 signing key from the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the N-1/N/N+1 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`).
     - `koji taginfo coreos-pool`
-    - `koji edit-tag coreos-pool -x tag2distrepo.keys="9570ff31 45719a39 9867c58f"`
+    - `koji edit-tag coreos-pool -x tag2distrepo.keys="<N-1 key> <N key> <N+1 key>"`
 
 ## At Branching
 
