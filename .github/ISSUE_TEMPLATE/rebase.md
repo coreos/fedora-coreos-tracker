@@ -179,6 +179,10 @@ We prefer to disable `next-devel` when there is no difference between `testing-d
 
 - [ ] Remove from the `manifest.yaml` of `next-devel` the `fedora-candidate-compose` repo
 
+### Prepare Fedora CoreOS (N) announcement
+
+- [ ] Draft an announcement that contains information found in the "Communications Tracker" and the Beta announcement, created in steps above, to inform users of Fedora CoreOS of upcoming changes in the Fedora (N) version. [(example)](https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/thread/AEZV7QKPNXGECMYQO4T4W5IQR4X5B62F/)
+
 ## After Fedora (N) GA
 
 ### Ship rebased `stable`
