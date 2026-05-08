@@ -18,7 +18,7 @@
 - [ ] First, coordinate with releng to let them know you'll be untagging N-2 packages and that you'll need them to update `tag2distrepo.keys` on the `coreos-pool` tag promptly afterward (to drop the N-2 key). This minimizes the window where the key list is out of sync with what's tagged. Check the current state with:
     - `koji taginfo coreos-pool`
 
-- [ ] Find the key short hashes for all active releases. Usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2). Then build the untaglist of packages not signed by any active key:
+- [ ] Find the key short hashes for all active releases. Usually found [here](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/bodhi2/backend/templates/pungi.rpm.conf.j2). Then build the untaglist of packages not signed by any active key:
 
 ```
 fN2key=<N-2 key hash>  # the key being removed
@@ -60,7 +60,7 @@ cat untaglist | xargs -L50 koji untag-build -v coreos-pool
 
 - [ ] Now that untagging is done, give a heads up to rpm-ostree developers that N-2 packages have been untagged and that they may need to update their CI compose tests to freeze on a newer FCOS commit.
 
-- [ ] Remove the N-2 signing key from the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the N-1/N/N+1 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`).
+- [ ] Remove the N-2 signing key from the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the N-1/N/N+1 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`). An example request looks [like this](https://forge.fedoraproject.org/releng/tickets/issues/13316).
     - `koji taginfo coreos-pool`
     - `koji edit-tag coreos-pool -x tag2distrepo.keys="<N-1 key> <N key> <N+1 key>"`
 
@@ -83,7 +83,7 @@ Branching is when a new stream is "branched" off of `rawhide`. This eventually b
 - `koji tag-build f${N+1}-coreos-continuous $BUILD`
     - example: `koji tag-build f36-coreos-continuous fedora-release-36-0.16`
 
-- [ ] Add the N+1 signing key short hash (usually found [here](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/bodhi2/backend/templates/pungi.rpm.conf.j2)) to the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the 32/33/34/35 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`). An example request looks [like this](https://pagure.io/releng/issue/10635).
+- [ ] Add the N+1 signing key short hash (usually found [here](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/bodhi2/backend/templates/pungi.rpm.conf.j2)) to the tag info for the coreos-pool tag. The following commands view the current settings and then update the list to the 32/33/34/35 keys. You'll most likely have to get someone from releng to run the second command (`edit-tag`). An example request looks [like this](https://forge.fedoraproject.org/releng/tickets/issues/13213).
     - `koji taginfo coreos-pool`
     - `koji edit-tag coreos-pool -x tag2distrepo.keys="12c944d0 9570ff31 45719a39 9867c58f"`
 
@@ -214,20 +214,16 @@ These are various containers in use throughout our ecosystem. We should update o
     - [Dockerfile](https://github.com/coreos/butane/blob/main/Dockerfile)
 - [ ] Update fedora-coreos-cincinnati
     - [Dockerfile](https://github.com/coreos/fedora-coreos-cincinnati/blob/main/dist/fedora-infra/Dockerfile)
-    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-cincinnati/templates/imagestream.yml)
-    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-cincinnati/templates/buildconfig.yml)
-    - [Git Hash Variables (Optional)](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-cincinnati/vars)
+    - [ImageStream](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/coreos-cincinnati/templates/imagestream.yml.j2)
+    - [BuildConfig](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/coreos-cincinnati/templates/buildconfig.yml.j2)
+    - [Git Hash Variables (Optional)](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/coreos-cincinnati/vars)
 - [ ] Update config-bot
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/config-bot/Dockerfile)
 - [ ] Update coreos-koji-tagger
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/coreos-koji-tagger/Dockerfile)
-    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-koji-tagger/templates/imagestream.yml)
-    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-koji-tagger/templates/buildconfig.yml)
-- [ ] Update coreos-ostree-importer
-    - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/coreos-ostree-importer/Dockerfile)
-    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-ostree-importer/templates/imagestream.yml)
-    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/coreos-ostree-importer/templates/buildconfig.yml)
+    - [ImageStream](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/coreos-koji-tagger/templates/imagestream.yml.j2)
+    - [BuildConfig](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/coreos-koji-tagger/templates/buildconfig.yml.j2)
 - [ ] Update fedora-ostree-pruner
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/fedora-ostree-pruner/Dockerfile)
-    - [ImageStream](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/fedora-ostree-pruner/templates/imagestream.yml)
-    - [BuildConfig](https://pagure.io/fedora-infra/ansible/blob/main/f/roles/openshift-apps/fedora-ostree-pruner/templates/buildconfig.yml)
+    - [ImageStream](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/fedora-ostree-pruner/templates/imagestream.yml.j2)
+    - [BuildConfig](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/fedora-ostree-pruner/templates/buildconfig.yml.j2)
