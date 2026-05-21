@@ -32,6 +32,11 @@ end user systems:
 - OCI: OSTree commits are packaged up in OCI container images and delivered
   via a container registry.
 
+For bootable-container delivery, we should prefer zstd-compressed container
+images once the build/export tooling supports it.  That direction matches the
+goal of reducing transfer size and may also improve update application speed,
+but it should be backed by benchmark data before becoming the default.
+
 Currently the plan in Fedora CoreOS is to deliver content via a plain
 OSTree Repo and augment our strategy with either rojig or OCI if it
 proves useful or necessary.
