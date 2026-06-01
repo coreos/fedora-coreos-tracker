@@ -202,9 +202,11 @@ Now that Fedora N is GA, we need to start tracking the release schedule of Fedor
 - [ ] Update the "Review Fedora N Release Schedule" topic and link to point to Fedora N+1 in the [FCOS meeting-action template](https://github.com/coreos/fcos-meeting-action/blob/main/static/meeting-template.md)
 
 
-## Miscellaneous container updates
+## Miscellaneous ecosystem updates
 
-These are various containers in use throughout our ecosystem. We should update or open a ticket to track updating them once a new Fedora release is out. If you open a ticket instead of doing the update add a link to the ticket as comment.
+These are various projects (primarily containers) in use throughout our ecosystem which require updating on new Fedora versions.
+We should update or open a ticket to track updating them once a new Fedora release is out.
+If you open a ticket instead of doing the update add a link to the ticket as comment.
 
 - [ ] Update coreos-assembler or open ticket to update:
     - [Dockerfile](https://github.com/coreos/coreos-assembler/blob/main/Dockerfile)
@@ -231,3 +233,6 @@ These are various containers in use throughout our ecosystem. We should update o
     - [Dockerfile](https://github.com/coreos/fedora-coreos-releng-automation/blob/main/fedora-ostree-pruner/Dockerfile)
     - [ImageStream](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/fedora-ostree-pruner/templates/imagestream.yml.j2)
     - [BuildConfig](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/openshift-apps/fedora-ostree-pruner/templates/buildconfig.yml.j2)
+- [ ] Update the grub2 versions in the bootupd e2e test
+    - [test script](https://github.com/coreos/bootupd/blob/main/tests/e2e-update/e2e-update.sh)
+
