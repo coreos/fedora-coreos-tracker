@@ -13,22 +13,19 @@
 
 ### Untag old packages
 
-`koji untag` packages from the pool that are not signed by any "active" release key (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). Active releases are N-1 and N. If branching for N+1 has already occurred, N+1 is also considered active. Use this process:
+`koji untag` packages from the pool that are signed with the N-2 release key (at some point we'll have GC in place to do this for us, but for now we must remember to do this manually or otherwise distRepo will fail once the signed packages are GC'ed). Use this process:
 
 - [ ] First, coordinate with releng to let them know you'll be untagging N-2 packages and that you'll need them to update `tag2distrepo.keys` on the `coreos-pool` tag promptly afterward (to drop the N-2 key). This minimizes the window where the key list is out of sync with what's tagged. Check the current state with:
     - `koji taginfo coreos-pool`
 
-- [ ] Find the key short hashes for all active releases. Usually found [here](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/bodhi2/backend/templates/pungi.rpm.conf.j2). Then build the untaglist of packages not signed by any active key:
+- [ ] Find the key short hashes for the N-2 release. Usually found [here](https://forge.fedoraproject.org/infra/ansible/src/branch/main/roles/bodhi2/backend/templates/pungi.rpm.conf.j2). Then build the untaglist of packages signed by the N-2 key:
 
 ```
 fN2key=<N-2 key hash>  # the key being removed
-fN1key=<N-1 key hash>  # active
-fNkey=<N key hash>     # active
-fNp1key=<N+1 key hash> # active if branching has already occurred
 
 echo > untaglist # create or empty out file
 for build in $(koji list-tagged --quiet coreos-pool | cut -f1 -d' '); do
-    if ! koji buildinfo $build | grep -iE "($fN1key|$fNkey|$fNp1key)" 1>/dev/null; then
+    if koji buildinfo $build | grep -i $fN2key 1>/dev/null; then
         echo "Adding $build to untag list"
         echo "${build}" >> untaglist
     fi
